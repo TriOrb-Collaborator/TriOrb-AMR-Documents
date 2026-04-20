@@ -11,7 +11,7 @@ PAGES = [
     ("ja_home", "/"),
     ("ja_pkg_index", "/packages/index.html"),
     ("ja_visual_slam", "/packages/visual_slam.html"),
-    ("ja_plc_cpp", "/packages/triorb_sick_plc_wrapper/generated/class__Node.html"),
+    ("ja_plc_cpp", "/packages/triorb_sick_plc_wrapper/generated/struct__Node_1_1PubApplicationData.html"),
     ("ja_plc_msg", "/packages/triorb_sick_plc_wrapper/interfaces/msg/AppDataFromPLC.html"),
     ("ja_terms", "/guides/terms.html"),
     ("ja_privacy", "/guides/privacy.html"),

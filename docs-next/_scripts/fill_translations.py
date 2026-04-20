@@ -92,7 +92,11 @@ def apply_mapping(po_path: Path, mapping: Dict[str, str]) -> int:
             if "fuzzy" in entry.flags:
                 entry.flags.remove("fuzzy")
             hits += 1
-    po.save(str(po_path))
+    # Save only when something actually changed — avoid bumping mtime on
+    # untouched PO files, which would force sphinx-intl to rebuild every .mo
+    # and cascade into Sphinx invalidating all docs.
+    if hits:
+        po.save(str(po_path))
     return hits
 
 
@@ -209,6 +213,12 @@ VISUAL_SLAM_DICT = {
 # ---------------------------------------------------------------------------
 ROSDOC2_LABEL_DICT = {
     "Class Documentation": "クラスドキュメント",
+    "Struct Documentation": "構造体ドキュメント",
+    "Enum Documentation": "列挙型ドキュメント",
+    "Function Documentation": "関数ドキュメント",
+    "Define Documentation": "マクロ定義ドキュメント",
+    "Typedef Documentation": "型定義ドキュメント",
+    "Variable Documentation": "変数ドキュメント",
     "Message Definitions": "メッセージ定義",
     "Standard Documents": "標準ドキュメント",
     "Nested Relationships": "ネスト関係",
@@ -250,6 +260,7 @@ ROSDOC2_LABEL_DICT = {
     "Full API": "全 API",
     "Defined in": "定義場所",
     "Source": "ソース",
+    "**Source**": "**ソース**",
     "Contents": "目次",
     "Overview": "概要",
     "Macros": "マクロ",
@@ -311,6 +322,38 @@ def populate_d1() -> None:
     print(f"D1 guides/privacy.po: {n} translations")
 
 
+# Pattern-based D2: msgids that embed a :ref:`target` parameter.
+ROSDOC2_REGEX_PATTERNS: List[tuple[re.Pattern, str]] = [
+    # "Defined in :ref:`file_include_foo.hpp`" → ":ref:`file_include_foo.hpp` で定義"
+    (re.compile(r"^Defined in (:ref:`[^`]+`)$"), r"\1 で定義"),
+]
+
+
+def apply_regex_patterns(po_path: Path, patterns: List[tuple[re.Pattern, str]]) -> int:
+    """Apply regex-based msgid→msgstr rewrites (for parametric msgids)."""
+    if not po_path.exists():
+        return 0
+    po = polib.pofile(str(po_path))
+    hits = 0
+    for entry in po:
+        if entry.obsolete:
+            continue
+        for pat, repl in patterns:
+            m = pat.match(entry.msgid)
+            if not m:
+                continue
+            new_msgstr = pat.sub(repl, entry.msgid)
+            if entry.msgstr != new_msgstr or entry.fuzzy:
+                entry.msgstr = new_msgstr
+                if "fuzzy" in entry.flags:
+                    entry.flags.remove("fuzzy")
+                hits += 1
+            break
+    if hits:
+        po.save(str(po_path))
+    return hits
+
+
 def populate_d2() -> None:
     pkg_root = LOCALE / "packages"
     if not pkg_root.is_dir():
@@ -318,12 +361,15 @@ def populate_d2() -> None:
         return
     total_files = 0
     total_hits = 0
+    total_regex_hits = 0
     for po_path in pkg_root.rglob("*.po"):
         n = apply_mapping(po_path, ROSDOC2_LABEL_DICT)
         if n:
             total_files += 1
             total_hits += n
+        total_regex_hits += apply_regex_patterns(po_path, ROSDOC2_REGEX_PATTERNS)
     print(f"D2 rosdoc2 labels applied to {total_files} files: {total_hits} msgstr set")
+    print(f"D2 rosdoc2 regex patterns: {total_regex_hits} msgstr set")
 
 
 if __name__ == "__main__":
