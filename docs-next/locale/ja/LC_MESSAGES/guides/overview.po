@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE 開発ガイド
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE 開発ガイド v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 13:49+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../guides/overview.md:1
+msgid "Product Overview"
+msgstr "製品概要"
+
+#: ../../guides/overview.md:3
+msgid ""
+"TriOrb BASE is an autonomous mobile robot (AMR) platform with "
+"omnidirectional motion realized by three omniwheels."
+msgstr "TriOrb BASE は、3 つのオムニホイールによる全方位移動を実現する自律移動ロボット (AMR) プラットフォームです。"
+
+#: ../../guides/overview.md:6
+msgid "This site provides:"
+msgstr "本サイトでは以下の情報を提供します:"
+
+#: ../../guides/overview.md:8
+msgid ""
+"**Autonomous Navigation API**: ROS 2 topics / services / actions for driving"
+" the robot"
+msgstr "**自律移動 API**: ロボットを制御するための ROS 2 トピック / サービス / アクション"
+
+#: ../../guides/overview.md:9
+msgid ""
+"**Collaborative Navigation API**: additional APIs for multi-robot "
+"cooperative transport"
+msgstr "**協調移動 API**: 複数台で連携搬送する場合の追加 API"
+
+#: ../../guides/overview.md:10
+msgid ""
+"**Control ECU Library**: a Python library for sending commands to the TriOrb"
+" control ECU directly from a host PC"
+msgstr "**制御 ECU 通信ライブラリ**: 上位 PC から TriOrb 制御 ECU へ直接指令を送るための Python ライブラリ"
+
+#: ../../guides/overview.md:11
+msgid "**Changelog / Terms of Service / Privacy Policy**"
+msgstr "**変更履歴 / 利用規約 / プライバシーポリシー**"
+
+#: ../../guides/overview.md:13
+msgid "Before you start"
+msgstr "利用前に"
+
+#: ../../guides/overview.md:15
+msgid ""
+"For hardware setup and initial software installation, refer to the "
+"separately distributed documents:"
+msgstr "ハードウェアのセットアップおよびソフトウェア導入手順は、別途配布される以下のドキュメントを参照してください:"
+
+#: ../../guides/overview.md:18
+msgid "TriOrb BASE Operating Manual"
+msgstr "TriOrb BASE 取扱説明書"
+
+#: ../../guides/overview.md:19
+msgid "Autonomous Navigation Package User Manual"
+msgstr "自律移動パッケージ ユーザーズマニュアル"
+
+#: ../../guides/overview.md:20
+msgid "Upgrade Procedures"
+msgstr "アップグレード手順書"
+
+#: ../../guides/overview.md:22
+msgid ""
+"This site focuses on the public API surface and change history of the ROS 2 "
+"/ Python layer."
+msgstr "本サイトは ROS 2 / Python レイヤの公開 API 仕様と変更履歴に特化しています。"

@@ -1,0 +1,11 @@
+# PoC pins chosen for Python 3.8 compatibility.
+# Upgrade to Sphinx 7.3+ / MyST 3.x once Python 3.9+ is the baseline (apt install python3.9-venv).
+Sphinx>=7.1,<7.2
+furo>=2024.1.29
+myst-parser>=2.0,<3.0
+sphinx-intl>=2.2
+sphinx-multiversion>=0.2.4
+sphinxcontrib-mermaid>=0.9
+sphinx-copybutton>=0.5
+sphinx-design>=0.5,<0.6
+sphinx-togglebutton>=0.3

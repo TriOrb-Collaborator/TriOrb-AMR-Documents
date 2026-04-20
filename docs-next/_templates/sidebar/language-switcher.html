@@ -1,0 +1,17 @@
+{# Simple language switcher for Furo sidebar.
+   Builds links that swap /ja/ <-> /en/ in the current URL.
+   Adjust target languages as more locales are added. #}
+<div class="sidebar-language-switcher">
+  <label for="language-select" style="font-size:0.8rem; opacity:0.7;">言語 / Language</label>
+  <select id="language-select"
+          onchange="(function(sel){
+              var url = window.location.href;
+              var map = {'ja': '/ja/', 'en': '/en/'};
+              var from = '{{ language }}' === 'ja' ? '/ja/' : '/en/';
+              var to = map[sel.value] || from;
+              window.location.href = url.replace(from, to);
+          })(this)">
+    <option value="ja" {% if language == 'ja' %}selected{% endif %}>日本語</option>
+    <option value="en" {% if language == 'en' %}selected{% endif %}>English</option>
+  </select>
+</div>

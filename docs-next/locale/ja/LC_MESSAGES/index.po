@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE 開発ガイド
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE 開発ガイド v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 13:49+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../index.md:6
+msgid "User Guide"
+msgstr "ユーザーガイド"
+
+#: ../../index.md:14
+msgid "Package API (rosdoc2)"
+msgstr "パッケージ API (rosdoc2)"
+
+#: ../../index.md:21
+msgid "Legal"
+msgstr "法務"
+
+#: ../../index.md:1
+msgid "TriOrb BASE Developer Guide"
+msgstr "TriOrb BASE 開発ガイド"
+
+#: ../../index.md:3
+msgid ""
+"Developer documentation for TriOrb BASE. Covers API references for "
+"autonomous and collaborative navigation packages, operational guides, and "
+"the changelog."
+msgstr ""
+"TriOrb BASE の開発者向けドキュメントです。自律移動・協調搬送パッケージの API リファレンス、運用ガイド、変更履歴をまとめています。"
+
+#: ../../index.md:29
+msgid "Support"
+msgstr "サポート"
+
+#: ../../index.md:31
+msgid ""
+"Source / Issues: [TriOrb-Inc/TriOrb-AMR-"
+"Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)"
+msgstr ""
+"ソースコード / Issue: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-"
+"Inc/TriOrb-AMR-Documents)"
+
+#: ../../index.md:32
+msgid "Contact: `info@triorb.co.jp`"
+msgstr "お問い合わせ: `info@triorb.co.jp`"
+
+#: ../../index.md:34
+msgid "Past versions"
+msgstr "過去バージョン"
+
+#: ../../index.md:36
+msgid ""
+"Documentation for v1.2.4 and earlier is available in the legacy MkDocs "
+"archive."
+msgstr "v1.2.4 以前のドキュメントは旧サイト (MkDocs) のアーカイブをご参照ください。"
+
+#: ../../index.md:38
+msgid "[v1.2.4 (legacy site)](../v1.2.4/)"
+msgstr "[v1.2.4 (旧サイト)](../v1.2.4/)"
+
+#: ../../index.md:39
+msgid "[v1.2.3 (legacy site)](../v1.2.3/)"
+msgstr "[v1.2.3 (旧サイト)](../v1.2.3/)"
+
+#: ../../index.md:40
+msgid "[v1.2.2 (legacy site)](../v1.2.2/)"
+msgstr "[v1.2.2 (旧サイト)](../v1.2.2/)"

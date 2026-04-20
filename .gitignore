@@ -52,6 +52,7 @@ TriOrb-AMR-Package/pkgs/triorb_collaboration/README.md
 
 # venv
 .venv/
+.venv-docs2/
 
 # site
 triorb-amr-docs/site/

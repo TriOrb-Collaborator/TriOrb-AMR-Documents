@@ -1,0 +1,106 @@
+name: docs2 (Sphinx + rosdoc2)
+
+# PoC workflow for the docs-next Sphinx/rosdoc2 pipeline.
+# - Builds the rosdoc2 Docker image (GHA layer cache)
+# - Runs rosdoc2 against configured packages → docs-next/packages/
+# - Builds umbrella Sphinx site (JP source + EN translation)
+# - Uploads the rendered site as a workflow artifact
+# Deployment to gh-pages is deliberately deferred to Phase 4 (cutover).
+
+on:
+  push:
+    branches:
+      - docs2-poc
+      - 'docs2/**'
+  pull_request:
+    branches:
+      - docs2-poc
+      - 'docs2/**'
+  workflow_dispatch:
+
+concurrency:
+  group: docs2-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOCS_IMAGE: triorb-rosdoc2
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: docs-next/requirements.txt
+
+      - name: Install umbrella Sphinx dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r docs-next/requirements.txt
+          pip install breathe playwright
+          playwright install --with-deps chromium
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build rosdoc2 image (cached)
+        uses: docker/build-push-action@v5
+        with:
+          context: docs-next/docker
+          file: docs-next/docker/Dockerfile.rosdoc2
+          load: true
+          tags: ${{ env.DOCS_IMAGE }}:latest
+          cache-from: type=gha,scope=rosdoc2
+          cache-to: type=gha,scope=rosdoc2,mode=max
+
+      - name: Run rosdoc2 on configured packages
+        run: bash docs-next/docker/run_rosdoc2.sh
+
+      - name: Build Japanese (source language)
+        run: make -C docs-next html
+
+      - name: Update English translations
+        run: make -C docs-next update-po
+
+      - name: Build English
+        run: make -C docs-next html-en
+
+      - name: Stage deploy tree (strip .doctrees/_sources)
+        run: make -C docs-next deploy-stage
+
+      - name: Visual check (Playwright, JP only)
+        run: |
+          cd docs-next/_build/html/ja
+          python -m http.server 18100 &
+          SERVER_PID=$!
+          sleep 3
+          cd ../../..
+          python _shot.py || true
+          kill $SERVER_PID || true
+
+      - name: Upload site artifact (JP + EN, deploy-ready)
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs2-site
+          path: docs-next/_build/deploy/
+          retention-days: 14
+
+      - name: Upload screenshots artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs2-screenshots
+          path: docs-next/_shots/
+          retention-days: 14
+        if: always()
