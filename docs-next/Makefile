@@ -16,20 +16,25 @@
 SPHINXBUILD ?= sphinx-build
 SOURCEDIR   := .
 BUILDDIR    := _build
+# Parallel read/write passes. Umbrella does NOT run exhale itself (rosdoc2
+# produced the RST inside its container), so -j auto is safe.
+# Override with SPHINXOPTS= on the make command line.
+SPHINXOPTS  ?= -j auto
 
 .PHONY: html html-ja gettext update-po serve clean rosdoc2 rosdoc2-image deploy-stage
 
 html:
-	$(SPHINXBUILD) -b html -D language=en "$(SOURCEDIR)" "$(BUILDDIR)/html/en"
+	$(SPHINXBUILD) $(SPHINXOPTS) -b html -D language=en "$(SOURCEDIR)" "$(BUILDDIR)/html/en"
 
 html-ja:
-	$(SPHINXBUILD) -b html -D language=ja "$(SOURCEDIR)" "$(BUILDDIR)/html/ja"
+	$(SPHINXBUILD) $(SPHINXOPTS) -b html -D language=ja "$(SOURCEDIR)" "$(BUILDDIR)/html/ja"
 
 gettext:
-	$(SPHINXBUILD) -b gettext "$(SOURCEDIR)" "$(BUILDDIR)/gettext"
+	$(SPHINXBUILD) $(SPHINXOPTS) -b gettext "$(SOURCEDIR)" "$(BUILDDIR)/gettext"
 
 update-po: gettext
 	sphinx-intl update -p "$(BUILDDIR)/gettext" -l ja
+	sphinx-intl build -l ja
 
 serve: html
 	@echo "Open http://localhost:8000/"

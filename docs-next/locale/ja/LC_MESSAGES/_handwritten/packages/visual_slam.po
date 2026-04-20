@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE 開発ガイド
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE 開発ガイド v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 13:49+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../_handwritten/packages/visual_slam.md:1
+msgid "Visual SLAM"
+msgstr "Visual SLAM"
+
+#: ../../_handwritten/packages/visual_slam.md:3
+msgid ""
+"Visual SLAM is TriOrb BASE's map building and self-localization engine based"
+" on stereo keyframe features. The implementation wraps the open-source "
+"[stella_vslam](https://github.com/stella-cv/stella_vslam) library — its "
+"internal API is considered implementation detail and is not covered in this "
+"reference."
+msgstr ""
+"Visual SLAM は、ステレオキーフレーム特徴量にもとづく TriOrb BASE の地図生成・自己位置推定エンジンです。オープンソースの "
+"[stella_vslam](https://github.com/stella-cv/stella_vslam) "
+"を内部で利用していますが、ラッパーの内部 API は実装詳細として扱い、本リファレンスでは公開していません。"
+
+#: ../../_handwritten/packages/visual_slam.md:8
+msgid "Role on TriOrb BASE"
+msgstr "TriOrb BASE における役割"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid "Responsibility"
+msgstr "役割"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid "Description"
+msgstr "説明"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid "Map building"
+msgstr "地図生成"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid ""
+"Builds a 3D keyframe-based map while the robot is driven through the "
+"environment"
+msgstr "手動走行やリモコン走行中にステレオ特徴量から 3D キーフレーム地図を構築"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid "Self-localization"
+msgstr "自己位置推定"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid ""
+"Estimates 6-DoF robot pose at runtime by matching stereo features against "
+"the stored map"
+msgstr "保存済み地図とステレオ特徴量を照合して実行時に 6 自由度のロボット姿勢を推定"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid "Map export"
+msgstr "地図エクスポート"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid ""
+"Exports the 3D map to a 2D occupancy representation used by downstream "
+"navigation"
+msgstr "ナビゲーションが利用する 2D 占有格子表現に 3D 地図を変換"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid "Map I/O"
+msgstr "地図 I/O"
+
+#: ../../_handwritten/packages/visual_slam.md
+msgid "Saves / loads map files to the robot controller and PC"
+msgstr "ロボットコントローラや PC との間で地図ファイルの保存・読み込みを実施"
+
+#: ../../_handwritten/packages/visual_slam.md:17
+msgid "Interfaces you care about"
+msgstr "関連する API"
+
+#: ../../_handwritten/packages/visual_slam.md:19
+msgid ""
+"Day-to-day interaction is through higher-level APIs, not through Visual SLAM"
+" directly:"
+msgstr "運用では Visual SLAM を直接操作せず、以下の上位 API 経由で利用します:"
+
+#: ../../_handwritten/packages/visual_slam.md:22
+msgid "`triorb_vslam_tf` — publishes VSLAM-derived pose as TF"
+msgstr "`triorb_vslam_tf` — VSLAM 由来の姿勢を TF として配信"
+
+#: ../../_handwritten/packages/visual_slam.md:23
+msgid "`trirob_vslam_tf_bridge` — bridges VSLAM to navigation pose"
+msgstr "`trirob_vslam_tf_bridge` — VSLAM 姿勢をナビゲーション用姿勢へブリッジ"
+
+#: ../../_handwritten/packages/visual_slam.md:24
+msgid ""
+"`triorb_dead_reckoning` — fuses VSLAM, odometry, and IMU for robust pose"
+msgstr "`triorb_dead_reckoning` — VSLAM・オドメトリ・IMU を統合し堅牢な自己位置を推定"
+
+#: ../../_handwritten/packages/visual_slam.md:25
+msgid "The WebAPI's map save / load / switch operations"
+msgstr "WebAPI の地図保存・読み込み・切替操作"
+
+#: ../../_handwritten/packages/visual_slam.md:27
+msgid "See those packages for the public topic / service surface."
+msgstr "公開されているトピック / サービスは各パッケージのページを参照してください。"
+
+#: ../../_handwritten/packages/visual_slam.md:29
+msgid "Related"
+msgstr "関連"
+
+#: ../../_handwritten/packages/visual_slam.md:31
+msgid "[triorb_vslam_tf](triorb_vslam_tf/index.md)"
+msgstr "[triorb_vslam_tf](triorb_vslam_tf/index.md)"
+
+#: ../../_handwritten/packages/visual_slam.md:32
+msgid "[trirob_vslam_tf_bridge](trirob_vslam_tf_bridge/index.md)"
+msgstr "[trirob_vslam_tf_bridge](trirob_vslam_tf_bridge/index.md)"
+
+#: ../../_handwritten/packages/visual_slam.md:33
+msgid "[triorb_dead_reckoning](triorb_dead_reckoning/index.md)"
+msgstr "[triorb_dead_reckoning](triorb_dead_reckoning/index.md)"
