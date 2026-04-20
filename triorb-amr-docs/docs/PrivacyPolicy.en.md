@@ -6,11 +6,11 @@ Effective date: March 27, 2026
 
 [Japanese version](./PrivacyPolicy.md)
 
-## 1. Basic Policy
+## Basic Policy
 
 TriOrb Inc. ("we", "us", or "our") handles user information obtained through the `TriOrb BASE Developer Guide`, the `TriOrb-AMR-Documents` repository, and related public pages managed or provided by us (collectively, "this site") in accordance with the Act on the Protection of Personal Information of Japan and other applicable laws and regulations.
 
-## 2. Scope of This Policy
+## Scope of This Policy
 
 This policy mainly applies in the following situations:
 
@@ -21,7 +21,7 @@ This policy mainly applies in the following situations:
 
 Information independently collected by external services is governed by the policies of those service providers.
 
-## 3. Information We May Collect
+## Information We May Collect
 
 We or the infrastructure used to operate this site may collect the following information.
 
@@ -44,7 +44,7 @@ This site is structured as a static documentation site using MkDocs and Material
 
 This site includes links or external asset references involving GitHub, Notion, Box, our corporate website, other GitHub Pages sites, and infrastructure for future ChatGPT Apps that we may use. When you use these services, the relevant providers may collect information in accordance with their own policies.
 
-## 4. Purposes of Use
+## Purposes of Use
 
 We may use collected information for the following purposes:
 
@@ -59,46 +59,46 @@ For content submitted through future non-public channels such as a ChatGPT App p
 
 By contrast, public submissions such as GitHub Issues and GitHub Discussions are only limited in anonymity because the poster's GitHub account name and similar public identifiers are visible. We may also use those public submissions, within the scope in which they were publicly posted, to improve TriOrb products, related software, documentation, and support quality.
 
-## 5. Third-Party Provision and Outsourcing
+## Third-Party Provision and Outsourcing
 
 Except where permitted or required by law, we do not provide personal data to third parties without the individual's consent.
 
 However, we may use services such as GitHub, GitHub Pages, Notion, Box, and other providers for site hosting, source code management, operation of Issues and Discussions, documentation delivery, infrastructure for ChatGPT Apps or similar channels, and the delivery of external materials. In those cases, the relevant service providers may handle information according to their roles.
 
-## 6. Security Management
+## Security Management
 
 We will endeavor to implement necessary and appropriate security measures within a reasonable scope to address risks such as leakage, loss, damage, and unauthorized access to the information we collect.
 
 At the same time, information that users voluntarily post in public spaces such as GitHub Issues or GitHub Discussions may be visible to third parties as public information. Do not include personal information, confidential information, customer information, or credentials in public posts.
 
-## 7. Retention Period
+## Retention Period
 
 We retain collected information only for the period necessary to achieve the relevant purposes of use or for the period required by law. However, retention periods and deletion control may not be fully under our control for public GitHub posts and records held by external services.
 
-## 8. Your Rights
+## Your Rights
 
 Subject to applicable law, you may request disclosure, correction, addition, deletion, suspension of use, or similar handling of your personal information retained by us.
 
 The specific method for making such requests and the method of identity verification will be handled through `info@triorb.co.jp` or another contact point separately designated by us. Public GitHub Issues and GitHub Discussions are not appropriate channels for personal information requests.
 
-## 9. Cookies and Similar Technologies
+## Cookies and Similar Technologies
 
 This site mainly consists of static content, but GitHub, GitHub Pages, our corporate website, or linked services may use cookies or similar technologies. Browser local storage or similar browser-side storage may also be used to retain display settings and related preferences on this site.
 
 You may control the storage of cookies and similar technologies through your browser settings, but doing so may disable certain features or prevent preferences from being retained.
 
-## 10. External Links
+## External Links
 
 This site contains links to Notion, Box, GitHub, our corporate website, other GitHub Pages sites, and similar destinations. Please review the privacy policies of those services or operators regarding their handling of personal information.
 
-## 11. Minors
+## Minors
 
 If you are a minor, please use this site with the consent of a parent or legal guardian where appropriate.
 
-## 12. Revisions
+## Revisions
 
 We may revise this policy in response to legal changes, operational changes, or changes to the content of this site. Where important changes are made, we will provide notice on this site or by another appropriate method.
 
-## 13. Contact
+## Contact
 
 The contact address for this policy is `info@triorb.co.jp`. We will operate public API inquiry channels separately from non-public contact routes for personal information matters.

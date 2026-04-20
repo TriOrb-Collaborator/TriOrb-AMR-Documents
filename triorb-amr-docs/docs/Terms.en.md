@@ -6,7 +6,7 @@ Effective date: March 27, 2026
 
 [Japanese version](./Terms.md)
 
-## 1. Scope
+## Scope
 
 These Terms of Use ("Terms") apply to the use of the following public information and related pages provided or managed by TriOrb Inc. ("we", "us", or "our"):
 
@@ -17,17 +17,17 @@ These Terms of Use ("Terms") apply to the use of the following public informatio
 
 Separate terms and conditions may apply to external services, external websites, or other repositories.
 
-## 2. Purpose of This Site
+## Purpose of This Site
 
 This site is intended to provide developer-facing information, API specifications, sample code, reference materials, and related documentation for TriOrb BASE and associated autonomous mobility, collaborative mobility, and control software.
 
 The information on this site is provided as reference material to support evaluation, development, verification, and operational preparation. It does not by itself constitute a warranty, design service, maintenance agreement, or safety guarantee for any individual project.
 
-## 3. Agreement to the Terms
+## Agreement to the Terms
 
 By using this site, you are deemed to have agreed to these Terms. If you do not agree, you must stop using this site.
 
-## 4. Conditions of Use
+## Conditions of Use
 
 You must use this site in compliance with applicable laws, these Terms, manuals separately provided by us, safety instructions, and any contractual conditions applicable to third parties.
 
@@ -37,7 +37,7 @@ You understand and agree that:
 - Any application of published API specifications or sample code to real hardware requires prior verification, hazard assessment, fail-safe design, and compliance checks under applicable laws and regulations
 - Access to unpublished repositories, binaries, credentials, or customer-specific settings is not granted merely because this site is publicly available
 
-## 5. Prohibited Conduct
+## Prohibited Conduct
 
 You must not engage in any of the following when using this site:
 
@@ -50,7 +50,7 @@ You must not engage in any of the following when using this site:
 - Alteration, redistribution, or presentation of site content in a misleading way, including suggesting that modified content is official information from us
 - Posting personal information of third parties, confidential information, unlawful content, or otherwise inappropriate content to GitHub Issues, Discussions, Pull Requests, or similar channels
 
-## 6. Intellectual Property
+## Intellectual Property
 
 All rights in the documents, images, structure, software, trademarks, logos, and other content on this site and in this repository belong to us or the relevant rights holders.
 
@@ -62,7 +62,7 @@ However, separate conditions may apply to the following:
 - Materials published on external sites such as PDFs, Notion pages, Box pages, and GitHub Pages
 - Software, images, documents, and linked content owned by third parties
 
-## 7. Submitted Content
+## Submitted Content
 
 Content posted by users to this repository or related pages through GitHub Issues, Discussions, Pull Requests, or similar means may be visible to the public. Do not post personal information, confidential information, or third-party information that you do not wish to disclose publicly.
 
@@ -72,11 +72,11 @@ For inquiries, requests, error reports, or improvement proposals submitted throu
 
 By contrast, posts to GitHub Issues, Discussions, Pull Requests, and similar channels are public. The poster's GitHub account name and other public profile information may be visible to third parties, so anonymity is limited. We may also use those public posts, within the scope in which they were made public, to improve TriOrb products, related software, documentation, and support quality.
 
-## 8. External Services
+## External Services
 
 This site may rely on links, embedded references, or hosting functions involving GitHub, GitHub Pages, Notion, Box, our corporate website, infrastructure used for future ChatGPT Apps provided by us, and other external services. These services are outside our direct control and are subject to the terms and policies of their respective providers.
 
-## 9. Disclaimer
+## Disclaimer
 
 We do not guarantee the accuracy, completeness, usefulness, fitness for a particular purpose, timeliness, continuity, or safety of the information provided on this site.
 
@@ -84,15 +84,15 @@ In particular, the use of robot control functions, path generation, sensor proce
 
 To the fullest extent permitted by law, we are not liable for any damages suffered by you or any third party in connection with use of, inability to use, reliance on information from, suspension of external services related to, broken links on, or data loss related to this site, unless caused by our willful misconduct or gross negligence.
 
-## 10. Changes and Suspension
+## Changes and Suspension
 
 We may change the content, structure, URLs, materials, these Terms, or the method of providing this site, or suspend or terminate all or part of this site, without prior notice to users.
 
-## 11. Governing Law and Jurisdiction
+## Governing Law and Jurisdiction
 
 These Terms are governed by the laws of Japan. Any dispute between us and a user in relation to these Terms or this site shall be subject to the exclusive jurisdiction of the district court having jurisdiction over our head office as the court of first instance.
 
-## 12. Contact
+## Contact
 
 The contact address for these Terms is `info@triorb.co.jp`.
 

@@ -9,25 +9,386 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TriOrb BASE 開発ガイド v1.2.5-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-20 13:49+0900\n"
+"POT-Creation-Date: 2026-04-20 20:30+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../guides/privacy.md:1
-msgid "Privacy Policy"
-msgstr "プライバシーポリシー"
+msgid "TriOrb BASE Developer Guide Privacy Policy (Draft)"
+msgstr "TriOrb BASE 開発ガイド プライバシーポリシー（案）"
 
-#: ../../guides/privacy.md:4
+#: ../../guides/privacy.md:3
+msgid "Effective date: March 27, 2026"
+msgstr "制定日: 2026年3月27日"
+
+#: ../../guides/privacy.md:5
 msgid ""
-"PoC stub. The full policy from `triorb-amr-docs/docs/PrivacyPolicy.md` "
-"will be migrated during Phase 2. Japanese text will be provided via "
-"`locale/ja/LC_MESSAGES/`."
+"This document is a draft prepared based on the current public content of the"
+" `TriOrb-AMR-Documents` repository and the `TriOrb BASE Developer Guide`. "
+"Before production use, it should be reviewed and adjusted to match TriOrb "
+"Inc.'s actual contact operations, service providers, retention policy, and "
+"legal review."
 msgstr ""
 
+#: ../../guides/privacy.md:7
+msgid "Basic Policy"
+msgstr "基本方針"
+
+#: ../../guides/privacy.md:9
+msgid ""
+"TriOrb Inc. (\"we\", \"us\", or \"our\") handles user information obtained "
+"through the `TriOrb BASE Developer Guide`, the `TriOrb-AMR-Documents` "
+"repository, and related public pages managed or provided by us "
+"(collectively, \"this site\") in accordance with the Act on the Protection "
+"of Personal Information of Japan and other applicable laws and regulations."
+msgstr ""
+"株式会社TriOrb（以下「当社」といいます。）は、当社が提供または管理する `TriOrb BASE 開発ガイド`、`TriOrb-AMR-"
+"Documents` "
+"リポジトリおよびこれらに付随する公開ページ（以下、総称して「本サイト」といいます。）において取得する利用者情報を、個人情報の保護に関する法律その他関係法令に従い、適切に取り扱います。"
+
+#: ../../guides/privacy.md:11
+msgid "Scope of This Policy"
+msgstr "本ポリシーの対象"
+
+#: ../../guides/privacy.md:13
+msgid "This policy mainly applies in the following situations:"
+msgstr "本ポリシーは、主に以下の場面に適用されます。"
+
+#: ../../guides/privacy.md:15
+msgid "When you browse this site"
+msgstr ""
+
+#: ../../guides/privacy.md:16
+msgid ""
+"When you contact us or the repository maintainers through GitHub Issues, "
+"Discussions, Pull Requests, or similar channels"
+msgstr ""
+
+#: ../../guides/privacy.md:17
+msgid ""
+"When you contact us through a future non-public channel such as a ChatGPT "
+"App provided by us"
+msgstr ""
+
+#: ../../guides/privacy.md:18
+msgid ""
+"When you move to an external destination linked from this site, to the "
+"extent that we provide that route"
+msgstr ""
+
+#: ../../guides/privacy.md:20
+msgid ""
+"Information independently collected by external services is governed by the "
+"policies of those service providers."
+msgstr "外部サービス自体が独自に取得する情報については、各サービス提供者のポリシーが適用されます。"
+
+#: ../../guides/privacy.md:22
+msgid "Information We May Collect"
+msgstr "取得する情報"
+
+#: ../../guides/privacy.md:24
+msgid ""
+"We or the infrastructure used to operate this site may collect the following"
+" information."
+msgstr "当社または本サイトの運用基盤は、以下の情報を取得することがあります。"
+
+#: ../../guides/privacy.md:26
+msgid "3.1 Information You Provide Directly"
+msgstr "3.1 利用者が自ら提供する情報"
+
+#: ../../guides/privacy.md:28
+msgid "GitHub account name, display name, and profile information"
+msgstr ""
+
+#: ../../guides/privacy.md:29
+msgid ""
+"Content of Issues, Discussions, Pull Requests, comments, attachments, and "
+"other submissions"
+msgstr ""
+
+#: ../../guides/privacy.md:30
+msgid ""
+"Questions, requests, error reports, ratings, attachments, and other content "
+"entered into future channels such as a ChatGPT App provided by us"
+msgstr ""
+
+#: ../../guides/privacy.md:31
+msgid ""
+"Contact details, affiliation, environment information, and other information"
+" you voluntarily provide when making an inquiry"
+msgstr ""
+
+#: ../../guides/privacy.md:33
+msgid "3.2 Information Collected Through Use of This Site"
+msgstr "3.2 本サイトの利用に伴い取得される情報"
+
+#: ../../guides/privacy.md:35
+msgid ""
+"IP address, timestamps, accessed URLs, referrers, browser type, operating "
+"system, and similar access log information"
+msgstr ""
+
+#: ../../guides/privacy.md:36
+msgid ""
+"Technical information normally collected by GitHub, GitHub Pages, and other "
+"hosting providers"
+msgstr ""
+
+#: ../../guides/privacy.md:37
+msgid ""
+"Preference information stored in browser local storage or similar browser-"
+"side storage for display settings and related functions"
+msgstr ""
+
+#: ../../guides/privacy.md:39
+msgid ""
+"This site is structured as a static documentation site using MkDocs and "
+"Material for MkDocs, and browser-side storage may be used to retain display "
+"settings and similar preferences."
+msgstr ""
+"本サイトは MkDocs / Material for MkDocs "
+"を利用した静的ドキュメントサイトとして構成されており、画面表示設定の保持等のためにブラウザ側保存機能を利用する場合があります。"
+
+#: ../../guides/privacy.md:41
+msgid "3.3 Information Potentially Collected Through External Services"
+msgstr "3.3 外部サービス経由で取得される可能性がある情報"
+
+#: ../../guides/privacy.md:43
+msgid ""
+"This site includes links or external asset references involving GitHub, "
+"Notion, Box, our corporate website, other GitHub Pages sites, and "
+"infrastructure for future ChatGPT Apps that we may use. When you use these "
+"services, the relevant providers may collect information in accordance with "
+"their own policies."
+msgstr ""
+"本サイトには、GitHub、Notion、Box、当社コーポレートサイト、他の GitHub Pages および当社が将来利用する ChatGPT "
+"App "
+"の提供基盤等へのリンクまたは外部アセット参照が含まれます。利用者がこれらのサービスを利用した場合、当該サービス提供者がそれぞれのポリシーに従って情報を取得することがあります。"
+
+#: ../../guides/privacy.md:45
+msgid "Purposes of Use"
+msgstr "利用目的"
+
+#: ../../guides/privacy.md:47
+msgid "We may use collected information for the following purposes:"
+msgstr "当社は、取得した情報を以下の目的で利用します。"
+
+#: ../../guides/privacy.md:49
+msgid ""
+"To provide this site, API specifications, sample code, change logs, and "
+"other public information"
+msgstr ""
+
+#: ../../guides/privacy.md:50
+msgid "To respond to inquiries, bug reports, proposals, and submitted content"
+msgstr ""
+
+#: ../../guides/privacy.md:51
+msgid ""
+"To improve documentation quality, site structure, maintenance, and incident "
+"response"
+msgstr ""
+
+#: ../../guides/privacy.md:52
+msgid ""
+"To analyze inquiry trends and improvement requests in order to improve "
+"TriOrb products, related software, documentation, and support quality"
+msgstr ""
+
+#: ../../guides/privacy.md:53
+msgid ""
+"To prevent, investigate, and respond to misuse, security incidents, rights "
+"violations, or operational issues"
+msgstr ""
+
+#: ../../guides/privacy.md:54
+msgid ""
+"To comply with legal obligations, protect rights, or respond to disputes"
+msgstr ""
+
+#: ../../guides/privacy.md:56
+msgid ""
+"For content submitted through future non-public channels such as a ChatGPT "
+"App provided by us, we may remove directly identifying information where "
+"necessary and then use the content in anonymized or aggregated form to "
+"improve TriOrb products, related software, documentation, and support "
+"quality."
+msgstr ""
+"当社は、将来提供する ChatGPT App "
+"等の非公開チャネルに寄せられた内容について、必要に応じて個人を直接特定できる情報を除去し、匿名化または統計化した上で、TriOrb "
+"製品、関連ソフトウェア、ドキュメントおよびサポート品質の向上に利用することがあります。"
+
+#: ../../guides/privacy.md:58
+msgid ""
+"By contrast, public submissions such as GitHub Issues and GitHub Discussions"
+" are only limited in anonymity because the poster's GitHub account name and "
+"similar public identifiers are visible. We may also use those public "
+"submissions, within the scope in which they were publicly posted, to improve"
+" TriOrb products, related software, documentation, and support quality."
+msgstr ""
+"一方、GitHub Issue や GitHub Discussions 等の公開投稿は、投稿者の GitHub "
+"アカウント名等が公開されるため匿名性は限定的です。当社は、これらの公開投稿についても、公開された範囲で、TriOrb "
+"製品、関連ソフトウェア、ドキュメントおよびサポート品質の向上に利用することがあります。"
+
+#: ../../guides/privacy.md:60
+msgid "Third-Party Provision and Outsourcing"
+msgstr "第三者提供および委託"
+
+#: ../../guides/privacy.md:62
+msgid ""
+"Except where permitted or required by law, we do not provide personal data "
+"to third parties without the individual's consent."
+msgstr "当社は、法令に基づく場合を除き、利用者の個人データを本人の同意なく第三者へ提供しません。"
+
+#: ../../guides/privacy.md:64
+msgid ""
+"However, we may use services such as GitHub, GitHub Pages, Notion, Box, and "
+"other providers for site hosting, source code management, operation of "
+"Issues and Discussions, documentation delivery, infrastructure for ChatGPT "
+"Apps or similar channels, and the delivery of external materials. In those "
+"cases, the relevant service providers may handle information according to "
+"their roles."
+msgstr ""
+"ただし、本サイトのホスティング、ソースコード管理、Issue / Discussion 運営、ドキュメント配信、ChatGPT App "
+"等の提供基盤または外部資料の提供にあたり、GitHub、GitHub Pages、Notion、Box "
+"その他のサービスを利用する場合があります。この場合、各サービス提供者がその役割に応じて情報を取り扱うことがあります。"
+
+#: ../../guides/privacy.md:66
+msgid "Security Management"
+msgstr "安全管理"
+
+#: ../../guides/privacy.md:68
+msgid ""
+"We will endeavor to implement necessary and appropriate security measures "
+"within a reasonable scope to address risks such as leakage, loss, damage, "
+"and unauthorized access to the information we collect."
+msgstr ""
+"当社は、取得した情報について、漏えい、滅失、毀損、不正アクセスその他のリスクに対し、合理的な範囲で必要かつ適切な安全管理措置を講じるよう努めます。"
+
+#: ../../guides/privacy.md:70
+msgid ""
+"At the same time, information that users voluntarily post in public spaces "
+"such as GitHub Issues or GitHub Discussions may be visible to third parties "
+"as public information. Do not include personal information, confidential "
+"information, customer information, or credentials in public posts."
+msgstr ""
+"一方で、GitHub Issue や GitHub Discussions "
+"など公開スペースに利用者が自ら投稿した情報は、公開情報として第三者から閲覧される可能性があります。公開投稿では、個人情報、秘密情報、顧客情報または認証情報を記載しないでください。"
+
+#: ../../guides/privacy.md:72
+msgid "Retention Period"
+msgstr "保存期間"
+
+#: ../../guides/privacy.md:74
+msgid ""
+"We retain collected information only for the period necessary to achieve the"
+" relevant purposes of use or for the period required by law. However, "
+"retention periods and deletion control may not be fully under our control "
+"for public GitHub posts and records held by external services."
+msgstr ""
+"当社は、取得した情報を、利用目的の達成に必要な期間または法令上必要な期間に限って保持します。ただし、GitHub "
+"上の公開投稿や外部サービス上の記録は、当社の削除権限や保存期間の管理が及ばない場合があります。"
+
+#: ../../guides/privacy.md:76
+msgid "Your Rights"
+msgstr "利用者の権利"
+
+#: ../../guides/privacy.md:78
+msgid ""
+"Subject to applicable law, you may request disclosure, correction, addition,"
+" deletion, suspension of use, or similar handling of your personal "
+"information retained by us."
+msgstr "利用者は、法令の定めに従い、当社が保有する自己の個人情報について、開示、訂正、追加、削除、利用停止等を求めることができます。"
+
+#: ../../guides/privacy.md:80
+msgid ""
+"The specific method for making such requests and the method of identity "
+"verification will be handled through `info@triorb.co.jp` or another contact "
+"point separately designated by us. Public GitHub Issues and GitHub "
+"Discussions are not appropriate channels for personal information requests."
+msgstr ""
+"具体的な請求方法および本人確認方法は、`info@triorb.co.jp` または当社が別途指定する窓口によります。公開された GitHub "
+"Issue や GitHub Discussions は、個人情報に関する請求窓口としては適しません。"
+
+#: ../../guides/privacy.md:82
+msgid "Cookies and Similar Technologies"
+msgstr "Cookie 等"
+
+#: ../../guides/privacy.md:84
+msgid ""
+"This site mainly consists of static content, but GitHub, GitHub Pages, our "
+"corporate website, or linked services may use cookies or similar "
+"technologies. Browser local storage or similar browser-side storage may also"
+" be used to retain display settings and related preferences on this site."
+msgstr ""
+"本サイト自体は静的コンテンツを中心に構成されていますが、GitHub、GitHub Pages、当社コーポレートサイトまたはリンク先サービスにより "
+"Cookie 等が利用される場合があります。また、本サイトの表示設定保持等のためにブラウザのローカルストレージ等が利用されることがあります。"
+
+#: ../../guides/privacy.md:86
+msgid ""
+"You may control the storage of cookies and similar technologies through your"
+" browser settings, but doing so may disable certain features or prevent "
+"preferences from being retained."
+msgstr "利用者は、ブラウザ設定により Cookie 等の保存を制御できますが、その結果、一部機能や表示設定の保持が利用できなくなる場合があります。"
+
+#: ../../guides/privacy.md:88
+msgid "External Links"
+msgstr "外部リンク"
+
+#: ../../guides/privacy.md:90
+msgid ""
+"This site contains links to Notion, Box, GitHub, our corporate website, "
+"other GitHub Pages sites, and similar destinations. Please review the "
+"privacy policies of those services or operators regarding their handling of "
+"personal information."
+msgstr ""
+"本サイトには、Notion、Box、GitHub、当社コーポレートサイト、他の GitHub Pages "
+"サイト等へのリンクが含まれます。リンク先での個人情報の取扱いについては、当該外部サービスまたは運営主体のポリシーをご確認ください。"
+
+#: ../../guides/privacy.md:92
+msgid "Minors"
+msgstr "未成年者"
+
+#: ../../guides/privacy.md:94
+msgid ""
+"If you are a minor, please use this site with the consent of a parent or "
+"legal guardian where appropriate."
+msgstr "未成年の利用者は、必要に応じて法定代理人の同意を得た上で本サイトを利用してください。"
+
+#: ../../guides/privacy.md:96
+msgid "Revisions"
+msgstr "改定"
+
+#: ../../guides/privacy.md:98
+msgid ""
+"We may revise this policy in response to legal changes, operational changes,"
+" or changes to the content of this site. Where important changes are made, "
+"we will provide notice on this site or by another appropriate method."
+msgstr ""
+"当社は、法令改正、運用変更または本サイトの内容変更に応じて、本ポリシーを改定することがあります。重要な変更がある場合は、本サイト上での掲示その他適切な方法により周知します。"
+
+#: ../../guides/privacy.md:100
+msgid "Contact"
+msgstr "問い合わせ窓口"
+
+#: ../../guides/privacy.md:102
+msgid ""
+"The contact address for this policy is `info@triorb.co.jp`. We will operate "
+"public API inquiry channels separately from non-public contact routes for "
+"personal information matters."
+msgstr ""
+"本ポリシーに関する問い合わせ窓口は、`info@triorb.co.jp` とします。公開リポジトリ上での一般的な API "
+"問い合わせと、個人情報に関する非公開の問い合わせ窓口は分けて運用します。"
+
+#~ msgid ""
+#~ "PoC stub. The full policy from `triorb-amr-docs/docs/PrivacyPolicy.md` will "
+#~ "be migrated during Phase 2. Japanese text will be provided via "
+#~ "`locale/ja/LC_MESSAGES/`."
+#~ msgstr ""
