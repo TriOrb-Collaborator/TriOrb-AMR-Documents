@@ -176,6 +176,53 @@ from pathlib import Path
 repo_root = Path(sys.argv[1]).resolve()
 pairs = [arg.split(":", 1) for arg in sys.argv[2:]]
 
+
+# Category mapping — derived from the package's path under TriOrb-AMR-Package.
+# Order here drives the display order in packages/index.md.
+CATEGORY_ORDER = [
+    "Drive & Navigation",
+    "SLAM",
+    "Sensor I/O",
+    "Safety Sensors",
+    "OS / Infrastructure",
+    "Fleet",
+    "Service",
+    "Interfaces",
+    "Other",
+]
+
+
+def categorize(pkg_rel: str) -> str:
+    """Classify a ROS 2 package by its source path."""
+    if pkg_rel.startswith("pkgs/triorb_drive/"):
+        return "Drive & Navigation"
+    if pkg_rel.startswith("pkgs/triorb_navigation_pkgs/"):
+        return "Drive & Navigation"
+    if pkg_rel == "pkgs/triorb_navi_bridge":
+        return "Drive & Navigation"
+    if pkg_rel.startswith("pkgs/tagslam_ws/"):
+        return "SLAM"
+    if pkg_rel.startswith("pkgs/triorb_sensor/sick/"):
+        return "Safety Sensors"
+    if pkg_rel.startswith("pkgs/triorb_sensor/"):
+        return "Sensor I/O"
+    if pkg_rel.startswith("pkgs/triorb_os/"):
+        return "OS / Infrastructure"
+    if pkg_rel.startswith("pkgs/triorb_fleet/"):
+        return "Fleet"
+    if pkg_rel.startswith("pkgs/triorb_service/"):
+        return "Service"
+    if pkg_rel.startswith("pkgs/TriOrb-ROS2-Types/"):
+        return "Interfaces"
+    return "Other"
+
+
+# Handwritten pages map their category via docs-next/_handwritten/packages/_categories.json.
+handwritten_categories = {}
+hw_cats_path = repo_root / "docs-next" / "_handwritten" / "packages" / "_categories.json"
+if hw_cats_path.exists():
+    handwritten_categories = json.loads(hw_cats_path.read_text(encoding="utf-8"))
+
 sources_root = repo_root / "docs-next" / "_rosdoc2_sources"
 output_root = repo_root / "docs-next" / "_rosdoc2_out"
 packages_root = repo_root / "docs-next" / "packages"
@@ -247,12 +294,15 @@ for pkg_rel, pkg_name in pairs:
         if m:
             breathe_project = m.group(1).strip()
             break
-    entry = {"path": f"packages/{pkg_name}"}
+    entry = {
+        "path": f"packages/{pkg_name}",
+        "category": categorize(pkg_rel),
+    }
     if breathe_project and (dest / "_doxygen" / "xml").is_dir():
         entry["breathe_project"] = breathe_project
         entry["doxygen_xml"] = f"packages/{pkg_name}/_doxygen/xml"
     manifest[pkg_name] = entry
-    print(f"OK   {pkg_name}: materialized to {dest.relative_to(repo_root)} (breathe='{breathe_project}')")
+    print(f"OK   {pkg_name}: materialized to {dest.relative_to(repo_root)} (category='{entry['category']}', breathe='{breathe_project}')")
 
 manifest_path.write_text(
     json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
@@ -268,32 +318,60 @@ handwritten_root = repo_root / "docs-next" / "_handwritten" / "packages"
 handwritten_names = []
 if handwritten_root.is_dir():
     for item in sorted(handwritten_root.iterdir()):
-        if item.suffix != ".md":
+        if item.suffix != ".md" or item.name.startswith("_"):
             continue
         name = item.stem
         dest_md = packages_root / f"{name}.md"
         shutil.copy2(item, dest_md)
         handwritten_names.append(name)
-        print(f"HAND {name}: copied {item.relative_to(repo_root)} -> {dest_md.relative_to(repo_root)}")
+        category = handwritten_categories.get(name, "Other")
+        manifest[name] = {
+            "path": f"packages/{name}",
+            "category": category,
+            "handwritten": True,
+        }
+        print(f"HAND {name}: copied {item.relative_to(repo_root)} -> {dest_md.relative_to(repo_root)} (category='{category}')")
 
-# Emit packages/index.md so the umbrella toctree auto-enumerates all entries
-# (rosdoc2-generated packages + hand-written stubs).
+# Emit packages/index.md grouped by category. Each category becomes a ## heading
+# with its own toctree. Categories appear in CATEGORY_ORDER; packages within a
+# category are alphabetized. Hand-written pages (where entry["handwritten"] is
+# True) render without the /index suffix.
+by_cat = {c: [] for c in CATEGORY_ORDER}  # dict[str, list[(name, entry)]]
+for name, entry in manifest.items():
+    cat = entry.get("category", "Other")
+    by_cat.setdefault(cat, []).append((name, entry))
+
 idx_path = packages_root / "index.md"
 lines = [
     "# Package API",
     "",
     "Auto-generated API reference for ROS 2 packages under TriOrb-AMR-Package,",
-    "produced by rosdoc2. Hand-written entries cover external components that",
-    "are surfaced by name only.",
-    "",
-    "```{toctree}",
-    ":maxdepth: 2",
+    "produced by rosdoc2. Packages are grouped by subsystem; within each group",
+    "they are sorted alphabetically.",
     "",
 ]
-for name in sorted(set(list(manifest.keys()) + handwritten_names)):
-    suffix = "/index" if name in manifest else ""
-    lines.append(f"{name}{suffix}")
-lines.extend(["```", ""])
+for cat in CATEGORY_ORDER:
+    entries = by_cat.get(cat, [])
+    if not entries:
+        continue
+    lines.extend([f"## {cat}", ""])
+    lines.extend(["```{toctree}", ":maxdepth: 1", ""])
+    for name, entry in sorted(entries, key=lambda kv: kv[0]):
+        suffix = "" if entry.get("handwritten") else "/index"
+        lines.append(f"{name}{suffix}")
+    lines.extend(["```", ""])
+
+# Any uncategorized leftovers (shouldn't happen but defensive).
+extras = [n for n in by_cat if n not in CATEGORY_ORDER and by_cat[n]]
+if extras:
+    lines.extend(["## Other", ""])
+    lines.extend(["```{toctree}", ":maxdepth: 1", ""])
+    for cat in extras:
+        for name, entry in sorted(by_cat[cat], key=lambda kv: kv[0]):
+            suffix = "" if entry.get("handwritten") else "/index"
+            lines.append(f"{name}{suffix}")
+    lines.extend(["```", ""])
+
 idx_path.write_text("\n".join(lines), encoding="utf-8")
 print(f"=== umbrella package index written: {idx_path.relative_to(repo_root)} ===")
 PY
