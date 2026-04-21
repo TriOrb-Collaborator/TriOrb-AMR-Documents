@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TriOrb BASE 開発ガイド v1.2.5-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-20 13:49+0900\n"
+"POT-Creation-Date: 2026-04-21 14:16+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -26,17 +26,21 @@ msgstr "変更履歴"
 
 #: ../../guides/history.md:4
 msgid ""
-"PoC stage: the detailed changelog currently lives in the [v1.2.4 legacy "
-"site](../../v1.2.4/TriOrb-AMR-Package/History/). Content will be migrated "
-"from `submodules/TriOrb-AMR-Package/History.md` into this page during Phase "
-"2."
+"The detailed per-release changelog is being migrated from "
+"`submodules/TriOrb-AMR-Package/History.md` into this page. Earlier entries "
+"still live on the legacy MkDocs archive ([v1.2.3](../../v1.2.3/TriOrb-AMR-"
+"Package/History/), [v1.2.2](../../v1.2.2/TriOrb-AMR-Package/History/))."
 msgstr ""
+"リリースごとの詳細な変更履歴を `submodules/TriOrb-AMR-Package/History.md` "
+"から本ページへ段階的に移行中です。それ以前のエントリは旧サイト（[v1.2.3](../../v1.2.3/TriOrb-AMR-"
+"Package/History/), [v1.2.2](../../v1.2.2/TriOrb-AMR-"
+"Package/History/)）をご参照ください。"
 
-#: ../../guides/history.md:10
-msgid "v1.2.5 (in progress)"
-msgstr "v1.2.5 (作業中)"
+#: ../../guides/history.md:11
+msgid "v1.2.4"
+msgstr "v1.2.4"
 
-#: ../../guides/history.md:12
+#: ../../guides/history.md:13
 msgid ""
 "From this release the documentation stack moves to Sphinx + rosdoc2 + Furo. "
 "English is the source of truth; the Japanese site is produced from PO "
@@ -46,6 +50,16 @@ msgstr ""
 "本バージョンからドキュメント基盤を Sphinx + rosdoc2 + Furo に移行しました。英語を正となるソースとし、日本語版は PO "
 "翻訳から生成しています。サイドバー上部の言語切替から日英を選択してください。"
 
-#: ../../guides/history.md:17
+#: ../../guides/history.md:18
 msgid "Earlier changes are available in the legacy site linked above."
 msgstr "それ以前の変更履歴は上記の旧サイトリンクから確認できます。"
+
+#~ msgid ""
+#~ "PoC stage: the detailed changelog currently lives in the [v1.2.4 legacy "
+#~ "site](../../v1.2.4/TriOrb-AMR-Package/History/). Content will be migrated "
+#~ "from `submodules/TriOrb-AMR-Package/History.md` into this page during Phase "
+#~ "2."
+#~ msgstr ""
+
+#~ msgid "v1.2.5 (in progress)"
+#~ msgstr "v1.2.5 (作業中)"
