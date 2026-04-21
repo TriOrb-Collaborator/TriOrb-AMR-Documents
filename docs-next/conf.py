@@ -102,13 +102,25 @@ gettext_compact = False
 html_theme = "furo"
 html_title = f"{project} {release}"
 html_static_path = ["_static"]
+html_favicon = "_static/favicon.png"
 
-# Furo theme options: minimal for PoC; expand later.
+# Lapis Lazuli brand colors, carried over from the legacy mike site
+# (triorb-amr-docs/docs/stylesheets/extra.css — primary rgb(34,59,128)).
+# Furo converts these into CSS custom properties served from its own theme.
 html_theme_options = {
     "source_repository": "https://github.com/TriOrb-Inc/TriOrb-AMR-Documents",
     "source_branch": "docs2-poc",
     "source_directory": "docs-next/",
     "sidebar_hide_name": False,
+    "light_css_variables": {
+        "color-brand-primary": "rgb(34, 59, 128)",
+        "color-brand-content": "rgb(34, 59, 128)",
+    },
+    "dark_css_variables": {
+        # Lightened for contrast against Furo's dark background.
+        "color-brand-primary": "rgb(138, 162, 224)",
+        "color-brand-content": "rgb(138, 162, 224)",
+    },
 }
 
 # Language switcher rendered via _templates/sidebar/language-switcher.html
