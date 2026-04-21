@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/sick_safetyscanners2/standard_docs/CHANGELOG.rst:2
+msgid "CHANGELOG"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:3
+msgid "Changelog for package sick_safetyscanners2"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:6
+msgid "1.0.4 (2024-09-24)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:7
+msgid "possible fix for out of range"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:8
+msgid "Add material for correct representation in Gazebo Sim."
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:9
+msgid "Enable workin in Gazebo under humble."
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:10
+msgid "enabled gazebo integration in urdf"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:11
+msgid "generated description folder using RTW"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:12
+msgid "diagnostics for lifecycle node aswell"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:13
+msgid "refactor: combine Node and LifeCycle node implementations"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:14
+msgid ""
+"Contributors: Dr. Denis Štogl, Lennart Puck, Nibanovic, Rein Appeldoorn"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:17
+msgid "1.0.3 (2021-12-22)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:18
+msgid "Fixes unsafe pointer access in UDP callback"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:19
+msgid "Implement lifecycle node"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:20
+msgid "Added functionality to allow multicast"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:21
+msgid "set not using the default sick angles as default"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:22
+msgid "moved changeSensor settings to be always be invoked"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:23
+msgid "fixed typo in launch file"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:24
+msgid "Contributors: Brice, Erwin Lejeune, Soma Gallai, Lennart Puck, Tanmay"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:27
+msgid "1.0.2 (2021-03-15)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:28
+msgid "added missing dependencies to package xml"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:29
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:35
+msgid "Contributors: Lennart Puck"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:32
+msgid "1.0.1 (2021-03-05)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:33
+msgid ""
+"changed the parameter callback interface so its only triggered when the "
+"parameters of this node are called"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:38
+msgid "1.0.0 (2021-01-11)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners2/standard_docs/original/CHANGELOG.rst:40
+msgid "Initial Release"
+msgstr ""

@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:5
+msgid "File CameraCapture.hpp"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:7
+msgid "|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:17
+msgid "Definition (``include/CameraCapture.hpp``)"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:30
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:33
+msgid "``assert.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:35
+msgid "``auto_exposure.hpp`` (:ref:`file_include_auto_exposure.hpp`)"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:37
+msgid "``chrono``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:39
+msgid "``ctime``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:41
+msgid "``errno.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:43
+msgid "``fcntl.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:45
+msgid "``geometry_msgs/msg/vector3_stamped.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:47
+msgid "``linux/videodev2.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:49
+msgid "``opencv2/opencv.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:51
+msgid "``poll.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:53
+msgid "``rclcpp/rclcpp.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:55
+msgid "``sensor_msgs/msg/image.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:57
+msgid "``std_msgs/msg/bool.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:59
+msgid "``std_msgs/msg/float64.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:61
+msgid "``stdint.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:63
+msgid "``stdio.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:65
+msgid "``stdlib.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:67
+msgid "``string.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:69
+msgid "``sys/ioctl.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:71
+msgid "``sys/mman.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:73
+msgid "``sys/stat.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:75
+msgid "``sys/time.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:77
+msgid "``sys/types.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:79
+msgid "``unistd.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:84
+msgid "Included By"
+msgstr "被インクルード"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:87
+msgid ":ref:`file_include_camera_capture.hpp`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:93
+msgid "Classes"
+msgstr "クラス"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:96
+msgid ":ref:`exhale_struct_structbuffer`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:98
+msgid ":ref:`exhale_class_classCameraCapture`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:102
+msgid "Defines"
+msgstr "マクロ定義"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:105
+msgid ""
+":ref:`exhale_define_CameraCapture_8hpp_1ad3033beb8848cb0030cf7875298e43f7`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_CameraCapture.hpp.rst:107
+msgid ""
+":ref:`exhale_define_CameraCapture_8hpp_1ab8c3d27eef7986838bc01417edbefbc7`"
+msgstr ""

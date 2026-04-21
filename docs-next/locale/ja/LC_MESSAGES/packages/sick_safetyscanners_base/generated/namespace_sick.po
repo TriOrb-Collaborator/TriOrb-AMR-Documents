@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:5
+msgid "Namespace sick"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:17
+msgid "Namespaces"
+msgstr "名前空間"
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:20
+msgid ":ref:`namespace_sick__cola2`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:22
+msgid ":ref:`namespace_sick__communication`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:24
+msgid ":ref:`namespace_sick__data_processing`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:26
+msgid ":ref:`namespace_sick__datastructure`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:28
+msgid ":ref:`namespace_sick__logging`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:30
+msgid ":ref:`namespace_sick__read_write_helper`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:32
+msgid ":ref:`namespace_sick__SensorDataFeatures`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:34
+msgid ":ref:`namespace_sick__types`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:38
+msgid "Classes"
+msgstr "クラス"
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:41
+msgid ":ref:`exhale_struct_structsick_1_1is__bitmask__enum`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:43
+msgid ":ref:`exhale_struct_structsick_1_1is__enum__that__contains__sentinel`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:45
+msgid ""
+":ref:`exhale_struct_structsick_1_1is__enum__that__contains__sentinel_3_01T_00_01decltype_07static__cast_3_01void_01_4_07T_1_1___08_08_4`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:47
+msgid ":ref:`exhale_class_classsick_1_1AsyncSickSafetyScanner`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:49
+msgid ":ref:`exhale_class_classsick_1_1configuration__error`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:51
+msgid ":ref:`exhale_class_classsick_1_1flag__set`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:53
+msgid ":ref:`exhale_class_classsick_1_1runtime__error`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:55
+msgid ":ref:`exhale_class_classsick_1_1SickSafetyscannersBase`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:57
+msgid ":ref:`exhale_class_classsick_1_1SyncSickSafetyScanner`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:59
+msgid ":ref:`exhale_class_classsick_1_1timeout__error`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:63
+msgid "Functions"
+msgstr "関数"
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:66
+msgid ":ref:`exhale_function_Generics_8h_1a6e891f99cdcc7ed57a500132967f691c`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:68
+msgid ":ref:`exhale_function_enumflags_8h_1aeb2d14f845ada50b3323ebb24cc564b5`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:70
+msgid ":ref:`exhale_function_enumflags_8h_1ac9dbc3961e89f3221f93c792feec9469`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:72
+msgid ":ref:`exhale_function_enumflags_8h_1a997645572b12847831bd1ca8c87cfad4`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:74
+msgid ":ref:`exhale_function_enumflags_8h_1a7113f036fd5b2f7ab91b11ccb4f6476d`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:76
+msgid ":ref:`exhale_function_flagset_8h_1a01ca149977448707bb520874eb874e47`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:78
+msgid ":ref:`exhale_function_enumflags_8h_1ae5a94078d4ce03b40edce13d22aa704e`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:80
+msgid ":ref:`exhale_function_enumflags_8h_1abfe49f37142231424d763b7a54cb2b30`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:82
+msgid ":ref:`exhale_function_enumflags_8h_1aa76601a584b6bcd845b369f48d54b008`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:86
+msgid "Typedefs"
+msgstr "型定義"
+
+#: ../../packages/sick_safetyscanners_base/generated/namespace_sick.rst:89
+msgid ""
+":ref:`exhale_typedef_SickSafetyscanners_8h_1a57c3622b5587ccae90c9dac008ec75f2`"
+msgstr ""

@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:5
+msgid "File safe_run_node.hpp"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:7
+msgid ""
+"|exhale_lsh| :ref:`Parent directory <dir_include_triorb_safe_run_cpp>` "
+"(``include/triorb_safe_run_cpp``)"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:17
+msgid "Definition (``include/triorb_safe_run_cpp/safe_run_node.hpp``)"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:30
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:33
+msgid "``array``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:35
+msgid "``memory``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:37
+msgid "``message_filters/subscriber.h``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:39
+msgid "``message_filters/sync_policies/approximate_time.h``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:41
+msgid "``message_filters/synchronizer.h``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:43
+msgid "``mutex``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:45
+msgid "``nlohmann/json.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:47
+msgid "``opencv2/core.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:49
+msgid "``opencv2/imgcodecs.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:51
+msgid "``opencv2/imgproc.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:53
+msgid "``optional``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:55
+msgid "``rclcpp/rclcpp.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:57
+msgid "``regex``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:59
+msgid "``sensor_msgs/msg/compressed_image.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:61
+msgid "``sensor_msgs/msg/point_cloud.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:63
+msgid "``std_msgs/msg/bool.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:65
+msgid "``std_msgs/msg/header.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:67
+msgid "``std_msgs/msg/string.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:69
+msgid "``std_msgs/msg/u_int16.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:71
+msgid "``string``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:73
+msgid "``triorb_collaboration_interface/msg/parent_bind.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:75
+msgid "``triorb_drive_interface/msg/triorb_run_vel3.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:77
+msgid "``triorb_drive_interface/msg/triorb_run_vel3_stamped.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:79
+msgid "``triorb_plc_interface/msg/basic_data_to_plc.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:81
+msgid "``triorb_static_interface/srv/get_string.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:83
+msgid "``triorb_static_interface/srv/set_string.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:85
+msgid "``tuple``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:87
+msgid "``unordered_map``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:89
+msgid "``vector``"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:97
+msgid "Namespaces"
+msgstr "名前空間"
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:100
+msgid ":ref:`namespace_triorb_safe_run_cpp`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:104
+msgid "Classes"
+msgstr "クラス"
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:107
+msgid ":ref:`exhale_struct_structtriorb__safe__run__cpp_1_1AnchorPoint`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:109
+msgid ":ref:`exhale_struct_structtriorb__safe__run__cpp_1_1SafeRunConfig`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:111
+msgid ""
+":ref:`exhale_struct_structtriorb__safe__run__cpp_1_1SafeRunNode_1_1ForceVector`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:113
+msgid ""
+":ref:`exhale_struct_structtriorb__safe__run__cpp_1_1SafeRunNode_1_1LastRunVel`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:115
+msgid ""
+":ref:`exhale_struct_structtriorb__safe__run__cpp_1_1SafeRunNode_1_1PointCloudWithIndex`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:117
+msgid ":ref:`exhale_class_classtriorb__safe__run__cpp_1_1SafeRunNode`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:121
+msgid "Defines"
+msgstr "マクロ定義"
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:124
+msgid ""
+":ref:`exhale_define_safe__run__node_8hpp_1ae3934d41ea62150f312dd032cd052b03`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:126
+msgid ""
+":ref:`exhale_define_safe__run__node_8hpp_1a403886aaf13e9fce621028243c1d0f44`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:128
+msgid ""
+":ref:`exhale_define_safe__run__node_8hpp_1a8cc8d559acdd2f74085b20977182d5b7`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:130
+msgid ""
+":ref:`exhale_define_safe__run__node_8hpp_1a779942b865375e96961bd01ba182d586`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:134
+msgid "Typedefs"
+msgstr "型定義"
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:137
+msgid ""
+":ref:`exhale_typedef_safe__run__node_8hpp_1aa4ae22303148422c39c0e823e547044f`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:139
+msgid ""
+":ref:`exhale_typedef_safe__run__node_8hpp_1ab701e3ac61a85b337ec5c1abaad6742d`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:141
+msgid ""
+":ref:`exhale_typedef_safe__run__node_8hpp_1af133d839fc007bb596078cbf5c5d9717`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:143
+msgid ""
+":ref:`exhale_typedef_safe__run__node_8hpp_1a631d0024bffdc0f5952804227e0be3dd`"
+msgstr ""
+
+#: ../../packages/triorb_safe_run_cpp/generated/file_include_triorb_safe_run_cpp_safe_run_node.hpp.rst:145
+msgid ""
+":ref:`exhale_typedef_safe__run__node_8hpp_1a1b39e451124f3d146e197874ac8ae72a`"
+msgstr ""

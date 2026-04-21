@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_navigation_manager/__readme_include.rst:2
+msgid "README"
+msgstr "README"
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:1
+msgid "Package: triorb_navigation_manager"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:3
+msgid "概要"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:5
+msgid ""
+"`triorb_navigation_manager`はTriOrb AMR向けのROS "
+"2ノードであり、CSVで定義された経路に従ってナビゲーション・協調走行・リフター動作・TagSLAM/SLAM連携・安全装置制御・イベント連携を一元管理します。ROS"
+" 2 "
+"TopicとMQTTの双方を用いて外部モジュールと連携し、状態監視や再開制御、地図切替待機などを自動化します。ノード起動時に一意性チェックを行い、`ROS_PREFIX`に応じた名前空間付きトピックへ自動的に接続します。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:7
+msgid "主な機能"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:9
+msgid "経路CSV（`/data/route/<name>.csv`）のロード・解析とWayPoint管理（Start/End行を基準に自動抽出）"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:10
+msgid "`nav/action`での開始・停止・一時停止・失敗復帰指示、速度係数や精度バイアスの適用"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:11
+msgid "走行（通常/協調/TagSLAM/相対移動）・リフター・イベント・地図操作・安全装置操作など多様なアクションを組み合わせ可能"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:12
+msgid "Drive/Lifter/MQTTイベントの成功判定と`NavResult`コードによる結果通知、失敗時は復帰位置を保持"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:13
+msgid "`/triorb/nav/state`によるナビゲーション状態公開と`/triorb/request_nav_state`からの即時再送"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:14
+msgid "MQTT経由での地図待機時間取得・読み込みスキップ・VSLAM制御"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:16
+msgid "CSVベースの経路定義"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:18
+msgid "ファイル配置: 既定で`/data/route/`配下。拡張子が無い場合は自動的に`.csv`を付与。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:19
+msgid ""
+"行形式: `type,name,action,x,y,w,vxy,vw,acc_xy,acc_w,gain,camera,accel_ms,...`"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:20
+msgid "`type`が`route/Start`と`route/End`の行で経路範囲を自動決定。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:21
+msgid ""
+"`accel_ms`が未設定の場合は`DEFAULT_ACC=1000`、速度比は`nav/action`コマンドで与えた`ratio_speed`を乗算。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:22
+msgid "`check_waypoints`で`acc_xy`または`acc_w`がバイアス加算後に0以下の場合は開始前にエラー通知。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:24
+msgid "エラー・状態管理"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:26
+msgid "`reset_nav()`でWayPointポインタ、速度係数、バイアス、待機フラグ、エラーリスト、地図状態を初期化。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:27
+msgid "タイマー (`0.5s`) で状態を定期送信。`/triorb/request_nav_state`受信時は即時再送。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:28
+msgid ""
+"地図切替時はMQTT推定時間を待機し、タイムアウトすると`MAP_LOAD_TIME_OUT_ERROR`を通知してナビゲーションをリセット。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:29
+msgid "`wait_nav`などのフラグにより並列アクションを制御し、完了コールバックで次のWayPoint処理を進める。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:31
+msgid "運用上の注意"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:33
+msgid "ノード名はファイル名先頭の`_`を除き、`ROS_PREFIX`付きで決定されます。ノード起動時に同名ノードが存在すると起動を中止します。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:34
+msgid ""
+"CSVには最低1つ以上のWayPoint（Start/End以外）が必要です。`idx_start >= "
+"idx_end`またはWayPoint不足の場合は`WAYPOINTS_EMPTY_ERROR`を返します。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:35
+msgid "`MarkerSetting`はトピック送信直後に`/triorb/nav/state`へ反映されるため、UI側で状態確認してください。"
+msgstr ""
+
+#: ../../packages/triorb_navigation_manager/standard_docs/original/README.md:36
+msgid ""
+"MQTTブローカー（既定: "
+"`localhost:1883`）に接続できない場合、地図切替アクションが正常に完了しません。必要に応じて`MQTTClient.connect()`のログを確認してください。"
+msgstr ""

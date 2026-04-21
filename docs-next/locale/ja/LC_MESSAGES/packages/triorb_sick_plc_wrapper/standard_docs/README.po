@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE 開発ガイド
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE 開発ガイド v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 13:49+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/README.rst:2
+msgid "README"
+msgstr "README"
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:1
+msgid "triorb_sick_plc_wrapper"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:3
+msgid ""
+"ROS 2 node that bridges TriOrb velocity commands to a SICK FlexiSoft PLC. "
+"The node translates `/drive/std_vector2` values into PLC assembly bytes, "
+"mirrors PLC feedback bits, and exposes services for emergency stop, PLC/SLS "
+"enabling, and watchdog handling."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:5
+msgid ""
+"All topics are prefixed with `ROS_PREFIX` (if set) through the "
+"`GET_TOPIC_NAME()` helper so the node can be namespaced without remapping "
+"each interface."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:7
+msgid "Repository layout"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:8
+msgid ""
+"`include/sick_plc_wrapper.hpp` – Node declaration, PLC bitfield definitions,"
+" and helpers."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:9
+msgid ""
+"`src/sick_plc_wrapper.cpp` – Implementation of the bridge, scaling logic, "
+"and services."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:10
+msgid "`src/ct.cpp`, `src/sha256.cpp` – License verification helpers."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:11
+msgid ""
+"`launch/plc_wrapper.launch.xml` – Example parameterization for FlexiSoft "
+"assemblies."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:13
+msgid "Key features"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:14
+msgid ""
+"Bidirectional byte-array interface to SICK FlexiSoft PLC assemblies with "
+"configurable offsets per field."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:15
+msgid ""
+"Scaling of TriOrb drive vectors into PLC-friendly integer representations "
+"(direction 0.1°, speed cm/s, rotate °/s)."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:16
+msgid ""
+"Watchdog timer that toggles a Jetson → PLC bit while mirroring PLC watchdog "
+"responses."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:17
+msgid ""
+"Exception-handler publishers for registration, warnings, and errors so "
+"operators see PLC issues in a unified feed."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:18
+msgid ""
+"Runtime services to request emergency-stop, PLC deactivate, and SLS disable "
+"without touching the PLC UI."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:19
+msgid ""
+"Startup guard that waits (up to 10 s) for both PLC topics to be connected "
+"before proceeding, emitting warnings if the FlexiSoft driver is absent."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:21
+msgid "Configuration"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:22
+msgid "Parameters can be supplied via the launch file or CLI:"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:23
+msgid ""
+"`topic_to_plc` (`string`, default `/flexisoft/Assem141/out_raw`) – Outbound "
+"PLC assembly topic."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:24
+msgid ""
+"`topic_from_plc` (`string`, default `/flexisoft/Assem131/in_raw`) – Inbound "
+"PLC assembly topic."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:25
+msgid ""
+"`assembly_size_to_plc` (`int`, default `10`) – Total byte length of the "
+"outbound array; must cover every configured index."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:26
+msgid ""
+"`speed_index`, `direction_index`, `rotate_index` (`int`) – Byte offsets "
+"(little-endian) where scaled data is written. Bounds are checked at runtime."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:27
+msgid ""
+"`pub_basic_index`, `sub_basic_index` (`int`) – Byte offsets that carry the "
+"basic control/status bitfields described below."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:28
+msgid ""
+"`scale_drive_vector_speed`, `scale_drive_vector_direction`, "
+"`scale_drive_vector_rotate` (`double`) – Unit conversions applied before "
+"packing (defaults: `100.0`, `10.0`, `180.0/M_PI`)."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:29
+msgid ""
+"`watchdog_interval_ms` (`int`, default `500`) – Period for toggling "
+"`watchdog_request_from_jetson`."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:31
+msgid "PLC basic bit layout"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:32
+msgid ""
+"Publish byte (`PubBasicData`, defaults to watchdog response off / emergency-"
+"stop asserted): `bit0` watchdog response → PLC, `bit1` watchdog request from"
+" Jetson, `bit2` emergency stop request, `bit3` deactivate request, `bit4` "
+"SLS OFF request, `bit5-7` reserved."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:33
+msgid ""
+"Subscribe byte (`SubBasicData`): `bit0` watchdog request from PLC, `bit1` "
+"watchdog response from PLC, `bit2` emergency stop active, `bit3` power cut "
+"active, `bit4` move permitted, `bit5-7` reserved."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:35
+msgid "PLC application bit layout"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:36
+msgid ""
+"Publish byte (`PubApplicationData`): `bit0` is moving, `bit1` has error, "
+"`bit2` battery low, `bit3` is collaborating, `bit4-7` reserved."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:37
+msgid "Subscribe byte (`SubApplicationData`): all 8 bits reserved."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:39
+msgid "Building"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:45
+msgid "Running"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:57
+msgid ""
+"Ensure `/drive/std_vector2` and the FlexiSoft PLC topics are available "
+"before starting; the node aborts if Pub/Sub connections are missing for 10 "
+"seconds. Provide `/install/license.yaml` so the built-in `KeyCertification` "
+"check can validate the runtime license."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:59
+msgid "Notes / Best practices"
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:60
+msgid ""
+"Keep `assembly_size_to_plc` consistent with the FlexiSoft configuration; an "
+"undersized buffer prevents the node from writing scaled vectors."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:61
+msgid ""
+"Tune the `scale_*` factors and indices to match the PLC project any time "
+"FlexiSoft addresses change."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:62
+msgid ""
+"Monitor `/triorb/error/str/add` for out-of-range speeds/angles; these "
+"indicate mis-scaled commands or upstream bugs."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:63
+#, python-brace-format
+msgid ""
+"When testing, call `ros2 service call /srv/plc/emergency_stop/request "
+"std_srvs/srv/Trigger {}` to validate the PLC reacts as expected."
+msgstr ""
+
+#: ../../packages/triorb_sick_plc_wrapper/standard_docs/original/README.md:64
+msgid ""
+"Namespacing the node? Just set `ROS_PREFIX=myrobot` before launch to scope "
+"every topic/service automatically."
+msgstr ""

@@ -1,0 +1,296 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:1
+msgid "SICK SLS データツール"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:3
+msgid ""
+"SICK SLS センサから取得した `raw_data.log` を可視化し、ROS 2 互換の占有グリッドへ変換する Python "
+"スクリプト群です。センサの検出補償範囲（minimum detectable free space）は 3.0 m と仮定し、+Inf "
+"を返したビームも走行可能領域として扱えます。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:5
+msgid "必要環境"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:7
+msgid "Python 3.9 以上"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:8
+msgid "[PyYAML](https://pyyaml.org/)"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:9
+msgid "[NumPy](https://numpy.org/)"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:10
+msgid "[Matplotlib](https://matplotlib.org/)"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:11
+msgid "[Pillow](https://python-pillow.org/)（任意。PNG 出力に利用）"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:13
+msgid "インストール例:"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:19
+msgid "Pillow が無い場合、`generate_occupancy.py` は Matplotlib を利用して PNG を保存します。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:21
+msgid ""
+"/sick/raw_dataをサブスクライブしてPointCloudをPublishするノード（`src/raw_data_to_pointcloud_node.cpp`）"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:22
+msgid ""
+"ROS 2 ノードとして動作し、`/sick/raw_data` トピックからデータを受信して、serial-"
+"numberが一致したデータをPointCloud2メッセージとしてパブリッシュします。オフセット値はミリメートル単位で指定します。シリアル番号ごとのキャリブレーション値は"
+" JSON ファイルにまとめて読み込み、`serial_number_of_device` に応じて自動で切り替わります。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:24
+msgid ""
+"`config/sls_point2d_config.json`（インストール後は`share/triorb_sls_wrapper/config/`配下）を編集してください:"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:65
+msgid ""
+"`mask_angles` に `[最小角度, 最大角度]`（度）でリストを指定すると、該当範囲の `point.angle`（度表現）を持つ測定点は "
+"2D 座標計算から除外されます。範囲は複数指定可能で、各シリアル番号の設定で上書きできます。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:67
+msgid ""
+"`pointcloud_topic` を省略した場合は `default` セクションの値が利用されます。`ROS_PREFIX` "
+"環境変数が設定されている場合は接頭辞付きでトピックが生成されます。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:76
+msgid ""
+"特定センサのみ処理したい場合は `-p serial_number:=<value>` と `-p filter_by_serial:=true` "
+"を併用してください。既定（`serial_number<=0`）では全シリアルを受け付け、JSONで定義されていないシリアルは `default` "
+"セクションの補正値が適用されます。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:78
+msgid "/sick/raw_dataを占有グリッドへ変換するノード（`src/raw_data_to_occupancy_node.cpp`）"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:80
+msgid ""
+"`/sick/raw_data` を購読し、スキャンごとに `nav_msgs/msg/OccupancyGrid` "
+"を生成してパブリッシュします。`generate_occupancy.py` のロジックをROS "
+"2ノード化したもので、シリアル番号ごとに解像度や検知範囲、出力トピックを切り替えられます。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:82
+msgid ""
+"`config/sls_occupancy_config.json`（インストール後は`share/triorb_sls_wrapper/config/`配下）を編集してください:"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:111
+msgid ""
+"`occupancy_topic` を省略した場合は `default` の値が利用されます。`ROS_PREFIX` "
+"環境変数を指定すると接頭辞付きトピックへ自動変換されます。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:113
+msgid ""
+"`detection_range` は +Inf ビームに対しても自由セルとして扱う最大距離を表し、範囲内は占有率 0 "
+"で塗りつぶされます。`beam_group_size` "
+"は角度方向のビームをまとめる単位数で、各グループの中から最も近い障害物を含むビーム（なければ任意のビーム）が選択されるため、計算負荷を抑えつつ近距離の障害物を優先的に反映できます。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:122
+msgid ""
+"`-p serial_number:=<value>` と `-p filter_by_serial:=true` "
+"を併用すれば、特定センサのみOccupancyGridを生成します。定義済みシリアルが1件だけの場合は自動でその設定が選択されます。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:124
+msgid "OccupancyGridをPNGとして保存するテストスクリプト"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:126
+msgid ""
+"`test/save_occupancy_png.py` "
+"を利用すると、任意の占有グリッドトピックを購読して最初のメッセージをPNGとして保存できます。Pillow (`pip install pillow`)"
+" を事前にインストールしてください。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:134
+msgid ""
+"未知セル (-1) は灰、自由セル (0) は白、占有セル (100) は黒で描画されます。メッセージを1度受信すると自動的にノードが終了します。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:136
+msgid "/sick/raw_dataをサブスクライブしてプロット（`plot_raw_data_node.py`）"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:138
+msgid ""
+"パラメータは`plot_raw_data.py`と同様ですが、ROS 2 ノードとして動作し、`/sick/raw_data` "
+"トピックからデータを受信して、serial-numberが一致したデータをプロットします。オフセット値はミリメートル単位で指定します。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:150
+msgid "raw_data のプロット (`plot_raw_data.py`)"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:152
+msgid "極座標ビューと XY ビューを生成し、反射率つきでスキャン結果を確認します。オフセット値はミリメートル単位で指定します。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:165
+msgid "主なオプション"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:167
+msgid "`--angle-offset` センサ取り付け角度の補正（度、時計回りが正）。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:168
+msgid "`--offset-x`, `--offset-y` センサ位置の平行移動量（ミリメートル）。`offset-y` の正値で下方向にシフト。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:169
+msgid "`--xy-limit` XY ビューの表示範囲（ミリメートル）。例: `2000` で ±2000 mm を描画。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:170
+msgid "`--dpi` 画像保存時の解像度。高くすると詳細になるがファイルサイズも増加。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:171
+msgid "`--show` 生成後に Matplotlib ウィンドウを表示。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:173
+msgid "Polar View には 0.1 ステップの補助円を追加、XY View は等倍率で描画します。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:175
+msgid "占有グリッド生成 (`generate_occupancy.py`)"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:177
+msgid ""
+"`raw_data.log` から ROS 2 `nav_msgs::msg::OccupancyGrid` 互換の PNG と JSON "
+"メタデータを出力します。センサオフセットはミリメートル、その他の距離系はメートルで指定します。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:195
+msgid "主なパラメータ"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:197
+msgid "`--resolution` グリッド解像度（メートル/セル）。既定値は 0.01。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:198
+msgid "`--unit-scale` 距離の単位変換。ミリ -> メートルなら 0.001。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:199
+msgid "`--xy-limit` センサ中心の正方形領域を ±値メートルでクリップ。未指定ならスキャン範囲に余白を加えて自動計算。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:200
+msgid "`--margin` `--xy-limit` 未指定時に周囲へ加える余白（メートル）。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:201
+msgid "`--max-range` 指定距離を超える計測値を除外（メートル）。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:202
+msgid "`--angle-offset` 角度補正（度）。`plot_raw_data.py` と同じ値を推奨。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:203
+msgid ""
+"`--offset-x`, `--offset-y` センサ位置の補正量（ミリメートル）。内部で `unit-scale` によりメートルへ換算。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:204
+msgid ""
+"`--infinite-free-range` +Inf（飽和）ビームに対して最低限走行可能とみなす距離（メートル）。既定値は 3.0 m（SICK "
+"検出補償範囲）。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:205
+msgid ""
+"`--detection-range` 3.0 m から 10.0 m までを検出可能範囲とみなし、距離に応じて占有率 0~50 を割り当てます。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:206
+msgid "`--output-meta` ROS 用メタデータ (JSON) を保存。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:207
+msgid "`--show` Matplotlib を使って占有グリッドを表示。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:209
+msgid "出力"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:211
+msgid ""
+"**occupancy_map.png**: 占有セル (100) は黒、自由セル (0) は白、未知セル (-1) は灰。画像は ROS "
+"の座標系に合わせて下向き原点で保存。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:212
+msgid ""
+"**occupancy_map.json**: `resolution`、`width`、`height`、`origin` など "
+"`nav_msgs::msg::OccupancyGrid::info` に転記可能な情報を含む。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:214
+msgid "ROS 2 側では画像を行優先（row-major）で読み込み、`origin` を踏まえて `data` 配列へ展開してください。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:216
+msgid "運用のヒント"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:218
+msgid "角度・平行移動オフセットは両スクリプトで統一すると結果が揃います。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:219
+msgid "高 DPI 設定はファイルサイズが大きくなるため用途に応じて調整してください。"
+msgstr ""
+
+#: ../../packages/triorb_sls_wrapper/standard_docs/original/README.md:220
+msgid ""
+"`--max-range` や `--infinite-free-range` を活用して、走行可能領域の解像度と範囲のバランスを取ってください。"
+msgstr ""

@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_navigation/__readme_include.rst:2
+msgid "README"
+msgstr "README"
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:1
+msgid "Package: triorb_navigation"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:3
+msgid "更新履歴"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:4
+msgid "1.2.1"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:5
+msgid "自律移動の状態通知用のトピックを追加"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:6
+msgid "1秒周期で通知する"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:8
+msgid "1.2.0"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:9
+msgid "forceのモード追加."
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:10
+msgid "レーン維持モード追加"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:11
+msgid "Jetson内に保存された最低速度と最高速度(triorb_drive_picoでpicoから取得)を反映."
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:12
+msgid "斜め方向並進移動で最高速度を越えないように修正."
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:14
+msgid "1.1.0"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:15
+msgid "forceのモード追加. bitフラグで指定できるように変更."
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:16
+msgid "回転のみモード追加"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:17
+msgid "並進のみモード追加"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:18
+msgid "速度指示モード追加(要調整)"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:19
+msgid "事後フィードバック制御モード追加"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:20
+msgid "無フィードバック制御版が必ず失敗になっていたバグ修正"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:21
+msgid "速度指示用のPIDパラメータ追加"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:22
+msgid "lookup_transformの参照先(robot)にprefixを追加"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:23
+msgid "ROS_LOCALHOST_ONLY=0のロボットが複数いる場合に別ロボットの姿勢を参照することがある問題の対策のため"
+msgstr ""
+
+#: ../../packages/triorb_navigation/standard_docs/original/README.md:24
+msgid "速度指示モードではlifetimeを設定"
+msgstr ""

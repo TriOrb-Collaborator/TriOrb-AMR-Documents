@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/sick_safetyscanners_base/generated/structsick_1_1is__enum__that__contains__sentinel_3_01T_00_01decltype_07static__cast_3_01void_01_4_07T_1_1___08_08_4.rst:4
+msgid ""
+"Template Struct is_enum_that_contains_sentinel< T, decltype(static_cast< "
+"void >, (T::_)) >"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/structsick_1_1is__enum__that__contains__sentinel_3_01T_00_01decltype_07static__cast_3_01void_01_4_07T_1_1___08_08_4.rst:6
+msgid ""
+"Defined in "
+":ref:`file_include_sick_safetyscanners_base_experimental_flagset.h`"
+msgstr ""
+":ref:`file_include_sick_safetyscanners_base_experimental_flagset.h` で定義"
+
+#: ../../packages/sick_safetyscanners_base/generated/structsick_1_1is__enum__that__contains__sentinel_3_01T_00_01decltype_07static__cast_3_01void_01_4_07T_1_1___08_08_4.rst:10
+msgid "Inheritance Relationships"
+msgstr "継承関係"
+
+#: ../../packages/sick_safetyscanners_base/generated/structsick_1_1is__enum__that__contains__sentinel_3_01T_00_01decltype_07static__cast_3_01void_01_4_07T_1_1___08_08_4.rst:13
+msgid "Base Type"
+msgstr "基底型"
+
+#: ../../packages/sick_safetyscanners_base/generated/structsick_1_1is__enum__that__contains__sentinel_3_01T_00_01decltype_07static__cast_3_01void_01_4_07T_1_1___08_08_4.rst:15
+msgid "``public std::is_enum< T >``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/structsick_1_1is__enum__that__contains__sentinel_3_01T_00_01decltype_07static__cast_3_01void_01_4_07T_1_1___08_08_4.rst:19
+msgid "Struct Documentation"
+msgstr "構造体ドキュメント"

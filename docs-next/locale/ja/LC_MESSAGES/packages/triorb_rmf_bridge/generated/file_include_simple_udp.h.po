@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:5
+msgid "File simple_udp.h"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:7
+msgid "|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:17
+msgid "Definition (``include/simple_udp.h``)"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:30
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:33
+msgid "``arpa/inet.h``"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:35
+msgid "``iostream``"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:37
+msgid "``netinet/in.h``"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:39
+msgid "``string``"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:41
+msgid "``sys/socket.h``"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:43
+msgid "``sys/types.h``"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:45
+msgid "``unistd.h``"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:50
+msgid "Included By"
+msgstr "被インクルード"
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:53
+msgid ":ref:`file_include_rmf_bridge_common.hpp`"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:59
+msgid "Classes"
+msgstr "クラス"
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:62
+msgid ":ref:`exhale_class_classsimple__udp`"
+msgstr ""
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:66
+msgid "Defines"
+msgstr "マクロ定義"
+
+#: ../../packages/triorb_rmf_bridge/generated/file_include_simple_udp.h.rst:69
+msgid ":ref:`exhale_define_simple__udp_8h_1a65c660282414eff7e990f21f6b306cb8`"
+msgstr ""

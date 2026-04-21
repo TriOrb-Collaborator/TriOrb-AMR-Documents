@@ -1,0 +1,478 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_can/standard_docs/README.rst:2
+msgid "README"
+msgstr "README"
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:1
+msgid "CAN Bridge Node"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:2
+msgid "**ROS 2 API 仕様書**"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:6
+msgid "1. 概要"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:7
+msgid ""
+"`CanBridgeNode` は、Linux SocketCAN (`PF_CAN`) を用いて **CAN バスと ROS 2 "
+"トピックを相互接続するブリッジノード**です。"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:10
+msgid "CAN → ROS 2（RX）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:11
+msgid "ROS 2 → CAN（TX）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:13
+msgid "を非同期で処理します。"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:17
+msgid "2. 責務範囲"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:19
+msgid "本ノードの責務"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:20
+msgid "SocketCAN を用いた CAN フレームの送受信"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:21
+msgid "CAN フレームを ROS 2 メッセージへ変換"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:22
+msgid "ROS 2 メッセージを CAN フレームへ変換"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:23
+msgid "YAML 設定による CAN ID フィルタリング"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:24
+msgid "非同期 I/O による低レイテンシ通信"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:26
+msgid "本ノードの非責務"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:27
+msgid "CAN データの意味解釈（バッテリー/センサ等）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:28
+msgid "上位ロジック（制御・判断）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:29
+msgid "CAN デバイス設定（bitrate 等）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:33
+msgid "3. ノード情報"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "項目"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "内容"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "パッケージ名"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "triorb_can_bridge"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "実行ファイル"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "can_bridge"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "ノード名"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "can_bridge（NODE_NAME マクロ依存）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "通信方式"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "SocketCAN (RAW)"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "QoS"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid ""
+"BestEffortOneQoS (KeepLast=1, Reliability=BestEffort, Durability=Volatile)"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:45
+msgid "4. ROS インタフェース"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:47
+msgid "4.1 Subscribe トピック（TX）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:49
+msgid "`/can_bridge/tx`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:50
+#: ../../packages/triorb_can/standard_docs/original/README.md:59
+msgid "型：`triorb_sensor_interface::msg::CanFrame`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:52
+msgid "ROS から CAN へ送信されるフレーム。"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:56
+msgid "4.2 Publish トピック（RX）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:58
+msgid "`/can_bridge/rx`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:61
+msgid "CAN から受信したフレーム。"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:65
+msgid "5. ROS メッセージ仕様"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:67
+msgid "CanFrame"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "フィールド"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "型"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "説明"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "`id`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "uint32"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "CAN ID"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "`dlc`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "uint8"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "データ長"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "`data[8]`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "uint8[]"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "Payload"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "`is_extended`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "bool"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "拡張 ID フラグ"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "`is_rtr`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "RTR フラグ"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "`is_error`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "Error フラグ"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:79
+msgid "6. 設定ファイル（YAML）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:81
+msgid "6.1 設定ファイル指定"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:82
+msgid "ROS パラメータで YAML ファイルのパスを指定します。"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:91
+msgid "6.2 YAML 構成例（can.yaml）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:115
+msgid "7. CAN RX 動作仕様"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:117
+msgid "`RX_FRAME_IDS` が未指定または空："
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:118
+msgid "**全 CAN フレームを受信**"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:119
+msgid "指定あり："
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:120
+msgid "SocketCAN の HW フィルタで受信制限"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:121
+msgid "標準 ID / 拡張 ID 両対応"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:122
+msgid "受信フレームは即座に `/can_bridge/rx` に publish"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:126
+msgid "8. CAN TX 動作仕様"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:128
+#: ../../packages/triorb_can/standard_docs/original/README.md:147
+msgid "`/can_bridge/tx` を subscribe"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:129
+msgid "`TX_ALLOW_IDS` が設定されている場合："
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:130
+msgid "ホワイトリスト外 ID は送信拒否"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:131
+msgid "拡張 ID 判定ルール："
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:132
+msgid "msg.is_extended が true"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:133
+msgid "または ID > 0x7FF"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:134
+msgid "または `TX_IS_EXTENDED_DEFAULT == true`"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:138
+msgid "9. 内部処理フロー"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:140
+msgid "RX（CAN → ROS）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:141
+msgid "SocketCAN で CAN フレーム受信"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:142
+msgid "フラグ・ID・Payload を CanFrame に変換"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:143
+msgid "`/can_bridge/rx` に publish"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:144
+msgid "非同期で次の受信待ち"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:146
+msgid "TX（ROS → CAN）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:148
+msgid "ID ホワイトリスト判定"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:149
+msgid "拡張/標準 ID 判定"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:150
+msgid "SocketCAN へ非同期送信"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:154
+msgid "10. エラーハンドリング"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "ケース"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "挙動"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "socket 作成失敗"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "例外送出 + error publish"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "bind 失敗"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "ノード停止"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "TX ID 不許可"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "warn ログ + 送信抑止"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "非同期 I/O エラー"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "error ログ"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:165
+msgid "11. 実行方法"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:167
+msgid "ビルド"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:173
+msgid "実行"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:181
+msgid "12. 注意事項（社内）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:183
+msgid "CAN bitrate 設定は OS 側で事前設定すること"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:184
+msgid "RX フィルタは HW レベルで適用される"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:185
+msgid "受信順序保証なし（CAN 仕様準拠）"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:186
+msgid "リアルタイム用途では CPU affinity を検討"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md:190
+msgid "13. 更新履歴"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "日付"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "2025-12-15"
+msgstr ""
+
+#: ../../packages/triorb_can/standard_docs/original/README.md
+msgid "初版作成"
+msgstr ""

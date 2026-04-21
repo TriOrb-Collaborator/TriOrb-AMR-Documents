@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:5
+msgid "File Datastructure.h"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:7
+msgid ""
+"|exhale_lsh| :ref:`Parent directory "
+"<dir_include_sick_safetyscanners_base_datastructure>` "
+"(``include/sick_safetyscanners_base/datastructure``)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:17
+msgid ""
+"Definition "
+"(``include/sick_safetyscanners_base/datastructure/Datastructure.h``)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:30
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:33
+msgid ""
+"``ApplicationData.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_ApplicationData.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:35
+msgid ""
+"``ApplicationInputs.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_ApplicationInputs.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:37
+msgid ""
+"``ApplicationName.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_ApplicationName.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:39
+msgid ""
+"``ApplicationOutputs.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_ApplicationOutputs.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:41
+msgid ""
+"``CommSettings.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_CommSettings.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:43
+msgid ""
+"``ConfigData.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_ConfigData.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:45
+msgid ""
+"``ConfigMetadata.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_ConfigMetadata.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:47
+msgid ""
+"``Data.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_ApplicationData.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:49
+msgid ""
+"``DataHeader.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_DataHeader.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:51
+msgid ""
+"``DatagramHeader.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_DatagramHeader.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:53
+msgid ""
+"``DerivedValues.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_DerivedValues.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:55
+msgid ""
+"``DeviceName.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_DeviceName.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:57
+msgid ""
+"``DeviceStatus.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_DeviceStatus.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:59
+msgid ""
+"``FieldData.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_FieldData.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:61
+msgid ""
+"``FieldSets.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_FieldSets.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:63
+msgid ""
+"``FirmwareVersion.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_FirmwareVersion.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:65
+msgid ""
+"``GeneralSystemState.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_GeneralSystemState.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:67
+msgid ""
+"``IntrusionData.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_IntrusionData.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:69
+msgid ""
+"``IntrusionDatum.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_IntrusionDatum.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:71
+msgid ""
+"``LatestTelegram.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_LatestTelegram.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:73
+msgid ""
+"``MeasurementData.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_MeasurementData.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:75
+msgid ""
+"``MonitoringCaseData.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_MonitoringCaseData.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:77
+msgid ""
+"``OrderNumber.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_OrderNumber.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:79
+msgid ""
+"``PacketBuffer.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_PacketBuffer.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:81
+msgid ""
+"``ParsedPacketBuffer.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_ParsedPacketBuffer.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:83
+msgid ""
+"``ProjectName.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_data_processing_ParseProjectName.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:85
+msgid ""
+"``RequiredUserAction.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_data_processing_ParseRequiredUserAction.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:87
+msgid ""
+"``ScanPoint.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_ScanPoint.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:89
+msgid ""
+"``SerialNumber.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_data_processing_ParseSerialNumber.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:91
+msgid ""
+"``StatusOverview.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_data_processing_ParseStatusOverview.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:93
+msgid ""
+"``TypeCode.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_TypeCode.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:95
+msgid ""
+"``UserName.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_UserName.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:100
+msgid "Included By"
+msgstr "被インクルード"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_datastructure_Datastructure.h.rst:103
+msgid ":ref:`file_include_sick_safetyscanners_base_SickSafetyscanners.h`"
+msgstr ""

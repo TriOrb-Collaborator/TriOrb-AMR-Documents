@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:5
+msgid "File job_monitor.hpp"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:7
+msgid "|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:17
+msgid "Definition (``include/job_monitor.hpp``)"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:30
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:33
+msgid "``json.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:35
+msgid "``rclcpp/rclcpp.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:37
+msgid "``regex``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:39
+msgid "``std_msgs/msg/bool.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:41
+msgid "``std_msgs/msg/empty.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:43
+msgid "``std_msgs/msg/float32.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:45
+msgid "``std_msgs/msg/header.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:47
+msgid "``std_msgs/msg/int16.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:49
+msgid "``std_msgs/msg/int32.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:51
+msgid "``std_msgs/msg/int8.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:53
+msgid "``std_msgs/msg/string.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:55
+msgid "``std_msgs/msg/u_int16.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:57
+msgid "``std_msgs/msg/u_int32.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:59
+msgid "``std_msgs/msg/u_int8.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:61
+msgid "``string``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:63
+msgid "``triorb_static_interface/srv/set_string.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:65
+msgid "``unordered_map``"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:73
+msgid "Defines"
+msgstr "マクロ定義"
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:76
+msgid ""
+":ref:`exhale_define_job__monitor_8hpp_1ae3934d41ea62150f312dd032cd052b03`"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:78
+msgid ""
+":ref:`exhale_define_job__monitor_8hpp_1a403886aaf13e9fce621028243c1d0f44`"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:80
+msgid ""
+":ref:`exhale_define_job__monitor_8hpp_1a8cc8d559acdd2f74085b20977182d5b7`"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:82
+msgid ""
+":ref:`exhale_define_job__monitor_8hpp_1a3c1d14e005131bc439de0596acdcef57`"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:84
+msgid ""
+":ref:`exhale_define_job__monitor_8hpp_1a779942b865375e96961bd01ba182d586`"
+msgstr ""
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:88
+msgid "Typedefs"
+msgstr "型定義"
+
+#: ../../packages/triorb_job_monitor/generated/file_include_job_monitor.hpp.rst:91
+msgid ""
+":ref:`exhale_typedef_job__monitor_8hpp_1ab701e3ac61a85b337ec5c1abaad6742d`"
+msgstr ""

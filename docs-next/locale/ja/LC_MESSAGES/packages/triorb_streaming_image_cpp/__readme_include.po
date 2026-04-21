@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_streaming_image_cpp/__readme_include.rst:2
+msgid "README"
+msgstr "README"
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md:1
+msgid "Package: triorb_streaming_image_cpp"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md:2
+msgid ""
+"このパッケージは、ROS 2 の `sensor_msgs/msg/Image` トピックから画像をサブスクリプションし、圧縮後に **MQTT "
+"トピックへ配信**するストリーミングノードです。 <br> "
+"python版(triorb_streaming_images)の代替パッケージであり、処理負荷軽減のためv1.2.3から追加されました。"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md:7
+msgid "更新履歴"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md:12
+msgid "Parameter"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "param"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md:25
+msgid "note"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "type"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "default"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "mqtt_address"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "MQTT Broker Address"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "string"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "localhost"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "mqtt_port"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "MQTT Broker Port"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "int"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "1883"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "mqtt_client_id"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "MQTT Client ID"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+#, python-brace-format
+msgid "triorb_streamer_{PID}"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "mqtt_topic"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "MQTT Topic"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "camera/stream"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "topic_name_raw"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "ROS2 topic name"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "/camera0"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "scale"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "Stream scale"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "double"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "0.2"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "fps"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "Stream fps"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "1.0"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "quality"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "Image quality"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "20"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "encode"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "Encode format"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md
+msgid "webp"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md:26
+msgid "CPU usage: jpg < webp << png"
+msgstr ""
+
+#: ../../packages/triorb_streaming_image_cpp/standard_docs/original/README.md:27
+msgid "network trafic: webp < jpg <<< png"
+msgstr ""

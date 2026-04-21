@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:5
+msgid "File enumflags.h"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:7
+msgid ""
+"|exhale_lsh| :ref:`Parent directory "
+"<dir_include_sick_safetyscanners_base_experimental>` "
+"(``include/sick_safetyscanners_base/experimental``)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:17
+msgid ""
+"Definition (``include/sick_safetyscanners_base/experimental/enumflags.h``)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:28
+msgid "Detailed Description"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:30
+msgid ""
+"Copyright (C) 2020, SICK AG, Waldkirch Copyright (C) 2020, FZI "
+"Forschungszentrum Informatik, Karlsruhe, Germany"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:32
+msgid ""
+"Licensed under the Apache License, Version 2.0 (the \"License\"); you may "
+"not use this file except in compliance with the License. You may obtain a "
+"copy of the License at"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:34
+msgid "http://www.apache.org/licenses/LICENSE-2.0"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:36
+msgid ""
+"Unless required by applicable law or agreed to in writing, software "
+"distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT "
+"WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the "
+"License for the specific language governing permissions and limitations "
+"under the License."
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:38
+msgid "Martin Schulze schulze@fzi.de"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:40
+msgid "2020-04-15"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:48
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:51
+msgid "``functional``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:53
+msgid "``memory``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:55
+msgid "``type_traits``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:63
+msgid "Namespaces"
+msgstr "名前空間"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:66
+msgid ":ref:`namespace_sick`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:70
+msgid "Classes"
+msgstr "クラス"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:73
+msgid ":ref:`exhale_struct_structsick_1_1is__bitmask__enum`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:77
+msgid "Functions"
+msgstr "関数"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:80
+msgid ":ref:`exhale_function_enumflags_8h_1aeb2d14f845ada50b3323ebb24cc564b5`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:82
+msgid ":ref:`exhale_function_enumflags_8h_1ac9dbc3961e89f3221f93c792feec9469`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:84
+msgid ":ref:`exhale_function_enumflags_8h_1a997645572b12847831bd1ca8c87cfad4`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:86
+msgid ":ref:`exhale_function_enumflags_8h_1a7113f036fd5b2f7ab91b11ccb4f6476d`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:88
+msgid ":ref:`exhale_function_enumflags_8h_1ae5a94078d4ce03b40edce13d22aa704e`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:90
+msgid ":ref:`exhale_function_enumflags_8h_1abfe49f37142231424d763b7a54cb2b30`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:92
+msgid ":ref:`exhale_function_enumflags_8h_1aa76601a584b6bcd845b369f48d54b008`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:96
+msgid "Defines"
+msgstr "マクロ定義"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_experimental_enumflags.h.rst:99
+msgid ":ref:`exhale_define_enumflags_8h_1ae4302c1ba8e7f13fd5f4245013e63bf3`"
+msgstr ""

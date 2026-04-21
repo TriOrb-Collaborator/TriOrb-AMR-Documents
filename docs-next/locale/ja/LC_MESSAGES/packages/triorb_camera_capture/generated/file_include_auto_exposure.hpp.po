@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:5
+msgid "File auto_exposure.hpp"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:7
+msgid "|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:17
+msgid "Definition (``include/auto_exposure.hpp``)"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:30
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:33
+msgid "``linux/videodev2.h``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:35
+msgid "``opencv2/opencv.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:37
+msgid "``string``"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:42
+msgid "Included By"
+msgstr "被インクルード"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:45
+msgid ":ref:`file_include_CameraCapture.hpp`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:51
+msgid "Classes"
+msgstr "クラス"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:54
+msgid ":ref:`exhale_class_classAutoExposure`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:56
+msgid ":ref:`exhale_class_classPIDController`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:60
+msgid "Defines"
+msgstr "マクロ定義"
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:63
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a0742c87d797f885f46df0fd723695852`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:65
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a3cc6d922c353cd880686fc8800601241`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:67
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a479cce662e03254708aa8a3d9b76dc22`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:69
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a01bac2b3ee5a10bba6de7b4dd56e5504`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:71
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a2296b9d8ddff458aa73824c030718eb2`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:73
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1aae84356c7571a32a0fd5d583d334906e`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:75
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a7753ae5138ba5d67c04898c9aea0c98f`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:77
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1aff73e55ccac0f20952a59b334bd3d576`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:79
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a79a61e4017e730d41e1793efb4e9e7aa`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:81
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a384461268082ef26b88d1cb80916b5bb`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:83
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a0129c84c91994973e0038a8c8910dc9e`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:85
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a2f4cf71871cf4db217b72fb02a0ffecb`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:87
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a4e7e6d69875ca09d0286eca0fbe6dd52`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:89
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1af6de4e760dc8ce85076f3a00a3d3be07`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:91
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a5bdc2a325d7220a0493c28f8cecb31bd`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:93
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a651a2b26de4037130971591937f2b0e1`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:95
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a649f2ca072cecad7ca7459e0cf870666`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:97
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a7460b5874c5b89063154d28c50c2c7ad`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:99
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1ae1fb1331e3e1e5c95938215fc2c6835e`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:101
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a4bfae3a30a95a0c8da60537b74d1b4e8`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:103
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a158372410be9ef1b01b12640d7554143`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:105
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1ae9157fcd1916d358239398f72ba732c9`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:107
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a8dd7495b05117ff59dbba448c200f89c`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:109
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a22d33ed3c90d379b0fcc1e4d4c836651`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:111
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1ade1aa3ef90b59a6ef9a06517aea89333`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:113
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a59283e454e04bd42de09d6a4ec5831be`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:115
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1ac3fd137c0469e48fbe2230fc4c780799`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:117
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1ab372845c8065d791dbb512d40c6c6f10`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:119
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1aea9f525416f41eb29627a54936c66933`"
+msgstr ""
+
+#: ../../packages/triorb_camera_capture/generated/file_include_auto_exposure.hpp.rst:121
+msgid ""
+":ref:`exhale_define_auto__exposure_8hpp_1a1b7b025cc43c159bcd4fd71975ca4954`"
+msgstr ""

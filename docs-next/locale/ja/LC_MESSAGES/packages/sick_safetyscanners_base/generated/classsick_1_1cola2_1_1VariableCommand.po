@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:4
+msgid "Class VariableCommand"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:6
+msgid ""
+"Defined in "
+":ref:`file_include_sick_safetyscanners_base_cola2_VariableCommand.h`"
+msgstr ""
+":ref:`file_include_sick_safetyscanners_base_cola2_VariableCommand.h` で定義"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:10
+msgid "Inheritance Relationships"
+msgstr "継承関係"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:13
+msgid "Base Type"
+msgstr "基底型"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:15
+msgid ""
+"``public sick::cola2::Command`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1Command`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:19
+msgid "Derived Types"
+msgstr "派生型"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:21
+msgid ""
+"``public sick::cola2::ApplicationNameVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1ApplicationNameVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:22
+msgid ""
+"``public sick::cola2::ConfigMetadataVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1ConfigMetadataVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:23
+msgid ""
+"``public sick::cola2::DeviceNameVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1DeviceNameVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:24
+msgid ""
+"``public sick::cola2::DeviceStatusVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1DeviceStatusVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:25
+msgid ""
+"``public sick::cola2::FieldGeometryVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1FieldGeometryVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:26
+msgid ""
+"``public sick::cola2::FieldHeaderVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1FieldHeaderVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:27
+msgid ""
+"``public sick::cola2::FieldSetsVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1FieldSetsVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:28
+msgid ""
+"``public sick::cola2::FirmwareVersionVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1FirmwareVersionVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:29
+msgid ""
+"``public sick::cola2::LatestTelegramVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1LatestTelegramVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:30
+msgid ""
+"``public sick::cola2::MeasurementCurrentConfigVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1MeasurementCurrentConfigVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:31
+msgid ""
+"``public sick::cola2::MeasurementPersistentConfigVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1MeasurementPersistentConfigVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:32
+msgid ""
+"``public sick::cola2::MonitoringCaseTableHeaderVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1MonitoringCaseTableHeaderVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:33
+msgid ""
+"``public sick::cola2::MonitoringCaseVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1MonitoringCaseVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:34
+msgid ""
+"``public sick::cola2::OrderNumberVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1OrderNumberVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:35
+msgid ""
+"``public sick::cola2::ProjectNameVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1ProjectNameVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:36
+msgid ""
+"``public sick::cola2::RequiredUserActionVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1RequiredUserActionVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:37
+msgid ""
+"``public sick::cola2::SerialNumberVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1SerialNumberVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:38
+msgid ""
+"``public sick::cola2::StatusOverviewVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1StatusOverviewVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:39
+msgid ""
+"``public sick::cola2::TypeCodeVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1TypeCodeVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:40
+msgid ""
+"``public sick::cola2::UserNameVariableCommand`` "
+"(:ref:`exhale_class_classsick_1_1cola2_1_1UserNameVariableCommand`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst:44
+msgid "Class Documentation"
+msgstr "クラスドキュメント"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst
+msgid "Public Functions"
+msgstr "Public メンバ関数"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst
+msgid "Parameters"
+msgstr "引数"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1cola2_1_1VariableCommand.rst
+msgid "Returns"
+msgstr "戻り値"

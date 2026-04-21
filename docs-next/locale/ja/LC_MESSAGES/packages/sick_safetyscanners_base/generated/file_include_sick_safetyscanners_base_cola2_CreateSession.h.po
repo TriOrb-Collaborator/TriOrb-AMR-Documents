@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:5
+msgid "File CreateSession.h"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:7
+msgid ""
+"|exhale_lsh| :ref:`Parent directory "
+"<dir_include_sick_safetyscanners_base_cola2>` "
+"(``include/sick_safetyscanners_base/cola2``)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:17
+msgid ""
+"Definition (``include/sick_safetyscanners_base/cola2/CreateSession.h``)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:30
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:33
+msgid ""
+"``sick_safetyscanners_base/cola2/Command.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_cola2_Command.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:38
+msgid "Included By"
+msgstr "被インクルード"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:41
+msgid ":ref:`file_include_sick_safetyscanners_base_cola2_Cola2.h`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:43
+msgid ":ref:`file_include_sick_safetyscanners_base_cola2_Cola2Session.h`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:49
+msgid "Namespaces"
+msgstr "名前空間"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:52
+msgid ":ref:`namespace_sick`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:54
+msgid ":ref:`namespace_sick__cola2`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:58
+msgid "Classes"
+msgstr "クラス"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_cola2_CreateSession.h.rst:61
+msgid ":ref:`exhale_class_classsick_1_1cola2_1_1CreateSession`"
+msgstr ""

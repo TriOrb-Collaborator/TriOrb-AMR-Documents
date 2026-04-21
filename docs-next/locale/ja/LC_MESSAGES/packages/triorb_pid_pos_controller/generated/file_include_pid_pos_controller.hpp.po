@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:5
+msgid "File pid_pos_controller.hpp"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:7
+msgid "|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:17
+msgid "Definition (``include/pid_pos_controller.hpp``)"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:30
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:33
+msgid "``ct.hpp`` (:ref:`file_include_ct.hpp`)"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:35
+msgid "``geometry_msgs/msg/vector3.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:37
+msgid "``map``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:39
+msgid "``nlohmann/json.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:41
+msgid "``rclcpp/rclcpp.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:43
+msgid "``rclcpp_components/register_node_macro.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:45
+msgid "``regex``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:47
+msgid "``std_msgs/msg/bool.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:49
+msgid "``std_msgs/msg/empty.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:51
+msgid "``std_msgs/msg/float32.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:53
+msgid "``std_msgs/msg/header.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:55
+msgid "``std_msgs/msg/int16.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:57
+msgid "``std_msgs/msg/int32.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:59
+msgid "``std_msgs/msg/int8.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:61
+msgid "``std_msgs/msg/string.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:63
+msgid "``std_msgs/msg/u_int16.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:65
+msgid "``std_msgs/msg/u_int32.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:67
+msgid "``std_msgs/msg/u_int8.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:69
+msgid "``string``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:71
+msgid "``triorb_drive_interface/msg/drive_gains.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:73
+msgid "``triorb_drive_interface/msg/triorb_run_pos3.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:75
+msgid "``triorb_navigation_utils.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:77
+msgid "``triorb_path_controller_interface.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:79
+msgid "``triorb_static_interface/srv/version.hpp``"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:87
+msgid "Namespaces"
+msgstr "名前空間"
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:90
+msgid ":ref:`namespace_pid_pos_controller`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:94
+msgid "Classes"
+msgstr "クラス"
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:97
+msgid ":ref:`exhale_class_classpid__pos__controller_1_1PidPosControllerNode`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:101
+msgid "Defines"
+msgstr "マクロ定義"
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:104
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a298607190b0359ce81dbda00bc1f27da`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:106
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a1eb2943c666a7e1b26c58327dd8d71b6`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:108
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a400cf5543af0302edf3b84ab87d91c7b`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:110
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a886210ad8f65156216efb0d18b504969`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:112
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a8fc2c4f031d7db4eb8c75469013a0522`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:114
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1aa83ea976b7d43c0721bed02806b2b3c0`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:116
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1ac496d6ceea4591163c188f170c0f3d41`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:118
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a6089e2b505e7d0beeb7a22ec49f34cf3`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:120
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1aaa3e83569e57e606c0d77735d360d825`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:122
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1ae451f88af1b61dbbb75cea8fab7d4f36`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:124
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1ae11820a9310f5376d46070ed9057b956`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:126
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1ae3934d41ea62150f312dd032cd052b03`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:128
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a403886aaf13e9fce621028243c1d0f44`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:130
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a8cc8d559acdd2f74085b20977182d5b7`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:132
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a3c1d14e005131bc439de0596acdcef57`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:134
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1ab973a9f973433a19cfae0a0b5c968e66`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:136
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1ac36cb3f25eab1731f322f0a1460e9840`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:138
+msgid ""
+":ref:`exhale_define_pid__pos__controller_8hpp_1a779942b865375e96961bd01ba182d586`"
+msgstr ""
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:142
+msgid "Typedefs"
+msgstr "型定義"
+
+#: ../../packages/triorb_pid_pos_controller/generated/file_include_pid_pos_controller.hpp.rst:145
+msgid ""
+":ref:`exhale_typedef_pid__pos__controller_8hpp_1ab701e3ac61a85b337ec5c1abaad6742d`"
+msgstr ""

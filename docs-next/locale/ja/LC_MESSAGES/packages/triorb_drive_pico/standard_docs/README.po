@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_drive_pico/standard_docs/README.rst:2
+msgid "README"
+msgstr "README"
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:1
+msgid "Package: triorb_drive_pico"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:2
+msgid "モーターの制御ECUと通信し, 移動指示の送信やステータス取得するためのパッケージ."
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:4
+msgid "主な機能"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:5
+msgid "移動指示によるロボットの駆動"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:6
+msgid "ロボットの内部状態の通知"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:8
+msgid "更新履歴"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:9
+msgid "1.2.3"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:10
+msgid "現在実行中の指令が分かるように/drive/mode topicを追加"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:11
+msgid "/drive/run_pos/result topicを追加し, 相対移動完了を通知するように変更"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:13
+msgid "1.2.0"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:14
+msgid "各バージョン取得serviceをtopicに変更、10秒に1回publishするように変更"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:15
+msgid "picoから最大速度・最小速度を取得し、Jetson内に保存するコードを追加"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:16
+msgid "picoからエラー履歴を取得するservice追加"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:17
+msgid "特定の条件で速度指示を無視していたバグ修正"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:19
+msgid "1.1.0"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:20
+msgid "nodeのバージョン取得serviceを追加（有効になるようにバグ修正）"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:21
+msgid "picoのバージョン取得serviceを追加"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:22
+msgid "triorb_coreのバージョン取得serviceを追加"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:23
+msgid "励磁オン・オフのservice版を追加"
+msgstr ""
+
+#: ../../packages/triorb_drive_pico/standard_docs/original/README.md:24
+msgid "速度0命令は連続でない限りスキップしない"
+msgstr ""

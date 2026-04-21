@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1datastructure_1_1ParsedPacketBuffer.rst:4
+msgid "Class ParsedPacketBuffer"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1datastructure_1_1ParsedPacketBuffer.rst:6
+msgid ""
+"Defined in "
+":ref:`file_include_sick_safetyscanners_base_datastructure_ParsedPacketBuffer.h`"
+msgstr ""
+":ref:`file_include_sick_safetyscanners_base_datastructure_ParsedPacketBuffer.h`"
+" で定義"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1datastructure_1_1ParsedPacketBuffer.rst:10
+msgid "Class Documentation"
+msgstr "クラスドキュメント"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1datastructure_1_1ParsedPacketBuffer.rst
+msgid "Public Types"
+msgstr "Public 型"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1datastructure_1_1ParsedPacketBuffer.rst
+msgid "Public Functions"
+msgstr "Public メンバ関数"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1datastructure_1_1ParsedPacketBuffer.rst
+msgid "Parameters"
+msgstr "引数"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1datastructure_1_1ParsedPacketBuffer.rst
+msgid "Returns"
+msgstr "戻り値"
+
+#: ../../packages/sick_safetyscanners_base/generated/classsick_1_1datastructure_1_1ParsedPacketBuffer.rst
+msgid "Public Static Functions"
+msgstr "Public 静的メンバ関数"

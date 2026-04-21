@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/triorb_tagslam_manager/__readme_include.rst:2
+msgid "README"
+msgstr "README"
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:1
+msgid "Package: triorb_tagslam_manager"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:3
+msgid "概要"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:4
+msgid ""
+"TriOrb製Tagslamシステムの運用をまとめて管理するROS "
+"2ノードです。地図保存/読み込みの指示に応じて`tagslam`や`sync_and_detect`ノードをtmuxセッションで再起動し、地図ファイルの生成・差し替え、状態通知、tf配信、Version応答までを一括で行います。`ROS_PREFIX`環境変数で名前空間を付与しており、同じプレフィックスを持つトピック/サービスへ自動でリマップされます。"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:6
+msgid "ノード実行"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:10
+msgid ""
+"`UNIQUE_NODE=True`のため、同名ノードが既に起動していると即座に終了します。内部では`/params/tagslam`配下の設定ファイルや`/data/tagslam_map`配下の地図を参照/更新します。"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:12
+msgid "パラメータ"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "名前"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "型"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "既定値"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "説明"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "`use_approx_sync`"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "bool"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "`True`"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "`tagslam`/`sync_and_detect`を起動する際に約同期を有効にするかどうか。"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "`replace_noise`"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md
+msgid "地図読込時に`position_noise`/`rotation_noise`を`1e-8`へ書き換えてタグ姿勢を固定するかどうか。"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:18
+msgid "カメラ設定の扱い"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:19
+msgid ""
+"起動時に`/params/tagslam/cameras.yaml`を読み込み、`ROS_PREFIX`付きトピックへ書き換えた結果を`/params/tagslam/cameras_prefix.yaml`（既定`cameras_prefix.yaml`）として保存します。同時にカメラ検出トピックへSubscriberを張り、`detector_callback`で検出タグを記録することで、タグTFメッセージに「現在視認中か既知のみか」を付加します。"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:21
+msgid "補足"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:22
+msgid ""
+"`tmux kill-session -t "
+"tagslam|detect`で既存セッションを切り替える設計のため、同名セッションを他用途で使わないでください。"
+msgstr ""
+
+#: ../../packages/triorb_tagslam_manager/standard_docs/original/README.md:23
+msgid ""
+"`/params`および`/data`パスはDockerコンテナなどでボリュームマウントされている前提です。必要に応じてシンボリックリンクで実ファイルを差し替えてください。"
+msgstr ""

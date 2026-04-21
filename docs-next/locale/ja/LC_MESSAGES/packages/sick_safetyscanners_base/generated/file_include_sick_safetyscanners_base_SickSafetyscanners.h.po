@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025-2026, TriOrb Inc.
+# This file is distributed under the same license as the TriOrb BASE
+# Developer Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TriOrb BASE Developer Guide v1.2.5-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 17:32+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ja <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:5
+msgid "File SickSafetyscanners.h"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:7
+msgid ""
+"|exhale_lsh| :ref:`Parent directory <dir_include_sick_safetyscanners_base>` "
+"(``include/sick_safetyscanners_base``)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:14
+msgid "Contents"
+msgstr "目次"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:17
+msgid "Definition (``include/sick_safetyscanners_base/SickSafetyscanners.h``)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:28
+msgid "Detailed Description"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:30
+msgid ""
+"Copyright (C) 2020, SICK AG, Waldkirch Copyright (C) 2020, FZI "
+"Forschungszentrum Informatik, Karlsruhe, Germany"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:32
+msgid ""
+"Licensed under the Apache License, Version 2.0 (the \"License\"); you may "
+"not use this file except in compliance with the License. You may obtain a "
+"copy of the License at"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:34
+msgid "http://www.apache.org/licenses/LICENSE-2.0"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:36
+msgid ""
+"Unless required by applicable law or agreed to in writing, software "
+"distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT "
+"WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the "
+"License for the specific language governing permissions and limitations "
+"under the License."
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:38
+msgid "Lennart Puck puck@fzi.de"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:40
+msgid "2018-09-24"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:42
+msgid "Martin Schulze schulze@fzi.de"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:44
+msgid "2020-04-15"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:52
+msgid "Includes"
+msgstr "インクルード"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:55
+msgid "``boost/asio.hpp``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:57
+msgid "``boost/scoped_ptr.hpp``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:59
+msgid "``boost/thread.hpp``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:61
+msgid "``chrono``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:63
+msgid "``functional``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:65
+msgid "``iostream``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:67
+msgid "``memory``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:69
+msgid ""
+"``sick_safetyscanners_base/Generics.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_Generics.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:71
+msgid ""
+"``sick_safetyscanners_base/Logging.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_Logging.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:73
+msgid ""
+"``sick_safetyscanners_base/Types.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_Types.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:75
+msgid ""
+"``sick_safetyscanners_base/cola2/Cola2Session.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_cola2_Cola2Session.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:77
+msgid ""
+"``sick_safetyscanners_base/cola2/Command.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_cola2_Command.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:79
+msgid ""
+"``sick_safetyscanners_base/communication/TCPClient.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_communication_TCPClient.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:81
+msgid ""
+"``sick_safetyscanners_base/communication/UDPClient.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_communication_UDPClient.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:83
+msgid ""
+"``sick_safetyscanners_base/data_processing/ParseData.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_data_processing_ParseData.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:85
+msgid ""
+"``sick_safetyscanners_base/data_processing/UDPPacketMerger.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_data_processing_UDPPacketMerger.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:87
+msgid ""
+"``sick_safetyscanners_base/datastructure/Datastructure.h`` "
+"(:ref:`file_include_sick_safetyscanners_base_datastructure_Datastructure.h`)"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:89
+msgid "``string``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:91
+msgid "``vector``"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:99
+msgid "Namespaces"
+msgstr "名前空間"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:102
+msgid ":ref:`namespace_sick`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:106
+msgid "Classes"
+msgstr "クラス"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:109
+msgid ":ref:`exhale_class_classsick_1_1AsyncSickSafetyScanner`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:111
+msgid ":ref:`exhale_class_classsick_1_1SickSafetyscannersBase`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:113
+msgid ":ref:`exhale_class_classsick_1_1SyncSickSafetyScanner`"
+msgstr ""
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:117
+msgid "Typedefs"
+msgstr "型定義"
+
+#: ../../packages/sick_safetyscanners_base/generated/file_include_sick_safetyscanners_base_SickSafetyscanners.h.rst:120
+msgid ""
+":ref:`exhale_typedef_SickSafetyscanners_8h_1a57c3622b5587ccae90c9dac008ec75f2`"
+msgstr ""
