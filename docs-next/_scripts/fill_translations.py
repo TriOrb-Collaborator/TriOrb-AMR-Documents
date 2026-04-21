@@ -305,7 +305,11 @@ def populate_d1() -> None:
         "guides/overview.po": OVERVIEW_MD_DICT,
         "guides/history.po": HISTORY_MD_DICT,
         "packages/index.po": PKG_INDEX_DICT,
-        "_handwritten/packages/visual_slam.po": VISUAL_SLAM_DICT,
+        # Sphinx reads translations for `packages/visual_slam.md` (which is
+        # copied from `_handwritten/packages/`) at `packages/visual_slam.po`.
+        # The `_handwritten/` tree is excluded from the build, so writing to
+        # `_handwritten/packages/visual_slam.po` had no effect.
+        "packages/visual_slam.po": VISUAL_SLAM_DICT,
     }
     for rel, mapping in simple_dicts.items():
         n = apply_mapping(LOCALE / rel, mapping)
