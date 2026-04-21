@@ -108,8 +108,8 @@ def apply_mapping(po_path: Path, mapping: Dict[str, str]) -> int:
 # ---------------------------------------------------------------------------
 INDEX_MD_DICT = {
     "TriOrb BASE Developer Guide": "TriOrb BASE 開発ガイド",
-    "Developer documentation for TriOrb BASE. Covers API references for autonomous and collaborative navigation packages, operational guides, and the changelog.":
-        "TriOrb BASE の開発者向けドキュメントです。自律移動・協調搬送パッケージの API リファレンス、運用ガイド、変更履歴をまとめています。",
+    "Developer documentation for TriOrb BASE. Covers the ROS 2 API reference for the autonomous navigation package, the host-side control ECU library, operational guides, and the changelog.":
+        "TriOrb BASE の開発者向けドキュメントです。自律移動パッケージの ROS 2 API リファレンス、上位側制御 ECU 通信ライブラリ、運用ガイド、変更履歴をまとめています。",
     "User Guide": "ユーザーガイド",
     "Package API (rosdoc2)": "パッケージ API (rosdoc2)",
     "Legal": "法務",
@@ -128,13 +128,13 @@ INDEX_MD_DICT = {
 
 OVERVIEW_MD_DICT = {
     "Product Overview": "製品概要",
-    "TriOrb BASE is an autonomous mobile robot (AMR) platform with omnidirectional motion realized by three omniwheels.":
-        "TriOrb BASE は、3 つのオムニホイールによる全方位移動を実現する自律移動ロボット (AMR) プラットフォームです。",
+    "TriOrb BASE is an autonomous mobile robot (AMR) platform with a novel **ball-drive omnidirectional motion mechanism** — three spheres and three motors — that addresses the \"external disturbance handling, positioning accuracy, and load capacity\" trade-offs that classical omnidirectional platforms have struggled with.":
+        "TriOrb BASE は、**3 つの球体と 3 つのモータで構成される球駆動式の全方向移動機構**を備えた自律移動ロボット (AMR) プラットフォームです。従来の全方向移動プラットフォームでは両立が難しかった「外乱走破性・位置決め精度・耐荷重」を同時に成立させる独自構造です。",
+    "Representative specs: standard φ100 sphere (φ140 / φ200 builds available), load up to ~300 kg (customizable up to 800 kg), runtime ~3.5 h with the optional battery, and mobility across ~45 mm gaps, ~10 mm steps and ~9° slopes. Refer to the TriOrb website for the latest hardware figures.":
+        "代表仕様: 標準球径 φ100（φ140 / φ200 の製作実績あり）、運搬能力 標準 300 kg（カスタマイズで最大 800 kg）、連続稼働 約 3.5 時間（オプションバッテリー搭載時）、溝 45 mm / 段差 10 mm / 勾配 9° 程度の走破性。最新のハードウェア諸元は TriOrb コーポレートサイトをご参照ください。",
     "This site provides:": "本サイトでは以下の情報を提供します:",
     "**Autonomous Navigation API**: ROS 2 topics / services / actions for driving the robot":
         "**自律移動 API**: ロボットを制御するための ROS 2 トピック / サービス / アクション",
-    "**Collaborative Navigation API**: additional APIs for multi-robot cooperative transport":
-        "**協調移動 API**: 複数台で連携搬送する場合の追加 API",
     "**Control ECU Library**: a Python library for sending commands to the TriOrb control ECU directly from a host PC":
         "**制御 ECU 通信ライブラリ**: 上位 PC から TriOrb 制御 ECU へ直接指令を送るための Python ライブラリ",
     "**Changelog / Terms of Service / Privacy Policy**": "**変更履歴 / 利用規約 / プライバシーポリシー**",
@@ -151,12 +151,24 @@ OVERVIEW_MD_DICT = {
 HISTORY_MD_DICT = {
     "Changelog": "変更履歴",
     "v1.2.4": "v1.2.4",
-    "The detailed per-release changelog is being migrated from `submodules/TriOrb-AMR-Package/History.md` into this page. Earlier entries still live on the legacy MkDocs archive ([v1.2.3](../../v1.2.3/TriOrb-AMR-Package/History/), [v1.2.2](../../v1.2.2/TriOrb-AMR-Package/History/)).":
-        "リリースごとの詳細な変更履歴を `submodules/TriOrb-AMR-Package/History.md` から本ページへ段階的に移行中です。それ以前のエントリは旧サイト（[v1.2.3](../../v1.2.3/TriOrb-AMR-Package/History/), [v1.2.2](../../v1.2.2/TriOrb-AMR-Package/History/)）をご参照ください。",
-    "From this release the documentation stack moves to Sphinx + rosdoc2 + Furo. English is the source of truth; the Japanese site is produced from PO translations. Use the language switcher in the sidebar to swap between Japanese and English.":
+    "Per-release details are published on GitHub. This page summarizes the highlights of the latest release in plain prose; refer to the GitHub release notes for exact PR / commit lists. Earlier releases remain on the legacy MkDocs archive ([v1.2.3](../../v1.2.3/TriOrb-AMR-Package/History/), [v1.2.2](../../v1.2.2/TriOrb-AMR-Package/History/)).":
+        "リリースごとの詳細は GitHub Release ページで公開しています。本ページでは最新リリースの主な変更内容を要約のみ掲載します（PR / コミットの正確な一覧はリリースノートをご参照ください）。それ以前のリリースは旧サイト（[v1.2.3](../../v1.2.3/TriOrb-AMR-Package/History/), [v1.2.2](../../v1.2.2/TriOrb-AMR-Package/History/)）に残しています。",
+    "Documentation stack switches to Sphinx + rosdoc2 + Furo. English is the source of truth; the Japanese site is produced from PO translations. Use the language switcher in the sidebar to swap between Japanese and English.":
         "本バージョンからドキュメント基盤を Sphinx + rosdoc2 + Furo に移行しました。英語を正となるソースとし、日本語版は PO 翻訳から生成しています。サイドバー上部の言語切替から日英を選択してください。",
-    "Earlier changes are available in the legacy site linked above.":
-        "それ以前の変更履歴は上記の旧サイトリンクから確認できます。",
+    "Headline functional changes in the `1.2.4.2` release (2026-04-07):":
+        "`1.2.4.2` リリース（2026-04-07）の主な機能変更:",
+    "**Navigation / drive control**: tidied up `stop` / `pause` delay and wait-time coordination with `snr_mux`, and reworked how the PICO connection timeout is handled. Goal XY judgment is now elliptical and idle-state navigation loop input reset is fixed.":
+        "**ナビゲーション / 走行制御**: `stop` / `pause` の遅延や待機時間の `snr_mux` 連携を整理し、PICO 接続タイムアウトの扱いを見直しました。ゴール XY 判定を楕円化し、idle 中の navigation loop 入力リセット不具合を修正しました。",
+    "**Manual operation / gamepad**: axis zero-range handling; suppress publish during autonomous motion; manual block stop / safe run controls; improved deadzone behavior.":
+        "**手動操作 / gamepad**: 軸の zero range 対応、自律走行中の publish 抑止、manual block stop / safe run 制御、deadzone 処理を改善。",
+    "**VSLAM / mapping / camera / MQTT**: restart VSLAM against the last loaded map; tracked-landmarks overlay; log preservation on abnormal termination. `run_mapping.sh` shows startup progress; camera now handles `AutoGainTarget`, scalar parameter parsing, and camera-disconnect scenarios; MQTT has improved reconnection resilience and startup-time client configuration injection.":
+        "**VSLAM / マッピング / カメラ / MQTT**: 最後に読み込んだ map での VSLAM 再起動、tracked landmarks 表示、異常終了時のログ保存に対応。`run_mapping.sh` の起動進捗表示、camera の `AutoGainTarget` / 単一値パラメータ解析 / 未接続時挙動、MQTT の接続復旧性と起動時 client 設定注入を改善。",
+    "**GUI / platform / diagnostics**: updated `gui/html` and `gui/launcher`; fixed topic names when `ROS_PREFIX` is applied; beacon DDS priority adjustment. Offline local installer bundle; `dead_reckoning` ISAM removal; IMU bypass/verification logging.":
+        "**GUI / プラットフォーム / 診断**: `gui/html` / `gui/launcher` を更新、`ROS_PREFIX` 適用時の topic 名を修正、beacon DDS 優先度を調整。オフライン用ローカルインストーラバンドル、`dead_reckoning` の ISAM 廃止、IMU 確認用バイパスログ機能を追加。",
+    "Full release notes:\n[TriOrb-AMR-Package 1.2.4.2](https://github.com/TriOrb-Inc/TriOrb-AMR-Package/releases/tag/1.2.4.2)":
+        "リリースノート全文:\n[TriOrb-AMR-Package 1.2.4.2](https://github.com/TriOrb-Inc/TriOrb-AMR-Package/releases/tag/1.2.4.2)",
+    "Notable merged PRs: #405 (`dev/std1.2.4` rollup), #397 (PICO timeout and `snr_mux` wait-time parameterization), #388 (`triorb_gamepad` axis zero range), #378 (release/std1.2.4 navigation stabilization and Bison feature landing).":
+        "主な取り込み PR: #405（`dev/std1.2.4` 反映）、#397（PICO timeout と `snr_mux` 待機時間パラメータ化）、#388（`triorb_gamepad` の axis zero range 対応）、#378（release/std1.2.4 向けナビ / 協調制御安定化と Bison 周辺機能反映）。",
 }
 
 PKG_INDEX_DICT = {
@@ -168,10 +180,7 @@ PKG_INDEX_DICT = {
     "Sensor I/O": "センサー I/O",
     "Safety Sensors": "セーフティセンサ",
     "OS / Infrastructure": "OS・基盤",
-    "Fleet": "フリート",
-    "Service": "サービス",
     "Interfaces": "インタフェース",
-    "Other": "その他",
 }
 
 VISUAL_SLAM_DICT = {

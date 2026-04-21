@@ -38,11 +38,12 @@ msgstr "TriOrb BASE 開発ガイド"
 
 #: ../../index.md:3
 msgid ""
-"Developer documentation for TriOrb BASE. Covers API references for "
-"autonomous and collaborative navigation packages, operational guides, and "
-"the changelog."
+"Developer documentation for TriOrb BASE. Covers the ROS 2 API reference for "
+"the autonomous navigation package, the host-side control ECU library, "
+"operational guides, and the changelog."
 msgstr ""
-"TriOrb BASE の開発者向けドキュメントです。自律移動・協調搬送パッケージの API リファレンス、運用ガイド、変更履歴をまとめています。"
+"TriOrb BASE の開発者向けドキュメントです。自律移動パッケージの ROS 2 API リファレンス、上位側制御 ECU "
+"通信ライブラリ、運用ガイド、変更履歴をまとめています。"
 
 #: ../../index.md:29
 msgid "Support"

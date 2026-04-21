@@ -1,7 +1,8 @@
 # TriOrb BASE Developer Guide
 
-Developer documentation for TriOrb BASE. Covers API references for autonomous
-and collaborative navigation packages, operational guides, and the changelog.
+Developer documentation for TriOrb BASE. Covers the ROS 2 API reference for
+the autonomous navigation package, the host-side control ECU library,
+operational guides, and the changelog.
 
 ```{toctree}
 :maxdepth: 2
