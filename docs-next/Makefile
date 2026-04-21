@@ -89,10 +89,25 @@ deploy-stage:
 	sed -e "s|{{LAST_UPDATED_ISO}}|$$LAST_UPDATED_ISO|g" \
 	    -e "s|{{LAST_UPDATED}}|$$LAST_UPDATED|g" \
 	    _landing/index.html > "$(BUILDDIR)/deploy/index.html"
-	@# Landing sibling assets (favicon, hero image). Any non-index.html file
-	@# under _landing/ is copied verbatim.
+	@# Landing sibling assets (favicon, hero image, brand.css).
+	@# Any non-index.html file under _landing/ is copied verbatim.
 	@find _landing -maxdepth 1 -type f ! -name index.html \
 	    -exec cp {} "$(BUILDDIR)/deploy/" \;
+	@# Mike-style visual overlay: inject /brand.css into every versioned
+	@# HTML page head. Cheap string op; no Sphinx rebuild required.
+	@if [ -f "$(BUILDDIR)/deploy/brand.css" ]; then \
+	    find "$(BUILDDIR)/deploy/$(DOCS_RELEASE)" -name '*.html' -print0 \
+	        | xargs -0 sed -i 's|</head>|<link rel="stylesheet" href="/brand.css" />\n</head>|'; \
+	fi
+	@# Strip the "README" anchor-only entries that rosdoc2 surfaces under
+	@# each package in packages/index.html (Sphinx's `:titlesonly:` does
+	@# not suppress them for H2 headings brought in via .. include ::).
+	@PY=$$(command -v python3 || echo python3); \
+	if [ -x ../.venv-docs2/bin/python3 ]; then PY=../.venv-docs2/bin/python3; fi; \
+	for lang in en ja; do \
+	    f="$(BUILDDIR)/deploy/$(DOCS_RELEASE)/$$lang/packages/index.html"; \
+	    [ -f "$$f" ] && "$$PY" _scripts/strip_readme_anchors.py "$$f"; \
+	done
 	@echo "deploy-ready tree: $(BUILDDIR)/deploy/"
 	@du -sh "$(BUILDDIR)/deploy"/* 2>/dev/null | sort -h
 
