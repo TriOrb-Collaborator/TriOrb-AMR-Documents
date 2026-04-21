@@ -9,3 +9,9 @@ _rosdoc2_out/
 _rosdoc2_sources/
 /packages/
 *.mo
+
+# B plan (Phase 4 pivot): rosdoc2-generated package docs are English-only.
+# We no longer extract/translate msgids under packages/. Local .po files
+# may still appear if an old `make gettext` is run, but they are not
+# tracked and not expected to be consulted.
+/locale/ja/LC_MESSAGES/packages/

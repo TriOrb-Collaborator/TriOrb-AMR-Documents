@@ -1,17 +1,20 @@
-"""Populate Japanese PO files for docs-next.
+"""Populate Japanese PO files for docs-next (D1 hand-written pages).
 
 Covers:
-  D1 (hand-written pages):
-    - index.md
-    - guides/overview.md, history.md, terms.md, privacy.md
-    - packages/index.md (category headings)
-    - _handwritten/packages/visual_slam.md
-  D2 (rosdoc2 common labels):
-    - all packages/**/*.po have their shared exhale/breathe labels translated
+  - index.md
+  - guides/overview.md, history.md, terms.md, privacy.md
+  - packages/index.md (category headings)
+  - packages/visual_slam.md
+  (7 hand-written docs total)
 
 Terms / Privacy use paragraph-aligned JP text from the legacy site
 (triorb-amr-docs/docs/Terms.md, PrivacyPolicy.md) which has the same
 heading / paragraph structure as the English source.
+
+D2 (rosdoc2 common labels) was retired in the Phase 4 B plan: rosdoc2
+API pages ship in English only to avoid the full-rebuild cascade that
+every .mo change triggers. A retired reference dict remains below for
+future reactivation.
 """
 from __future__ import annotations
 
@@ -211,10 +214,12 @@ VISUAL_SLAM_DICT = {
 
 
 # ---------------------------------------------------------------------------
-# D2 rosdoc2 / exhale / breathe labels repeated across every package.
-# Single dict applied to every packages/**/*.po.
+# NOTE: D2 (rosdoc2 common labels) has been retired. Per the "B plan" pivot
+# in Phase 4, rosdoc2-generated API pages ship in English only. The
+# packages/** PO tree was removed from the repo; this dict is kept for
+# historical reference only and is no longer applied.
 # ---------------------------------------------------------------------------
-ROSDOC2_LABEL_DICT = {
+_RETIRED_ROSDOC2_LABEL_DICT = {
     "Class Documentation": "クラスドキュメント",
     "Struct Documentation": "構造体ドキュメント",
     "Enum Documentation": "列挙型ドキュメント",
@@ -329,56 +334,5 @@ def populate_d1() -> None:
     print(f"D1 guides/privacy.po: {n} translations")
 
 
-# Pattern-based D2: msgids that embed a :ref:`target` parameter.
-ROSDOC2_REGEX_PATTERNS: List[tuple[re.Pattern, str]] = [
-    # "Defined in :ref:`file_include_foo.hpp`" → ":ref:`file_include_foo.hpp` で定義"
-    (re.compile(r"^Defined in (:ref:`[^`]+`)$"), r"\1 で定義"),
-]
-
-
-def apply_regex_patterns(po_path: Path, patterns: List[tuple[re.Pattern, str]]) -> int:
-    """Apply regex-based msgid→msgstr rewrites (for parametric msgids)."""
-    if not po_path.exists():
-        return 0
-    po = polib.pofile(str(po_path))
-    hits = 0
-    for entry in po:
-        if entry.obsolete:
-            continue
-        for pat, repl in patterns:
-            m = pat.match(entry.msgid)
-            if not m:
-                continue
-            new_msgstr = pat.sub(repl, entry.msgid)
-            if entry.msgstr != new_msgstr or entry.fuzzy:
-                entry.msgstr = new_msgstr
-                if "fuzzy" in entry.flags:
-                    entry.flags.remove("fuzzy")
-                hits += 1
-            break
-    if hits:
-        po.save(str(po_path))
-    return hits
-
-
-def populate_d2() -> None:
-    pkg_root = LOCALE / "packages"
-    if not pkg_root.is_dir():
-        print("D2 skipped: no packages/ locale tree yet")
-        return
-    total_files = 0
-    total_hits = 0
-    total_regex_hits = 0
-    for po_path in pkg_root.rglob("*.po"):
-        n = apply_mapping(po_path, ROSDOC2_LABEL_DICT)
-        if n:
-            total_files += 1
-            total_hits += n
-        total_regex_hits += apply_regex_patterns(po_path, ROSDOC2_REGEX_PATTERNS)
-    print(f"D2 rosdoc2 labels applied to {total_files} files: {total_hits} msgstr set")
-    print(f"D2 rosdoc2 regex patterns: {total_regex_hits} msgstr set")
-
-
 if __name__ == "__main__":
     populate_d1()
-    populate_d2()

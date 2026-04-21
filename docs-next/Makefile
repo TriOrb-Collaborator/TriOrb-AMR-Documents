@@ -34,10 +34,16 @@ html-ja:
 
 gettext:
 	$(SPHINXBUILD) $(SPHINXOPTS) -b gettext "$(SOURCEDIR)" "$(BUILDDIR)/gettext"
+	@# B plan (Phase 4): rosdoc2-generated packages/** ship in English only.
+	@# Drop the extracted POTs under packages/ so sphinx-intl update can't
+	@# regenerate the corresponding PO tree.
+	@rm -rf "$(BUILDDIR)/gettext/packages"
 
 update-po: gettext
 	sphinx-intl update -p "$(BUILDDIR)/gettext" -l ja
 	sphinx-intl build -l ja
+	@# Prune stale .mo / .po under packages/ in case they linger locally.
+	@rm -rf locale/ja/LC_MESSAGES/packages
 
 serve: html
 	@echo "Open http://localhost:8000/"
