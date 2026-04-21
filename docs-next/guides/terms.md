@@ -1,4 +1,4 @@
-# TriOrb BASE Developer Guide Terms of Use (Draft)
+# Terms of Use
 
 Effective date: March 27, 2026
 

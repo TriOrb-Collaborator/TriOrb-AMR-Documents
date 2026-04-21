@@ -1,4 +1,4 @@
-# TriOrb BASE Developer Guide Privacy Policy (Draft)
+# Privacy Policy
 
 Effective date: March 27, 2026
 
