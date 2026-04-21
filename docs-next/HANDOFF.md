@@ -1,80 +1,78 @@
-# docs2 Phase 2 Handoff (2026-04-20)
+# docs-next HANDOFF (2026-04-21)
 
-Live snapshot for picking up this work in a fresh session (Claude Code CLI or
-similar). Pair with the memory files under
+Live snapshot for picking up this work in a fresh session. Pair with
 `~/.claude/projects/-nvme-home-tobeta-TriOrb-AMR-Documents/memory/`.
 
-## 1. Current git state
+## 1. Current state — Phase 4 largely landed
 
-- Branch: **`docs2/phase2`** (cut from master @ `62f080c`).
-- Committed on this branch:
-  1. `77ca04b docs2: add Sphinx + rosdoc2 + Furo docs pipeline (Phase 1 + Phase 2 PoC)`
-  2. `e06cc6d docs2: group Package API index by subsystem category`
-- Submodules currently checked out (matches uncommitted v1.2.4 work on master side):
-  - `submodules/TriOrb-AMR-Package` → `9cb35f1d` (release/std1.2.4 tip)
-  - `submodules/triorb-core` → `cb94e5c` (master tip)
+| Area | Status |
+| --- | --- |
+| Pipeline | Sphinx + rosdoc2 + Furo on `docs-next/`, committed on `docs2/phase2`. |
+| Landing page (`/`) | Bilingual version picker at `docs-next/_landing/index.html`. Level B (logo-free, JA+EN description, version cards, last-updated stamp, contact). |
+| Deploy layout | `_build/deploy/{index.html, v1.2.4/{en,ja}/, favicon.png, TriOrb_concept.webp, brand.css}`. `deploy-stage-local` hydrates `v1.2.2/`, `v1.2.3/`, and mike shared assets from the local `gh-pages` branch for end-to-end local preview. |
+| Release label | `conf.py` default `v1.2.4`; `DOCS_RELEASE` env override. |
+| Legacy mike | `.github/workflows/jekyll-gh-pages2.yml` is a `workflow_dispatch` + `if: false` stub. Effectively disabled. |
+| gh-pages deploy | CI step **not yet wired**. Phase 4 pre-cutover is local-only. |
+| Translation scope | **B plan**: only the 7 hand-written pages are translated (`index.md`, `guides/{overview,history,terms,privacy}.md`, `packages/index.md`, `packages/visual_slam.md`). rosdoc2-generated API pages ship English-only. PO tree under `locale/ja/LC_MESSAGES/packages/**` was deleted; gitignore allows `packages/{index,visual_slam}.po` as exceptions. |
+| Branding | Lapis Lazuli `rgb(34, 59, 128)` from the legacy mike site. Applied both in Furo (via `conf.py` theme options) and on the landing page. `brand.css` injected at deploy-stage adds mike-style polish (sidebar brand gradient, H1 accent underline, active-nav side border, admonition border, TOC heading color). |
+| Favicon | `image/triorb_connect_icon.png` → `_static/favicon.png` (Sphinx) + `_landing/favicon.png` (landing). |
 
-## 2. Working-tree status (two independent changesets mingled)
+## 2. Content correctness pass (2026-04-21)
 
-Run `git status -s` — you will see changes from **two** unrelated work streams.
-Do **not** commit them together.
+The product overview now describes the **ball-drive omnidirectional motion
+mechanism** (3 spheres, 3 motors) per the TriOrb corporate site — the
+earlier "three omniwheels" line was wrong. Collaborative navigation is
+dropped from the public documentation (API is not designed for control
+from external ROS 2 nodes). Terms / Privacy H1s are simplified to
+"Terms of Use" / "Privacy Policy" and "利用規約" / "プライバシー
+ポリシー" (dropping the "(Draft)" / "（案）" suffix).
 
-### 2a. v1.2.4 release work → belongs on `master`
-- `gather_md.py`
-- `submodules/TriOrb-AMR-Package`, `submodules/triorb-core`
-- `triorb-amr-docs/docs/TriOrb-AMR-Package/**` (History.md, pkgs/…, pkgs-collab/…, auto-gen)
-- `triorb-amr-docs/docs/TriOrb-AMR-Package/document/` deletions (internal materials)
-- New API pages under `Reference_API/` for 1.2.4 additions
-- New root-level files: `triorb-amr-docs/docs/TriOrb-AMR-Package/pkgs/Reference_API/triorb-{drive/triorb-snr-mux-driver,os/triorb-battery-info,sensor/triorb-can}.md`
+`packages/index.md` now excludes everything the master-side
+`gather_md.py` marks as non-public (`pkgs/triorb_navi_bridge`,
+`pkgs/triorb_navigation_pkgs`, `pkgs/triorb_fleet`, etc.) plus
+`path_planning_server`. The whole "Fleet" category is removed as a
+result. `deploy-stage` then runs `_scripts/strip_readme_anchors.py` to
+scrub the rosdoc2 "README" anchor entries that Sphinx's `:titlesonly:`
+fails to suppress when they come from an `.. include ::` directive.
 
-### 2b. docs2 phase 2 follow-up → belongs on `docs2/phase2`
-- `docs-next/Makefile` (added `-j auto` parallel build; `update-po` now also runs `sphinx-intl build`; added `deploy-stage` target earlier — already committed, only the new changes are unstaged)
-- `docs-next/_shot.py` (iterated visual-check targets)
-- `docs-next/guides/terms.md`, `docs-next/guides/privacy.md` (numeric heading prefixes stripped, see section 3)
-- `docs-next/locale/ja/LC_MESSAGES/guides/terms.po`, `…/privacy.po` (re-filled via `fill_translations.py`)
-- `triorb-amr-docs/docs/Terms.md`, `…/Terms.en.md`, `…/PrivacyPolicy.md`, `…/PrivacyPolicy.en.md` (same numeric-prefix strip — legacy site stays in sync)
+## 3. Build performance (B plan payoff)
 
-Suggested path forward for splitting:
-```bash
-# Save docs2 follow-ups
-git stash push -m "docs2-phase2-post-rosdoc2-run" \
-    docs-next/Makefile docs-next/_shot.py \
-    docs-next/guides/terms.md docs-next/guides/privacy.md \
-    docs-next/locale/ja/LC_MESSAGES/guides/terms.po \
-    docs-next/locale/ja/LC_MESSAGES/guides/privacy.po \
-    triorb-amr-docs/docs/Terms.md triorb-amr-docs/docs/Terms.en.md \
-    triorb-amr-docs/docs/PrivacyPolicy.md triorb-amr-docs/docs/PrivacyPolicy.en.md
-# Handle v1.2.4 on master in its own session
-git checkout master
-# → commit the remaining working tree there
-# Come back
-git checkout docs2/phase2
-git stash pop
-# → commit these docs2 follow-ups
+On this box, a single-line source edit after `make clean`:
+
+| Before B plan | After B plan |
+| --- | --- |
+| 1583 docs invalidated per edit | 100–120 docs invalidated (only hand-written pages + their category neighbors) |
+| 60–120 min per rebuild | 10–20 min per rebuild |
+| `fill_translations.py` used to touch ~1,500 PO files each invocation | filler's save-only-on-hit patch + no packages/** means 0–4 PO files touched |
+
+`conf.py` edits still reset `env.pickle` entirely (Sphinx's
+`config_status` is conservative), so avoid conf.py tweaks during
+iteration. Brand-color tweaks go in `_static/` / `_landing/brand.css`
+or the theme_options light/dark CSS variables already in place.
+
+## 4. Commit history (docs2/phase2 tip)
+
 ```
-
-## 3. Open issue worked around during this session
-
-**MyST-parser + Sphinx i18n drops translations for `## 1. Title` numbered H2**.
-- Confirmed: `.mo` contains `"1. Scope" → "1. 適用範囲"`, `gettext.translation(...).gettext("1. Scope")` returns the JP correctly, yet Sphinx renders EN.
-- Non-numbered headings (`## Scope`) translate correctly.
-- Rosdoc2 labels ("Class Documentation" etc.) translate correctly.
-- **Workaround applied**: stripped the numeric `N. ` prefix from Terms / Privacy H2 headings in both docs-next EN source and legacy JP/EN site.
-- **Follow-up for root-cause fix**: reproduce minimally and file upstream issue (MyST-parser or sphinx-intl). Not urgent.
-
-After the strip + `make update-po`, `sphinx-intl update` inherited the old
-numbered translations as `fuzzy` attached to the new non-numbered msgids. The
-filler script at `docs-next/_scripts/fill_translations.py` was updated to
-**override fuzzy entries** and clear the flag.
-
-## 4. Translation dictionary layout
-
-- **D1 (hand-written pages)** — dicts in `docs-next/_scripts/fill_translations.py`
-  (INDEX_MD_DICT, OVERVIEW_MD_DICT, HISTORY_MD_DICT, PKG_INDEX_DICT,
-  VISUAL_SLAM_DICT) plus paragraph-aligned pairs from
-  `triorb-amr-docs/docs/{Terms,PrivacyPolicy}.md`.
-- **D2 (rosdoc2 common labels)** — ROSDOC2_LABEL_DICT in the same file; applied
-  to all `docs-next/locale/ja/LC_MESSAGES/packages/**/*.po`.
+daaf407 docs: rewrite root README around current docs-next pipeline
+b46840c docs2: B plan — drop rosdoc2 packages/** from i18n scope
+97ef73a docs2: refresh terms/privacy JA PO after H1 simplification
+59c419e docs2: simplify Terms/Privacy H1 titles (drop "(Draft)" / "（案）")
+287c64d docs2: add brand image assets + landing page chrome
+0b63be2 docs2: add Sphinx favicon + Lapis Lazuli brand palette
+033a70f docs2: refresh index + history JA PO files after content pass
+66e6553 docs2: retire v1.2.5-dev references + point past-versions list at v1.2.3/2
+5930dd4 docs2: add Phase 4 landing page + deploy-stage layout targets
+e640941 docs2: bump Sphinx release to v1.2.4 + exclude HANDOFF.md from build
+8ad6ba8 docs2: track generated packages/**/*.po (D2 filler outputs + hand-edited)  [superseded by b46840c]
+1895c96 docs2: fix visual_slam PO path + drop orphan _handwritten PO
+4461fa2 docs2: extend D2 label dict + skip no-op PO saves
+0d48153 add root CLAUDE.md with pipeline split guidance
+2c7180c docs2: add Phase 2 handoff doc + iterate visual-check targets
+1d14cc2 docs2: add translation filler + parallel Sphinx builds
+43635d6 docs2: strip numeric H2 prefixes from Terms/Privacy (MyST i18n workaround)
+e06cc6d docs2: group Package API index by subsystem category (pre-session)
+77ca04b docs2: add Sphinx + rosdoc2 + Furo docs pipeline (pre-session)
+```
 
 ## 5. Resume commands
 
@@ -83,83 +81,64 @@ filler script at `docs-next/_scripts/fill_translations.py` was updated to
 source /nvme/home/tobeta/TriOrb-AMR-Documents/.venv-docs2/bin/activate
 cd /nvme/home/tobeta/TriOrb-AMR-Documents/docs-next
 
-# (Optional) rerun rosdoc2 full set — ~30 min on this box:
-make rosdoc2             # → packages/_manifest.json, packages/<pkg>/…
-
-# Extract + fill + compile JA translations:
-make update-po           # runs gettext + sphinx-intl update + sphinx-intl build
+# Typical translation + rebuild loop (~10 min on this box)
 python3 _scripts/fill_translations.py
-sphinx-intl build -l ja  # recompile .mo after fill
+sphinx-intl build -l ja
+SPHINXOPTS="-j 1" make html-ja        # -j auto has crashed; use -j 1 or -j 4
 
-# Builds (parallel):
-make clean && make html     # EN, ~10 min
-make html-ja                # JA, ~8 min
-
-# Deploy-ready tree (strips .doctrees / _sources):
-make deploy-stage           # → _build/deploy/{en,ja}/
-
-# Preview:
-cd _build/html/en && python3 -m http.server 18100 &
-cd ../../html/ja && python3 -m http.server 18101 &
-
-# Visual check:
-python3 _shot.py            # → _shots/*.png
+# Full-site local preview
+make deploy-stage-local               # landing + v1.2.4/{en,ja}/ + v1.2.2/3 from gh-pages
+cd _build/deploy && python3 -m http.server 18000 &
+# Open http://localhost:18000/
 ```
 
-## 6. Known state of the last run (before handoff)
+## 6. Still pending / next decisions
 
-- `make html` (EN): last succeeded with **451 warnings** (cosmetic cross-package
-  exhale label / C declaration collisions; suppressed where possible).
-- `make html-ja` (JA): last succeeded with **568 warnings** (same pattern plus
-  a few fuzzy-translation notices cleared after the fill fix).
-- Deploy tree size: **EN 651 MB + JA 652 MB ≈ 1.3 GB total** after stripping.
-- Package materialized count: **58 rosdoc2 + 1 hand-written (Visual SLAM) = 59**.
+1. **CI gh-pages deploy step**: add to `.github/workflows/docs2.yml` as
+   `workflow_dispatch` first, then enable automatic deploy on
+   `docs2/phase2` push after a smoke run.
+2. **Cutover announcement**: inform stakeholders before flipping
+   `/v1.2.4/` on gh-pages (the legacy mike `/v1.2.4/` gets replaced).
+3. **Sphinx logo**: we have `image/TriOrb_Logo_White-Blue_with_concept.svg`;
+   not yet wired via `html_logo`. Adding it would trigger a full
+   rebuild — bundle it with the next content batch.
+4. **v1.2.4 release work on `master`**: separate session. Submodule
+   bumps (`TriOrb-AMR-Package @ 9cb35f1d`, `triorb-core @ cb94e5c`),
+   `gather_md.py` regen, `triorb-amr-docs/docs/TriOrb-AMR-Package/**`
+   updates.
+5. **v1.2.4 release notes → history.md**: currently the summary pulls
+   from `1.2.4.2` release notes; keep in sync as new patch releases
+   land.
 
-## 7. Next tasks (prioritized)
-
-1. **Screenshot-verify the latest JA build**. Last shots in `_shots/` reflect
-   the pre-strip state — regenerate before committing. (Preview servers were
-   started on 18101 and killed mid-check.)
-2. **Commit docs2 follow-ups** to `docs2/phase2`:
-   - Makefile parallelism + `sphinx-intl build` hook
-   - `_scripts/fill_translations.py` (new file + fuzzy-override fix)
-   - Terms / Privacy (+ legacy .md) heading strip
-   - Updated PO files for terms / privacy
-3. **Handle v1.2.4 work on master** (separate session).
-4. **CI smoke run**: push `docs2/phase2` to remote and confirm
-   `.github/workflows/docs2.yml` fires.
-5. **Phase 3 decision points** (memory: `project_docs2_migration.md`):
-   - rosdoc2 package README translation policy (D3 scope)
-   - Cross-package exhale label collision prefixing
-   - Package-README per-page navigation size (still ~420 KB/page)
-
-## 8. Where things live
+## 7. Where things live
 
 ```
 docs-next/
 ├── HANDOFF.md                               ← this file
 ├── CI.md                                    ← CI design notes
-├── README.md                                ← developer setup
-├── conf.py                                  ← Sphinx + Furo + breathe + i18n
-├── Makefile                                 ← html / html-ja / gettext / update-po / rosdoc2 / rosdoc2-image / deploy-stage
-├── index.md                                 ← site root (EN source)
+├── README.md                                ← current docs-next quickstart
+├── conf.py                                  ← Sphinx config (v1.2.4, favicon, Lapis brand)
+├── Makefile                                 ← html, html-ja, gettext, update-po, rosdoc2, deploy-stage{,-local}, serve{,-deploy}
+├── index.md                                 ← site root (MyST)
 ├── guides/{overview,history,terms,privacy}.md
-├── _handwritten/packages/
-│   ├── _categories.json                     ← handwritten → category mapping
-│   └── visual_slam.md                       ← external-component stub
-├── _templates/sidebar/language-switcher.html
-├── _scripts/fill_translations.py            ← D1+D2 PO filler
-├── docker/
-│   ├── Dockerfile.rosdoc2                   ← ROS 2 Humble + rosdoc2
-│   └── run_rosdoc2.sh                       ← auto-discover + colcon + rosdoc2 + host post-process
-├── locale/ja/LC_MESSAGES/**.po              ← JA translations
-├── packages/                                ← gitignored; rebuilt by `make rosdoc2`
-│   ├── _manifest.json
+├── packages/                                ← rosdoc2 output (gitignored except .md/.po below)
 │   ├── index.md                             ← category-grouped toctree
-│   └── <pkg_name>/…
-├── _rosdoc2_out/  _rosdoc2_sources/         ← gitignored intermediates
-└── _build/  _shots/  .venv-docs2/           ← gitignored
-.github/workflows/docs2.yml                  ← CI: build + artefact (no gh-pages yet)
+│   └── visual_slam.md                       ← external-component hand-written stub
+├── _handwritten/packages/visual_slam.md     ← authoring source (copied into packages/)
+├── _landing/                                ← deploy-stage landing
+│   ├── index.html                           ← bilingual version picker template
+│   ├── favicon.png, TriOrb_concept.webp
+│   └── brand.css                            ← mike-style overlay (injected into every versioned page at deploy-stage)
+├── _static/                                 ← Sphinx static (favicon, concept)
+├── _scripts/
+│   ├── fill_translations.py                 ← D1 PO filler (7 hand-written pages)
+│   └── strip_readme_anchors.py              ← post-process: remove rosdoc2 README anchors from packages/index.html
+├── _templates/sidebar/language-switcher.html
+├── docker/                                  ← rosdoc2 Docker image + run script
+└── locale/ja/LC_MESSAGES/                   ← JA PO/MO (D1 only: guides, index, packages/{index,visual_slam})
+.github/workflows/
+├── docs2.yml                                ← build + artifact; gh-pages deploy step pending
+└── jekyll-gh-pages2.yml                     ← stub, disabled
 ```
 
 Memory index: `~/.claude/projects/-nvme-home-tobeta-TriOrb-AMR-Documents/memory/MEMORY.md`.
