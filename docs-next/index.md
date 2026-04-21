@@ -33,8 +33,9 @@ guides/privacy
 
 ## Past versions
 
-Documentation for v1.2.4 and earlier is available in the legacy MkDocs archive.
+Documentation for v1.2.3 and earlier is available in the legacy MkDocs archive.
 
-- [v1.2.4 (legacy site)](../v1.2.4/)
-- [v1.2.3 (legacy site)](../v1.2.3/)
-- [v1.2.2 (legacy site)](../v1.2.2/)
+- [v1.2.3 (legacy site)](../../v1.2.3/)
+- [v1.2.2 (legacy site)](../../v1.2.2/)
+
+See the [top-level version picker](../../) for a cross-version landing page.

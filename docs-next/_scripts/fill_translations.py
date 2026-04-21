@@ -115,11 +115,12 @@ INDEX_MD_DICT = {
         "ソースコード / Issue: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)",
     "Contact: `info@triorb.co.jp`": "お問い合わせ: `info@triorb.co.jp`",
     "Past versions": "過去バージョン",
-    "Documentation for v1.2.4 and earlier is available in the legacy MkDocs archive.":
-        "v1.2.4 以前のドキュメントは旧サイト (MkDocs) のアーカイブをご参照ください。",
-    "[v1.2.4 (legacy site)](../v1.2.4/)": "[v1.2.4 (旧サイト)](../v1.2.4/)",
-    "[v1.2.3 (legacy site)](../v1.2.3/)": "[v1.2.3 (旧サイト)](../v1.2.3/)",
-    "[v1.2.2 (legacy site)](../v1.2.2/)": "[v1.2.2 (旧サイト)](../v1.2.2/)",
+    "Documentation for v1.2.3 and earlier is available in the legacy MkDocs archive.":
+        "v1.2.3 以前のドキュメントは旧サイト (MkDocs) のアーカイブをご参照ください。",
+    "[v1.2.3 (legacy site)](../../v1.2.3/)": "[v1.2.3 (旧サイト)](../../v1.2.3/)",
+    "[v1.2.2 (legacy site)](../../v1.2.2/)": "[v1.2.2 (旧サイト)](../../v1.2.2/)",
+    "See the [top-level version picker](../../) for a cross-version landing page.":
+        "版の横断トップは [バージョンピッカー](../../) をご利用ください。",
 }
 
 OVERVIEW_MD_DICT = {
@@ -146,7 +147,9 @@ OVERVIEW_MD_DICT = {
 
 HISTORY_MD_DICT = {
     "Changelog": "変更履歴",
-    "v1.2.5 (in progress)": "v1.2.5 (作業中)",
+    "v1.2.4": "v1.2.4",
+    "The detailed per-release changelog is being migrated from `submodules/TriOrb-AMR-Package/History.md` into this page. Earlier entries still live on the legacy MkDocs archive ([v1.2.3](../../v1.2.3/TriOrb-AMR-Package/History/), [v1.2.2](../../v1.2.2/TriOrb-AMR-Package/History/)).":
+        "リリースごとの詳細な変更履歴を `submodules/TriOrb-AMR-Package/History.md` から本ページへ段階的に移行中です。それ以前のエントリは旧サイト（[v1.2.3](../../v1.2.3/TriOrb-AMR-Package/History/), [v1.2.2](../../v1.2.2/TriOrb-AMR-Package/History/)）をご参照ください。",
     "From this release the documentation stack moves to Sphinx + rosdoc2 + Furo. English is the source of truth; the Japanese site is produced from PO translations. Use the language switcher in the sidebar to swap between Japanese and English.":
         "本バージョンからドキュメント基盤を Sphinx + rosdoc2 + Furo に移行しました。英語を正となるソースとし、日本語版は PO 翻訳から生成しています。サイドバー上部の言語切替から日英を選択してください。",
     "Earlier changes are available in the legacy site linked above.":
