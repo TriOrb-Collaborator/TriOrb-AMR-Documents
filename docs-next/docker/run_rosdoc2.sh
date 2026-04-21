@@ -185,11 +185,28 @@ CATEGORY_ORDER = [
     "Sensor I/O",
     "Safety Sensors",
     "OS / Infrastructure",
-    "Fleet",
-    "Service",
     "Interfaces",
     "Other",
 ]
+
+# Packages excluded from the public API docs. Mirrors the master-side
+# gather_md.py EXCLUDE_KWDS so docs-next and the legacy MkDocs navigation
+# stay aligned. Matched against `pkg_rel` (the package path under the
+# submodule root); substring match.
+EXCLUDE_PREFIXES = (
+    "pkgs/triorb_navi_bridge",       # leaf pkg — not public API
+    "pkgs/triorb_navigation_pkgs/",  # internal controller / planner modules
+    "pkgs/triorb_fleet/",            # fleet management, internal
+    "pkgs/triorb_service/",          # infra services, internal
+    "pkgs/rosbridge_suite/",
+    "pkgs-collab/",                  # collaborative API — separate site, not exposed here
+    "pkgs/stella_vslam_ros/",        # visual_slam page is the hand-written replacement
+    "pkgs/triorb_drive/path_planning_server",
+)
+
+
+def is_excluded(pkg_rel: str) -> bool:
+    return any(pkg_rel.startswith(p) for p in EXCLUDE_PREFIXES)
 
 
 def categorize(pkg_rel: str) -> str:
@@ -239,6 +256,10 @@ if manifest_path.exists():
 project_re = re.compile(r":project:\s+(.+?)\s*$", re.MULTILINE)
 
 for pkg_rel, pkg_name in pairs:
+    if is_excluded(pkg_rel):
+        print(f"SKIP {pkg_name}: excluded by EXCLUDE_PREFIXES rule ({pkg_rel})")
+        manifest.pop(pkg_name, None)
+        continue
     src = sources_root / pkg_name
     if not src.exists():
         print(f"SKIP {pkg_name}: RST sources missing at {src}", file=sys.stderr)
@@ -355,7 +376,7 @@ for cat in CATEGORY_ORDER:
     if not entries:
         continue
     lines.extend([f"## {cat}", ""])
-    lines.extend(["```{toctree}", ":maxdepth: 1", ""])
+    lines.extend(["```{toctree}", ":maxdepth: 1", ":titlesonly:", ""])
     for name, entry in sorted(entries, key=lambda kv: kv[0]):
         suffix = "" if entry.get("handwritten") else "/index"
         lines.append(f"{name}{suffix}")
@@ -365,7 +386,7 @@ for cat in CATEGORY_ORDER:
 extras = [n for n in by_cat if n not in CATEGORY_ORDER and by_cat[n]]
 if extras:
     lines.extend(["## Other", ""])
-    lines.extend(["```{toctree}", ":maxdepth: 1", ""])
+    lines.extend(["```{toctree}", ":maxdepth: 1", ":titlesonly:", ""])
     for cat in extras:
         for name, entry in sorted(by_cat[cat], key=lambda kv: kv[0]):
             suffix = "" if entry.get("handwritten") else "/index"
