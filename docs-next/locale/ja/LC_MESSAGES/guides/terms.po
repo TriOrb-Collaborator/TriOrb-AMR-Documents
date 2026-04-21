@@ -9,20 +9,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TriOrb BASE 開発ガイド v1.2.5-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-20 20:30+0900\n"
+"POT-Creation-Date: 2026-04-21 14:16+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: ja <LL@li.org>\n"
 "Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../guides/terms.md:1
 msgid "TriOrb BASE Developer Guide Terms of Use (Draft)"
-msgstr "TriOrb BASE 開発ガイド 利用規約（案）"
+msgstr ""
 
 #: ../../guides/terms.md:3
 msgid "Effective date: March 27, 2026"
@@ -30,11 +30,11 @@ msgstr "制定日: 2026年3月27日"
 
 #: ../../guides/terms.md:5
 msgid ""
-"This document is a draft prepared based on the current public content of the"
-" `TriOrb-AMR-Documents` repository and the `TriOrb BASE Developer Guide`. "
-"Before production use, it should be reviewed and adjusted to match TriOrb "
-"Inc.'s actual business operations, contract structure, sales model, and "
-"legal review."
+"This document is a draft prepared based on the current public content of "
+"the `TriOrb-AMR-Documents` repository and the `TriOrb BASE Developer "
+"Guide`. Before production use, it should be reviewed and adjusted to "
+"match TriOrb Inc.'s actual business operations, contract structure, sales"
+" model, and legal review."
 msgstr ""
 
 #: ../../guides/terms.md:7
@@ -44,10 +44,9 @@ msgstr "適用範囲"
 #: ../../guides/terms.md:9
 msgid ""
 "These Terms of Use (\"Terms\") apply to the use of the following public "
-"information and related pages provided or managed by TriOrb Inc. (\"we\", "
-"\"us\", or \"our\"):"
-msgstr ""
-"本利用規約（以下「本規約」といいます。）は、株式会社TriOrb（以下「当社」といいます。）が提供または管理する以下の公開情報および関連ページの利用に適用されます。"
+"information and related pages provided or managed by TriOrb Inc. (\"we\","
+" \"us\", or \"our\"):"
+msgstr "本利用規約（以下「本規約」といいます。）は、株式会社TriOrb（以下「当社」といいます。）が提供または管理する以下の公開情報および関連ページの利用に適用されます。"
 
 #: ../../guides/terms.md:11
 msgid "The documentation site published as the `TriOrb BASE Developer Guide`"
@@ -55,8 +54,8 @@ msgstr ""
 
 #: ../../guides/terms.md:12
 msgid ""
-"The `TriOrb-AMR-Documents` repository and related GitHub pages introduced by"
-" us"
+"The `TriOrb-AMR-Documents` repository and related GitHub pages introduced"
+" by us"
 msgstr ""
 
 #: ../../guides/terms.md:13
@@ -84,21 +83,20 @@ msgstr "本サイトの目的"
 #: ../../guides/terms.md:20
 msgid ""
 "This site is intended to provide developer-facing information, API "
-"specifications, sample code, reference materials, and related documentation "
-"for TriOrb BASE and associated autonomous mobility, collaborative mobility, "
-"and control software."
+"specifications, sample code, reference materials, and related "
+"documentation for TriOrb BASE and associated autonomous mobility, "
+"collaborative mobility, and control software."
 msgstr ""
 "本サイトは、TriOrb BASE および関連する自律移動・協調移動・制御用ソフトウェアに関する開発者向け情報、API "
 "仕様、サンプルコード、参照資料等を提供することを目的としています。"
 
 #: ../../guides/terms.md:22
 msgid ""
-"The information on this site is provided as reference material to support "
-"evaluation, development, verification, and operational preparation. It does "
-"not by itself constitute a warranty, design service, maintenance agreement, "
-"or safety guarantee for any individual project."
-msgstr ""
-"本サイト上の情報は、利用者による評価、開発、検証および運用準備を支援するための参考情報であり、個別案件に対する保証、設計受託、保守契約または安全性保証を当然に構成するものではありません。"
+"The information on this site is provided as reference material to support"
+" evaluation, development, verification, and operational preparation. It "
+"does not by itself constitute a warranty, design service, maintenance "
+"agreement, or safety guarantee for any individual project."
+msgstr "本サイト上の情報は、利用者による評価、開発、検証および運用準備を支援するための参考情報であり、個別案件に対する保証、設計受託、保守契約または安全性保証を当然に構成するものではありません。"
 
 #: ../../guides/terms.md:24
 msgid "Agreement to the Terms"
@@ -106,8 +104,8 @@ msgstr "規約への同意"
 
 #: ../../guides/terms.md:26
 msgid ""
-"By using this site, you are deemed to have agreed to these Terms. If you do "
-"not agree, you must stop using this site."
+"By using this site, you are deemed to have agreed to these Terms. If you "
+"do not agree, you must stop using this site."
 msgstr "利用者は、本サイトを利用した時点で、本規約に同意したものとみなされます。本規約に同意できない場合は、本サイトの利用を中止してください。"
 
 #: ../../guides/terms.md:28
@@ -117,8 +115,8 @@ msgstr "利用条件"
 #: ../../guides/terms.md:30
 msgid ""
 "You must use this site in compliance with applicable laws, these Terms, "
-"manuals separately provided by us, safety instructions, and any contractual "
-"conditions applicable to third parties."
+"manuals separately provided by us, safety instructions, and any "
+"contractual conditions applicable to third parties."
 msgstr "利用者は、法令、本規約、当社が別途提示するマニュアル、安全上の注意および第三者との契約条件を遵守した上で、本サイトを利用するものとします。"
 
 #: ../../guides/terms.md:32
@@ -127,16 +125,16 @@ msgstr "利用者は、以下の事項を理解した上で本サイトを利用
 
 #: ../../guides/terms.md:34
 msgid ""
-"Use of robots, ECUs, ROS 2 nodes, Web APIs, and related software requires "
-"separate hardware, network setup, operational procedures, and safety "
+"Use of robots, ECUs, ROS 2 nodes, Web APIs, and related software requires"
+" separate hardware, network setup, operational procedures, and safety "
 "management"
 msgstr ""
 
 #: ../../guides/terms.md:35
 msgid ""
 "Any application of published API specifications or sample code to real "
-"hardware requires prior verification, hazard assessment, fail-safe design, "
-"and compliance checks under applicable laws and regulations"
+"hardware requires prior verification, hazard assessment, fail-safe "
+"design, and compliance checks under applicable laws and regulations"
 msgstr ""
 
 #: ../../guides/terms.md:36
@@ -160,8 +158,8 @@ msgstr ""
 
 #: ../../guides/terms.md:43
 msgid ""
-"Any act that infringes the rights, interests, reputation, or credibility of "
-"us or any third party"
+"Any act that infringes the rights, interests, reputation, or credibility "
+"of us or any third party"
 msgstr ""
 
 #: ../../guides/terms.md:44
@@ -178,8 +176,9 @@ msgstr ""
 
 #: ../../guides/terms.md:46
 msgid ""
-"Unauthorized acquisition, use, or disclosure of information, repositories, "
-"credentials, or customer environment data that we treat as non-public"
+"Unauthorized acquisition, use, or disclosure of information, "
+"repositories, credentials, or customer environment data that we treat as "
+"non-public"
 msgstr ""
 
 #: ../../guides/terms.md:47
@@ -190,9 +189,9 @@ msgstr ""
 
 #: ../../guides/terms.md:48
 msgid ""
-"Alteration, redistribution, or presentation of site content in a misleading "
-"way, including suggesting that modified content is official information from"
-" us"
+"Alteration, redistribution, or presentation of site content in a "
+"misleading way, including suggesting that modified content is official "
+"information from us"
 msgstr ""
 
 #: ../../guides/terms.md:49
@@ -208,17 +207,17 @@ msgstr "知的財産権"
 
 #: ../../guides/terms.md:53
 msgid ""
-"All rights in the documents, images, structure, software, trademarks, logos,"
-" and other content on this site and in this repository belong to us or the "
-"relevant rights holders."
+"All rights in the documents, images, structure, software, trademarks, "
+"logos, and other content on this site and in this repository belong to us"
+" or the relevant rights holders."
 msgstr "本サイトおよび本リポジトリに含まれる文書、画像、構成、ソフトウェア、商標、ロゴその他の権利は、当社または正当な権利者に帰属します。"
 
 #: ../../guides/terms.md:55
 msgid ""
-"Where separate license notices are attached to source files, documentation "
-"source, or other deliverables in this repository, those notices take "
-"precedence. At present, an Apache License 2.0 file exists at the root of "
-"this repository, and that license applies within its scope."
+"Where separate license notices are attached to source files, "
+"documentation source, or other deliverables in this repository, those "
+"notices take precedence. At present, an Apache License 2.0 file exists at"
+" the root of this repository, and that license applies within its scope."
 msgstr ""
 "本リポジトリのソースファイル、ドキュメント原稿その他の成果物について、別途ライセンス表示がある場合は当該表示が優先します。現時点では、本リポジトリのルートに"
 " Apache License 2.0 が置かれており、当該ライセンスが適用される範囲ではその条件に従って利用できます。"
@@ -229,14 +228,14 @@ msgstr "ただし、以下については本リポジトリのオープンソー
 
 #: ../../guides/terms.md:59
 msgid ""
-"The `TriOrb` and `TriOrb BASE` names, our logos, and other trademark-related"
-" elements"
+"The `TriOrb` and `TriOrb BASE` names, our logos, and other trademark-"
+"related elements"
 msgstr ""
 
 #: ../../guides/terms.md:60
 msgid ""
-"Materials published on external sites such as PDFs, Notion pages, Box pages,"
-" and GitHub Pages"
+"Materials published on external sites such as PDFs, Notion pages, Box "
+"pages, and GitHub Pages"
 msgstr ""
 
 #: ../../guides/terms.md:61
@@ -249,30 +248,32 @@ msgstr "投稿コンテンツ"
 
 #: ../../guides/terms.md:65
 msgid ""
-"Content posted by users to this repository or related pages through GitHub "
-"Issues, Discussions, Pull Requests, or similar means may be visible to the "
-"public. Do not post personal information, confidential information, or "
-"third-party information that you do not wish to disclose publicly."
+"Content posted by users to this repository or related pages through "
+"GitHub Issues, Discussions, Pull Requests, or similar means may be "
+"visible to the public. Do not post personal information, confidential "
+"information, or third-party information that you do not wish to disclose "
+"publicly."
 msgstr ""
 "利用者が GitHub Issue、Discussion、Pull Request "
 "その他の方法で本リポジトリまたは関連ページに投稿した内容は、公開状態で閲覧されることがあります。公開したくない個人情報、機密情報または第三者情報は投稿しないでください。"
 
 #: ../../guides/terms.md:67
 msgid ""
-"Unless otherwise agreed, proposals, fixes, or contributions intentionally "
-"submitted for inclusion in this repository will be handled under the license"
-" terms applicable to this repository and under GitHub's terms."
+"Unless otherwise agreed, proposals, fixes, or contributions intentionally"
+" submitted for inclusion in this repository will be handled under the "
+"license terms applicable to this repository and under GitHub's terms."
 msgstr ""
-"利用者が本リポジトリへの取り込みを意図して行う提案、修正または貢献は、別段の合意がない限り、本リポジトリに適用されるライセンス条件および GitHub "
-"の利用条件に従って取り扱われるものとします。"
+"利用者が本リポジトリへの取り込みを意図して行う提案、修正または貢献は、別段の合意がない限り、本リポジトリに適用されるライセンス条件および "
+"GitHub の利用条件に従って取り扱われるものとします。"
 
 #: ../../guides/terms.md:69
 msgid ""
-"For inquiries, requests, error reports, or improvement proposals submitted "
-"through future non-public channels such as a ChatGPT App provided by us, we "
-"may remove directly identifying information where reasonably possible and "
-"then use the content in anonymized or aggregated form to improve TriOrb "
-"products, related software, documentation, and support quality."
+"For inquiries, requests, error reports, or improvement proposals "
+"submitted through future non-public channels such as a ChatGPT App "
+"provided by us, we may remove directly identifying information where "
+"reasonably possible and then use the content in anonymized or aggregated "
+"form to improve TriOrb products, related software, documentation, and "
+"support quality."
 msgstr ""
 "当社が将来提供する ChatGPT App "
 "等の非公開チャネルに利用者が入力した問い合わせ、要望、エラー報告または改善提案について、当社は、個人を直接特定できる情報を可能な範囲で除去、匿名化または統計化した上で、TriOrb"
@@ -280,11 +281,11 @@ msgstr ""
 
 #: ../../guides/terms.md:71
 msgid ""
-"By contrast, posts to GitHub Issues, Discussions, Pull Requests, and similar"
-" channels are public. The poster's GitHub account name and other public "
-"profile information may be visible to third parties, so anonymity is "
-"limited. We may also use those public posts, within the scope in which they "
-"were made public, to improve TriOrb products, related software, "
+"By contrast, posts to GitHub Issues, Discussions, Pull Requests, and "
+"similar channels are public. The poster's GitHub account name and other "
+"public profile information may be visible to third parties, so anonymity "
+"is limited. We may also use those public posts, within the scope in which"
+" they were made public, to improve TriOrb products, related software, "
 "documentation, and support quality."
 msgstr ""
 "一方、GitHub Issue、Discussions、Pull Request 等への投稿は公開情報であり、投稿者の GitHub "
@@ -312,31 +313,31 @@ msgstr "免責"
 
 #: ../../guides/terms.md:79
 msgid ""
-"We do not guarantee the accuracy, completeness, usefulness, fitness for a "
-"particular purpose, timeliness, continuity, or safety of the information "
-"provided on this site."
+"We do not guarantee the accuracy, completeness, usefulness, fitness for a"
+" particular purpose, timeliness, continuity, or safety of the information"
+" provided on this site."
 msgstr "当社は、本サイトに掲載する情報について、正確性、完全性、有用性、特定目的適合性、最新性、継続性または安全性を保証しません。"
 
 #: ../../guides/terms.md:81
 msgid ""
-"In particular, the use of robot control functions, path generation, sensor "
-"processing, ECU communications, Web API operations, or sample code may "
-"result in physical damage, service interruption, malfunction, or harm to "
-"third parties. You are solely responsible for your own verification, "
-"monitoring, safety checks, and backup measures at your own cost and risk."
+"In particular, the use of robot control functions, path generation, "
+"sensor processing, ECU communications, Web API operations, or sample code"
+" may result in physical damage, service interruption, malfunction, or "
+"harm to third parties. You are solely responsible for your own "
+"verification, monitoring, safety checks, and backup measures at your own "
+"cost and risk."
 msgstr ""
 "特に、ロボット制御、経路生成、センサ処理、ECU 通信、WebAPI "
 "操作またはサンプルコードの利用は、物理的損害、停止、誤動作または第三者被害につながる可能性があります。利用者は、自己の責任と費用において検証、監視、安全確認および必要なバックアップ手段を実施してください。"
 
 #: ../../guides/terms.md:83
 msgid ""
-"To the fullest extent permitted by law, we are not liable for any damages "
-"suffered by you or any third party in connection with use of, inability to "
-"use, reliance on information from, suspension of external services related "
-"to, broken links on, or data loss related to this site, unless caused by our"
-" willful misconduct or gross negligence."
-msgstr ""
-"当社は、本サイトの利用または利用不能、本サイト上の情報に基づく判断、外部サービスの停止、リンク切れ、データ消失その他本サイトに関連して利用者または第三者に生じた損害について、当社に故意または重過失がある場合を除き、一切の責任を負いません。"
+"To the fullest extent permitted by law, we are not liable for any damages"
+" suffered by you or any third party in connection with use of, inability "
+"to use, reliance on information from, suspension of external services "
+"related to, broken links on, or data loss related to this site, unless "
+"caused by our willful misconduct or gross negligence."
+msgstr "当社は、本サイトの利用または利用不能、本サイト上の情報に基づく判断、外部サービスの停止、リンク切れ、データ消失その他本サイトに関連して利用者または第三者に生じた損害について、当社に故意または重過失がある場合を除き、一切の責任を負いません。"
 
 #: ../../guides/terms.md:85
 msgid "Changes and Suspension"
@@ -344,11 +345,10 @@ msgstr "変更および提供中断"
 
 #: ../../guides/terms.md:87
 msgid ""
-"We may change the content, structure, URLs, materials, these Terms, or the "
-"method of providing this site, or suspend or terminate all or part of this "
-"site, without prior notice to users."
-msgstr ""
-"当社は、利用者への事前通知なく、本サイトの内容、構成、URL、掲載資料、本規約または提供方法を変更し、または本サイトの全部もしくは一部の提供を中断、終了できるものとします。"
+"We may change the content, structure, URLs, materials, these Terms, or "
+"the method of providing this site, or suspend or terminate all or part of"
+" this site, without prior notice to users."
+msgstr "当社は、利用者への事前通知なく、本サイトの内容、構成、URL、掲載資料、本規約または提供方法を変更し、または本サイトの全部もしくは一部の提供を中断、終了できるものとします。"
 
 #: ../../guides/terms.md:89
 msgid "Governing Law and Jurisdiction"
@@ -356,12 +356,11 @@ msgstr "準拠法および管轄"
 
 #: ../../guides/terms.md:91
 msgid ""
-"These Terms are governed by the laws of Japan. Any dispute between us and a "
-"user in relation to these Terms or this site shall be subject to the "
-"exclusive jurisdiction of the district court having jurisdiction over our "
-"head office as the court of first instance."
-msgstr ""
-"本規約は日本法に準拠します。本規約または本サイトに関して当社と利用者との間で紛争が生じた場合には、当社本店所在地を管轄する地方裁判所を第一審の専属的合意管轄裁判所とします。"
+"These Terms are governed by the laws of Japan. Any dispute between us and"
+" a user in relation to these Terms or this site shall be subject to the "
+"exclusive jurisdiction of the district court having jurisdiction over our"
+" head office as the court of first instance."
+msgstr "本規約は日本法に準拠します。本規約または本サイトに関して当社と利用者との間で紛争が生じた場合には、当社本店所在地を管轄する地方裁判所を第一審の専属的合意管轄裁判所とします。"
 
 #: ../../guides/terms.md:93
 msgid "Contact"
@@ -374,9 +373,10 @@ msgstr "本規約に関する問い合わせ先は、`info@triorb.co.jp` とし�
 #: ../../guides/terms.md:97
 msgid ""
 "For general API questions and bug reports, users may use GitHub Issues, "
-"GitHub Discussions, or future channels such as a ChatGPT App provided by us."
-" However, if a matter cannot be resolved through a ChatGPT App or similar "
-"channel, we may direct the user to GitHub Issues or GitHub Discussions."
+"GitHub Discussions, or future channels such as a ChatGPT App provided by "
+"us. However, if a matter cannot be resolved through a ChatGPT App or "
+"similar channel, we may direct the user to GitHub Issues or GitHub "
+"Discussions."
 msgstr ""
 "API 仕様や不具合に関する一般的な問い合わせについては、当社が案内する GitHub Issue、GitHub "
 "Discussions、または将来提供する ChatGPT App 等の窓口を利用できます。ただし、ChatGPT App "
@@ -384,8 +384,8 @@ msgstr ""
 
 #: ../../guides/terms.md:99
 msgid ""
-"GitHub Issues and GitHub Discussions are public channels, and poster IDs are"
-" publicly visible, so anonymity is limited. If your inquiry contains "
+"GitHub Issues and GitHub Discussions are public channels, and poster IDs "
+"are publicly visible, so anonymity is limited. If your inquiry contains "
 "personal information or confidential information, or if you prefer a non-"
 "public contact route, do not use a public post and instead contact "
 "`info@triorb.co.jp`."
@@ -398,7 +398,10 @@ msgstr ""
 #~ msgstr "利用規約"
 
 #~ msgid ""
-#~ "PoC stub. The full terms from `triorb-amr-docs/docs/Terms.md` will be "
-#~ "migrated during Phase 2. Japanese text will be provided via "
+#~ "PoC stub. The full terms from "
+#~ "`triorb-amr-docs/docs/Terms.md` will be "
+#~ "migrated during Phase 2. Japanese text"
+#~ " will be provided via "
 #~ "`locale/ja/LC_MESSAGES/`."
 #~ msgstr ""
+
