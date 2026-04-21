@@ -7,7 +7,7 @@ import os
 project = "TriOrb BASE Developer Guide"
 author = "TriOrb Inc."
 copyright = "2025-2026, TriOrb Inc."
-release = os.environ.get("DOCS_RELEASE", "v1.2.5-dev")
+release = os.environ.get("DOCS_RELEASE", "v1.2.4")
 version = release
 
 extensions = [
@@ -75,6 +75,7 @@ exclude_patterns = [
     ".venv",
     "README.md",
     "CI.md",
+    "HANDOFF.md",
     "_rosdoc2_out",
     "_rosdoc2_sources",
     "_handwritten",
