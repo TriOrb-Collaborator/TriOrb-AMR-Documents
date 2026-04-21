@@ -83,6 +83,10 @@ deploy-stage:
 	sed -e "s|{{LAST_UPDATED_ISO}}|$$LAST_UPDATED_ISO|g" \
 	    -e "s|{{LAST_UPDATED}}|$$LAST_UPDATED|g" \
 	    _landing/index.html > "$(BUILDDIR)/deploy/index.html"
+	@# Landing sibling assets (favicon, hero image). Any non-index.html file
+	@# under _landing/ is copied verbatim.
+	@find _landing -maxdepth 1 -type f ! -name index.html \
+	    -exec cp {} "$(BUILDDIR)/deploy/" \;
 	@echo "deploy-ready tree: $(BUILDDIR)/deploy/"
 	@du -sh "$(BUILDDIR)/deploy"/* 2>/dev/null | sort -h
 
