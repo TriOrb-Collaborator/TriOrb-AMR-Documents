@@ -112,11 +112,19 @@ INDEX_MD_DICT = {
         "TriOrb BASE の開発者向けドキュメントです。自律移動パッケージの ROS 2 API リファレンス、上位側制御 ECU 通信ライブラリ、運用ガイド、変更履歴をまとめています。",
     "User Guide": "ユーザーガイド",
     "Package API (rosdoc2)": "パッケージ API (rosdoc2)",
+    "WebAPI": "WebAPI",
+    "WebAPI (external site)": "WebAPI（別サイト）",
+    "MCP": "MCP",
+    "MCP server (external)": "MCP サーバー（別サイト）",
     "Legal": "法務",
     "Support": "サポート",
     "Source / Issues: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)":
         "ソースコード / Issue: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)",
     "Contact: `info@triorb.co.jp`": "お問い合わせ: `info@triorb.co.jp`",
+    "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) (separate site)":
+        "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)（別サイト）",
+    "[MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model Context Protocol endpoint, usable from any MCP-capable AI client.":
+        "[MCP サーバー](https://mcp.triorb-cloud.com/mcp/) — TriOrb 提供の Model Context Protocol エンドポイント。MCP 対応の AI クライアントから誰でもご利用いただけます。",
     "Past versions": "過去バージョン",
     "Documentation for v1.2.3 and earlier is available in the legacy MkDocs archive.":
         "v1.2.3 以前のドキュメントは旧サイト (MkDocs) のアーカイブをご参照ください。",
@@ -128,15 +136,17 @@ INDEX_MD_DICT = {
 
 OVERVIEW_MD_DICT = {
     "Product Overview": "製品概要",
-    "TriOrb BASE is an autonomous mobile robot (AMR) platform with a novel **ball-drive omnidirectional motion mechanism** — three spheres and three motors — that addresses the \"external disturbance handling, positioning accuracy, and load capacity\" trade-offs that classical omnidirectional platforms have struggled with.":
-        "TriOrb BASE は、**3 つの球体と 3 つのモータで構成される球駆動式の全方向移動機構**を備えた自律移動ロボット (AMR) プラットフォームです。従来の全方向移動プラットフォームでは両立が難しかった「外乱走破性・位置決め精度・耐荷重」を同時に成立させる独自構造です。",
-    "Representative specs: standard φ100 sphere (φ140 / φ200 builds available), load up to ~300 kg (customizable up to 800 kg), runtime ~3.5 h with the optional battery, and mobility across ~45 mm gaps, ~10 mm steps and ~9° slopes. Refer to the TriOrb website for the latest hardware figures.":
-        "代表仕様: 標準球径 φ100（φ140 / φ200 の製作実績あり）、運搬能力 標準 300 kg（カスタマイズで最大 800 kg）、連続稼働 約 3.5 時間（オプションバッテリー搭載時）、溝 45 mm / 段差 10 mm / 勾配 9° 程度の走破性。最新のハードウェア諸元は TriOrb コーポレートサイトをご参照ください。",
+    "TriOrb BASE is an autonomous mobile robot (AMR) platform built around a novel **ball-drive omnidirectional motion mechanism** that addresses the \"external disturbance handling, positioning accuracy, and load capacity\" trade-offs that classical omnidirectional platforms have struggled with.":
+        "TriOrb BASE は、独自の**球体駆動式全方向移動機構**を搭載した自律移動ロボット (AMR) プラットフォームです。従来の全方向移動プラットフォームでは両立が難しかった「外乱走破性・位置決め精度・耐荷重」を同時に成立させる独自構造です。",
+    "Representative specs: standard φ100 sphere, load up to ~300 kg. Refer to the TriOrb website for the latest hardware figures.":
+        "代表仕様: 標準球径 φ100、運搬能力 約 300 kg。最新のハードウェア諸元は TriOrb コーポレートサイトをご参照ください。",
     "This site provides:": "本サイトでは以下の情報を提供します:",
     "**Autonomous Navigation API**: ROS 2 topics / services / actions for driving the robot":
         "**自律移動 API**: ロボットを制御するための ROS 2 トピック / サービス / アクション",
     "**Control ECU Library**: a Python library for sending commands to the TriOrb control ECU directly from a host PC":
         "**制御 ECU 通信ライブラリ**: 上位 PC から TriOrb 制御 ECU へ直接指令を送るための Python ライブラリ",
+    "**WebAPI**: browser-facing HTTP API for the robot controller ([separate site](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/))":
+        "**WebAPI**: ロボットコントローラ向けのブラウザ対応 HTTP API（[別サイト](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)）",
     "**Changelog / Terms of Service / Privacy Policy**": "**変更履歴 / 利用規約 / プライバシーポリシー**",
     "Before you start": "利用前に",
     "For hardware setup and initial software installation, refer to the separately distributed documents:":
@@ -144,8 +154,8 @@ OVERVIEW_MD_DICT = {
     "TriOrb BASE Operating Manual": "TriOrb BASE 取扱説明書",
     "Autonomous Navigation Package User Manual": "自律移動パッケージ ユーザーズマニュアル",
     "Upgrade Procedures": "アップグレード手順書",
-    "This site focuses on the public API surface and change history of the ROS 2 / Python layer.":
-        "本サイトは ROS 2 / Python レイヤの公開 API 仕様と変更履歴に特化しています。",
+    "This site focuses on the public API surface and change history of the ROS 2 / Python layer. The [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) is also available when a browser-only integration is preferred.":
+        "本サイトは ROS 2 / Python レイヤの公開 API 仕様と変更履歴に特化しています。ブラウザのみで連携したい場合は [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) もご利用いただけます。",
 }
 
 HISTORY_MD_DICT = {

@@ -1,20 +1,18 @@
 # Product Overview
 
-TriOrb BASE is an autonomous mobile robot (AMR) platform with a novel
-**ball-drive omnidirectional motion mechanism** — three spheres and three
-motors — that addresses the "external disturbance handling, positioning
-accuracy, and load capacity" trade-offs that classical omnidirectional
-platforms have struggled with.
+TriOrb BASE is an autonomous mobile robot (AMR) platform built around a novel
+**ball-drive omnidirectional motion mechanism** that addresses the "external
+disturbance handling, positioning accuracy, and load capacity" trade-offs
+that classical omnidirectional platforms have struggled with.
 
-Representative specs: standard φ100 sphere (φ140 / φ200 builds available),
-load up to ~300 kg (customizable up to 800 kg), runtime ~3.5 h with the
-optional battery, and mobility across ~45 mm gaps, ~10 mm steps and ~9°
-slopes. Refer to the TriOrb website for the latest hardware figures.
+Representative specs: standard φ100 sphere, load up to ~300 kg. Refer to the
+TriOrb website for the latest hardware figures.
 
 This site provides:
 
 - **Autonomous Navigation API**: ROS 2 topics / services / actions for driving the robot
 - **Control ECU Library**: a Python library for sending commands to the TriOrb control ECU directly from a host PC
+- **WebAPI**: browser-facing HTTP API for the robot controller ([separate site](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/))
 - **Changelog / Terms of Service / Privacy Policy**
 
 ## Before you start
@@ -27,4 +25,5 @@ distributed documents:
 - Upgrade Procedures
 
 This site focuses on the public API surface and change history of the ROS 2 /
-Python layer.
+Python layer. The [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)
+is also available when a browser-only integration is preferred.

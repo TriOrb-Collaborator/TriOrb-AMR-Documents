@@ -39,9 +39,9 @@
       line-height: 1.6;
     }
     main {
-      max-width: 880px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 3rem 1.5rem 4rem;
+      padding: 3rem 2rem 4rem;
     }
     .hero {
       display: flex;
@@ -145,6 +145,59 @@
       background: var(--accent);
       color: #fff;
     }
+    .companion-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .companion-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+    }
+    .companion-card:hover { border-color: var(--accent); }
+    .companion-card h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    .companion-card .badge {
+      display: inline-block;
+      margin-left: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      vertical-align: middle;
+    }
+    .companion-card p.meta {
+      margin: 0.1rem 0 0.8rem;
+      color: var(--fg-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .companion-card .links a {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      word-break: break-all;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .companion-card .links a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
     footer {
       margin-top: 3rem;
       padding-top: 1.5rem;
@@ -224,6 +277,29 @@
         </div>
       </li>
 
+    </ul>
+  </section>
+
+  <section class="companion" aria-labelledby="companion-heading">
+    <h2 id="companion-heading">Companion services</h2>
+    <ul class="companion-cards">
+      <li class="companion-card">
+        <h3>WebAPI</h3>
+        <p class="meta">ロボットコントローラ向けのブラウザ対応 HTTP API / Browser-facing HTTP API for the robot controller.</p>
+        <div class="links">
+          <a href="https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/">Open</a>
+        </div>
+      </li>
+      <li class="companion-card">
+        <h3>MCP server <span class="badge">Open</span></h3>
+        <p class="meta">
+          TriOrb 提供の Model Context Protocol サーバー。対応 AI クライアント（Claude Desktop / Claude Code / Cursor 等）から誰でも接続できます。<br>
+          TriOrb's public Model Context Protocol server — any MCP-capable AI client (Claude Desktop, Claude Code, Cursor, …) can connect.
+        </p>
+        <div class="links">
+          <a href="https://mcp.triorb-cloud.com/mcp/">https://mcp.triorb-cloud.com/mcp/</a>
+        </div>
+      </li>
     </ul>
   </section>
 
