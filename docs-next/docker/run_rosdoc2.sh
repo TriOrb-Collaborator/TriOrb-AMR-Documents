@@ -216,6 +216,9 @@ EXCLUDE_PREFIXES = (
     # 3rd-party SICK safetyscanner driver stack — internal-only.
     "pkgs/triorb_sensor/sick/sick_safetyscanners2",
     "pkgs/triorb_sensor/sick/sick_safetyscanners_base",
+    # Additional internal-only packages.
+    "pkgs/triorb_sensor/triorb_streaming_images",
+    "pkgs/triorb_sensor/sick/sick_Flexi-Soft_ROS2",
 )
 
 

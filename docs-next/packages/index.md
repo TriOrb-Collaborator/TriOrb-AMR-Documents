@@ -40,7 +40,6 @@ triorb_camera_argus/index
 triorb_camera_capture/index
 triorb_gamepad/index
 triorb_streaming_image_cpp/index
-triorb_streaming_images/index
 ```
 
 ## Safety Sensors
@@ -49,7 +48,6 @@ triorb_streaming_images/index
 :maxdepth: 1
 :titlesonly:
 
-sick_flexi_soft/index
 triorb_sick_plc_wrapper/index
 triorb_sls_wrapper/index
 ```
