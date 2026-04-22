@@ -149,11 +149,12 @@ OVERVIEW_MD_DICT = {
         "**WebAPI**: ロボットコントローラ向けのブラウザ対応 HTTP API（[別サイト](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)）",
     "**Changelog / Terms of Service / Privacy Policy**": "**変更履歴 / 利用規約 / プライバシーポリシー**",
     "Before you start": "利用前に",
-    "For hardware setup and initial software installation, refer to the separately distributed documents:":
-        "ハードウェアのセットアップおよびソフトウェア導入手順は、別途配布される以下のドキュメントを参照してください:",
-    "TriOrb BASE Operating Manual": "TriOrb BASE 取扱説明書",
-    "Autonomous Navigation Package User Manual": "自律移動パッケージ ユーザーズマニュアル",
-    "Upgrade Procedures": "アップグレード手順書",
+    "For hardware setup and initial software installation, refer to the TriOrb User Documents portal, which aggregates the **TriOrb BASE Operating Manual**, **Autonomous Navigation Package User Manual**, and **Upgrade Procedures**:":
+        "ハードウェアのセットアップおよびソフトウェア導入手順は、**TriOrb BASE 取扱説明書**・**自律移動パッケージ ユーザーズマニュアル**・**アップグレード手順書**をまとめた TriOrb User Documents ポータルを参照してください:",
+    "[TriOrb User Documents (Notion)](https://triorb.notion.site/2afb60b1eaf380dd8e6acade491a29d6?v=2afb60b1eaf381f4a558000ca9c9461d)":
+        "[TriOrb User Documents (Notion)](https://triorb.notion.site/2afb60b1eaf380dd8e6acade491a29d6?v=2afb60b1eaf381f4a558000ca9c9461d)",
+    "Detailed hardware manuals for non-standard models are distributed separately on a per-project basis.":
+        "標準機以外のハードウェア詳細マニュアルは個別配布となります。",
     "This site focuses on the public API surface and change history of the ROS 2 / Python layer. The [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) is also available when a browser-only integration is preferred.":
         "本サイトは ROS 2 / Python レイヤの公開 API 仕様と変更履歴に特化しています。ブラウザのみで連携したい場合は [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) もご利用いただけます。",
 }

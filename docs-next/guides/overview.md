@@ -17,12 +17,14 @@ This site provides:
 
 ## Before you start
 
-For hardware setup and initial software installation, refer to the separately
-distributed documents:
+For hardware setup and initial software installation, refer to the TriOrb
+User Documents portal, which aggregates the **TriOrb BASE Operating Manual**,
+**Autonomous Navigation Package User Manual**, and **Upgrade Procedures**:
 
-- TriOrb BASE Operating Manual
-- Autonomous Navigation Package User Manual
-- Upgrade Procedures
+- [TriOrb User Documents (Notion)](https://triorb.notion.site/2afb60b1eaf380dd8e6acade491a29d6?v=2afb60b1eaf381f4a558000ca9c9461d)
+
+Detailed hardware manuals for non-standard models are distributed separately
+on a per-project basis.
 
 This site focuses on the public API surface and change history of the ROS 2 /
 Python layer. The [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)
