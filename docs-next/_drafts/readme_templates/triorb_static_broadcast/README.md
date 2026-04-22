@@ -1,41 +1,41 @@
 # triorb_static_broadcast
 
-ロボットの基本フレーム間（base_link, camera, imu 等）の固定変換を TF2 静的 TF として送出する C++ ノード。
+ロボットの基本フレーム間の固定変換をTFとして送出する静的ブロードキャストノードです。
 
-> package.xml `<description>`: "ロボットの基本フレーム間の固定変換をTFとして送出する静的ブロードキャストノードです。"
->
-> version: 1.1.0 / maintainer: info@triorb.co.jp
->
-> executable: `triorb_tf_static`
+> version: `1.1.0` / maintainer: TriOrb Inc. <info@triorb.co.jp> / license: Apache-2.0
 
 ## Overview
 
-TODO: 設定 YAML / パラメータから `StaticTransformBroadcaster` で各種 TF を送出。起動直後に一度だけ publish される性質を記載。
+TODO: このパッケージが提供する機能、起動タイミング、関連ノードとの連携を 2–4 文で。
 
-## Public ROS 2 API
+## API Reference
 
-### Publishers
+> Source: migrated from the hand-written `API.md` in the submodule.
 
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| `<prefix>/except_handl/node/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/error/str/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/warn/str/add` | `std_msgs/String` | parameters | TODO |
-| `/tf_static` | `tf2_msgs/TFMessage` | static (latched) | 固定 TF（`tf2_ros::StaticTransformBroadcaster` 経由） |
+TriOrb 固有の `tf_static` を一括で生成するノードです。
 
-## Parameters
+### Active API
 
-TODO: 静的 TF の定義（親/子フレーム名、translation, rotation）を与える YAML / パラメータを列挙。
-
-## Launch / run
-
-```bash
-ros2 run triorb_static_broadcast triorb_tf_static
+#### 静的TF(triorb_map→map)
+- Topic：/tf_static
+- Node：(prefix)_triorb_static_broadcast
+- Type： tf2_msgs/msg/TFMessage
+- Note：`rig_is_center` パラメータに応じて `triorb_map→map` と `rig→robot_center` の2本を送信
+- Usage：
+```
+ros2 topic echo /tf_static --once
 ```
 
-TODO: launch file / YAML のパスを記入。
+#### ノード登録通知
+- Topic：/except_handl/node/add
+- Node：(prefix)_triorb_static_broadcast
+- Type： std_msgs/msg/String
+- Note：ParametersQoS で `[instant]node_name` を送信し、例外監視ノードへ登録
+- Usage：
+```
+ros2 topic echo /except_handl/node/add --once
+```
 
 ## Related Packages
 
-- 下流: TF2 を購読する全ノード（`triorb_navigation`, `triorb_dead_reckoning`, visual_slam など）
-- インターフェース: 直接の msg/srv 依存は `std_msgs` / `geometry_msgs` のみ
+TODO: 上流・下流の関連パッケージを列挙。

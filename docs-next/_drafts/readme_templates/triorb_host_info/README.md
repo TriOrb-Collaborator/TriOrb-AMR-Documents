@@ -1,41 +1,46 @@
 # triorb_host_info
 
-ホストコンピュータ（Jetson）関連の情報を表示するためのノード（Python）。
+ホストコンピューター（Jetson）関連の情報を表示するためのパッケージ
 
-> package.xml `<description>`: "ホストコンピューター（Jetson）関連の情報を表示するためのパッケージ"
->
-> version: 0.0.0 / maintainer: info@triorb.co.jp
->
-> executable(s): `device` (entry: `triorb_host_info.device:main`)
+> version: `0.0.0` / maintainer: TriOrb <info@triorb.co.jp> / license: Apache License, Version 2.0
 
 ## Overview
 
-TODO: CPU/GPU 温度、メモリ使用量、ディスク使用量、IP アドレス等の Jetson ホスト情報を定期取得し、`/host/status` トピックに配信する。
+TODO: このパッケージが提供する機能、起動タイミング、関連ノードとの連携を 2–4 文で。
 
-## Public ROS 2 API
+## API Reference
 
-すべてのトピック名は `ROS_PREFIX` 環境変数がプレフィックスとして付与される。
+> Source: migrated from the hand-written `API.md` in the submodule.
 
-### Publishers
+ホストコンピューター（Jetson）関連の情報を表示するためのパッケージ
 
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| `<prefix>/except_handl/node/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/error/str/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/warn/str/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/host/status` | `triorb_static_interface/HostStatus`（要確認） | parameters | TODO: CPU/メモリ/温度/IP 等 |
-
-## Parameters
-
-TODO: 取得周期、項目 on/off フラグを列挙。
-
-## Launch / run
-
+### ホストコンピュータのシステムモニター
+Topic：(prefix)/host/status
+Type：triorb_static_interface/msg/HostStatus
+Frequency：1/1.0 Hz
+Usage：
 ```bash
-ros2 run triorb_host_info device
+root@orin-nx-XXX:~/$ ros2 topic echo --once /host/status
+header:
+  stamp:
+    sec: 1753410530
+    nanosec: 830279666
+  frame_id: host_device
+memory_percent: 39.599998474121094
+cpu_percent: 86.9000015258789
+host_temperature: 70.81199645996094
+wlan_ssid: TriOrb-WiFi
+wlan_signal: 58
+wlan_freq: 5180
+ping: 10.668999671936035
+gateway:
+- 192
+- 168
+- 25
+- 1
+---
 ```
 
 ## Related Packages
 
-- 下流: 監視 UI（`/host/status` を subscribe）
-- インターフェース: `triorb_static_interface` (`HostStatus`)
+TODO: 上流・下流の関連パッケージを列挙。

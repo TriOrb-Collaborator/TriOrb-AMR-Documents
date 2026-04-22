@@ -1,62 +1,95 @@
 # triorb_camera_capture
 
-カメラキャプチャ用パッケージ（C++）。`triorb_camera_argus` の再実装または v4l2 ベースの別実装として、実行時に動的に画像トピックを追加・切替できるよう設計されている。
+カメラキャプチャーのためのパッケージ
 
-> package.xml `<description>`: "カメラキャプチャーのためのパッケージ"
->
-> version: 1.2.0 / maintainer: yano.koichi@triorb.co.jp
->
-> executable: `camera_capture`
+> version: `1.2.0` / maintainer: triorb <yano.koichi@triorb.co.jp> / license: Apache-2.0
 
 ## Overview
 
-TODO: 起動時に静的にカメラを N 台 open し、`/set/camera/state` service で動的に topic 名を変更/追加可能。`/camera/stacked/image_raw` で連結画像も配信。自動露出は `/set/auto_exposure/enable` / `/set/auto_exposure/vcrop` で制御。
+TODO: このパッケージが提供する機能、起動タイミング、関連ノードとの連携を 2–4 文で。
 
-## Public ROS 2 API
+## API Reference
 
-すべてのトピック名は `ROS_PREFIX` 環境変数がプレフィックスとして付与される。
+> Source: migrated from the hand-written `API.md` in the submodule.
 
-### Publishers
+カメラキャプチャーのためのパッケージ
 
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| `<prefix>/except_handl/node/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/error/str/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/warn/str/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/error/camera` | `std_msgs/Empty` | parameters | TODO: カメラ異常通知 |
-| `<prefix>/camera/stacked/image_raw` | `sensor_msgs/Image` | sensor_data depth=1 | TODO: 連結画像 |
-| `<prefix>/<topic>` (params) | `sensor_msgs/Image` | sensor_data depth=1 | TODO: 各カメラ画像（topic 名パラメータ / 実行時に `SetCameraState` でも追加） |
-| `<prefix>/<topic>_device` | `triorb_sensor_interface/CameraDevice` | sensor_data depth=1 | TODO: デバイス情報 |
-
-### Subscribers
-
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| `<prefix>/<enable_auto_exposure>` | `std_msgs/Bool` | (TODO) | TODO: 自動露出 on/off（topic 名パラメータ） |
-| `<prefix>/<auto_exposure_vcrop>` | `std_msgs/Float32MultiArray` | (TODO) | TODO: 自動露出 vertical crop 領域 |
-
-### Services
-
-| Service | Type | 用途（TODO） |
-| --- | --- | --- |
-| `<prefix>/get/camera/state` | `triorb_sensor_interface/srv/CameraDevice` | TODO: 現在のカメラ状態取得 |
-| `<prefix>/set/camera/state` | `triorb_sensor_interface/srv/CameraCapture` | TODO: カメラ有効化 / topic 切替 |
-| `<prefix>/<auto_gain_target>` | `triorb_camera_argus/srv/AutoGainTarget` | TODO: AutoGain ターゲット設定（`triorb_camera_argus` の srv を再利用） |
-
-## Parameters
-
-TODO: カメラ本数、device node マップ、トピック名配列、露出/ゲイン初期値を列挙。`cfg/` 配下の YAML を参照。
-
-## Launch / run
-
+### camera_capture API
+#### カメラ画像受信
+- Topic：(prefix)/camera(0-N) # 末尾の整数はカメラのID
+- Node：(prefix)_camera_capture
+- Type：sensor_msgs/Image
+- Frequency：最大1/0.02 Hz
+- Usage：
 ```bash
-ros2 launch triorb_camera_capture <launch_file>.launch.py
+root@orin-nx-XXX:~/$ ros2 topic info /camera0; ros2 topic hz /camera0
+Type: sensor_msgs/msg/Image
+Publisher count: 1
+Subscription count: 0
+average rate: 9.537
+        min: 0.072s max: 0.240s std dev: 0.04572s window: 13
+...
+average rate: 10.766
+        min: 0.064s max: 0.240s std dev: 0.02494s window: 266
 ```
 
-TODO: `launch/` 配下の具体ファイル名を記入。
+#### カメラ情報受信
+- Topic：(prefix)/camera(0-N)_device # 末尾の整数はカメラのID
+- Node：(prefix)_camera_capture
+- Type：triorb_sensor_interface/msg/CameraDevice
+- Usage：
+```bash
+root@orin-nx-XXX:~/$ ros2 topic echo /camera0_device
+header:
+  stamp:
+    sec: 1753408673
+    nanosec: 447031540
+  frame_id: cam0
+device: /dev/video-csi0
+topic: /camera0
+id: cam0
+state: sleep
+rotation: 0
+exposure: 0
+gamma: 0.0
+timer: 0.30000001192092896
+```
+
+
+#### カメラデバイス一覧取得
+- Topic：(prefix)/get/camera/state
+- Node：(prefix)_camera_capture
+- Type：triorb_sensor_interface/srv/CameraDevice
+- Usage：
+```bash
+root@orin-nx-XXX:~/$ ros2 service call /get/camera/state triorb_sensor_interface/srv/CameraDevice
+...
+response:
+triorb_sensor_interface.srv.CameraDevice_Response(result=[triorb_sensor_interface.msg.CameraDevice(device='/dev/video0', topic='/camera0', id='cam0', state='awake', rotation=0, exposure=800, gamma=1.0, timer=0.02), ...])
+```
+
+#### カメラデバイスの起動・終了
+- Topic：(prefix)/set/camera/state
+- Node：(prefix)_camera_capture
+- Type：triorb_sensor_interface/srv/CameraCapture
+- Usage：
+```bash
+root@orin-nx-XXX:~/$ ros2 service call /set/camera/state triorb_sensor_interface/srv/CameraCapture '{request: [{device: /dev/video0, topic: /camera0, id: camera0, state: wakeup, rotation: 0, exposure: 500, gamma: 1.0, timer: 0.1}, {device: /dev/video2, topic: /camera1, id: camera1, state: wakeup, rotation: 0, exposure: 500, gamma: 1.0, timer: 0.1}]}'
+...
+response:
+triorb_sensor_interface.srv.CameraCamture_Response(result=['success','success'])
+```
+
+#### オートゲイン目標値の設定
+- Service：(prefix)/set/camera/auto_gain_target
+- Node：(prefix)_camera_capture
+- Type：triorb_camera_argus/srv/AutoGainTarget
+- Note：`target` は EV 相当で、`[-2.0, 2.0]` にクランプされます
+- Usage：
+```bash
+root@orin-nx-XXX:~/$ ros2 service call /set/camera/auto_gain_target triorb_camera_argus/srv/AutoGainTarget "{target: 0.5}"
+```
 
 ## Related Packages
 
-- 上流: カメラハードウェア（v4l2）
-- 下流: visual_slam、`triorb_camera_calibration`, `triorb_calibration`, UI
-- インターフェース: `triorb_sensor_interface`, `triorb_camera_argus`（srv 参照）、`triorb_static_interface`
+TODO: 上流・下流の関連パッケージを列挙。

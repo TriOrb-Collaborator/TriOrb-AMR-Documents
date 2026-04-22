@@ -1,50 +1,47 @@
 # triorb_gpio
 
-GPIO を通じて AMR の外部デバイス（ランプ、ブザー、トリガ等）を制御する Python ノード。
+GPIOを通じてAMRの外部デバイス（ランプ・ブザー・トリガ等）を制御するためのノードを提供するパッケージです。
 
-> package.xml `<description>`: "GPIOを通じてAMRの外部デバイス（ランプ・ブザー・トリガ等）を制御するためのノードを提供するパッケージです。"
->
-> version: 1.0.0 / maintainer: info@triorb.co.jp
->
-> executable(s): `gpio` (entry: `triorb_gpio.gpio:main`)
+> version: `1.0.0` / maintainer: TriOrb <info@triorb.co.jp> / license: Apache License, Version 2.0
 
 ## Overview
 
-TODO: Jetson GPIO ヘッダのピンを初期化し、`/gpios/set_direction` で入出力方向、`/gpios/set_value` で出力値を設定。入力ピンの現在値を `/gpios/value` に定期配信する。
+TODO: このパッケージが提供する機能、起動タイミング、関連ノードとの連携を 2–4 文で。
 
-## Public ROS 2 API
+## API Reference
 
-すべてのトピック名は `ROS_PREFIX` 環境変数がプレフィックスとして付与される。
+> Source: migrated from the hand-written `API.md` in the submodule.
 
-### Publishers
+GPIOを通じてAMRの外部デバイス（ランプ・ブザー・トリガ等）を制御するためのノードを提供するパッケージです。
 
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| `<prefix>/except_handl/node/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/error/str/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/warn/str/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/gpios/value` | `std_msgs/Int8MultiArray` | parameters | TODO: 現在の GPIO 値（配列長 = 管理ピン数） |
-
-### Subscribers
-
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| `<prefix>/gpios/set_direction` | `std_msgs/Int8MultiArray` | parameters | TODO: ピン方向設定（0=IN, 1=OUT 等） |
-| `<prefix>/gpios/set_value` | `std_msgs/Int8MultiArray` | parameters | TODO: ピン出力値設定 |
-
-## Parameters
-
-TODO: 管理対象ピン番号のリスト、ポーリング周期、デフォルト方向を列挙。
-
-## Launch / run
-
+### Subscriber
+#### GPIOの入出力モード設定（複数）
+- Topic: /gpios/set_direction
+- Type: std_msgs/msg/Int8MultiArray
+- Values: -2: NotSet, -1: None, 0: Output, 1: Input
+- Usage: 
 ```bash
-ros2 run triorb_gpio gpio
+## pin 37を非管理、pin 38を入力、pin 40を出力、その他は変更なしに設定
+root@agx-orin-XXXX:/ws# ros2 topic pub -1 /gpios/set_direction std_msgs/msg/Int8MultiArray 'data: [-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-1,1,0]'
 ```
 
-TODO: launch file があれば記載。
+#### GPIOの出力値設定（複数）
+- Topic: /gpios/set_value
+- Type: std_msgs/msg/Int8MultiArray
+- Values: -2: NotSet, -1: NotSet, 0: Low, 1: High
+- Usage:
+```bash
+## pin 40をHighに、その他は変更なし
+root@agx-orin-XXXX:/ws# ros2 topic pub -1 /gpios/set_value std_msgs/msg/Int8MultiArray 'data: [-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-1,-1,1]'
+```
+
+#### Publisher
+#### GPIOのHi/Lo値（複数）
+- Topic: /gpios/value
+- Type: std_msgs/msg/Int8MultiArray
+- Values: -1: None, 0: Low, 1: High
+- Frequency: 1Hz + エッジトリガ
 
 ## Related Packages
 
-- 上流/下流: 外部 HMI（ランプ制御・物理スイッチ読取）
-- インターフェース: `std_msgs` のみ
+TODO: 上流・下流の関連パッケージを列挙。

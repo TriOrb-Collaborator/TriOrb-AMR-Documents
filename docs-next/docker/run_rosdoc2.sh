@@ -202,6 +202,17 @@ EXCLUDE_PREFIXES = (
     "pkgs-collab/",                  # collaborative API — separate site, not exposed here
     "pkgs/stella_vslam_ros/",        # visual_slam page is the hand-written replacement
     "pkgs/triorb_drive/path_planning_server",
+    # Additional exclusions (2026-04-22) — internal / not public API.
+    "pkgs/triorb_drive/triorb_path_search_server",
+    "pkgs/triorb_drive/triorb_region_map",
+    "pkgs/triorb_sensor/triorb_calibration",
+    "pkgs/triorb_sensor/triorb_camera_calibration",
+    "pkgs/triorb_sensor/triorb_can",
+    "pkgs/triorb_sensor/triorb_sls_drive_manager",
+    "pkgs/TriOrb-ROS2-Types/triorb_collaboration_interface",
+    "pkgs/TriOrb-ROS2-Types/triorb_cv_interface",
+    "pkgs/TriOrb-ROS2-Types/triorb_field_interface",
+    "pkgs/TriOrb-ROS2-Types/triorb_project_interface",
 )
 
 

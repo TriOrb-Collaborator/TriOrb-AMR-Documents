@@ -1,70 +1,34 @@
 # triorb_safe_run_cpp
 
-速度指令に対して安全減速フィルタを適用する C++ ノード。PointCloud 障害物、PLC 状態、協調 alive 監視を統合し、`/drive/run_vel` へ減速後の指令を再配信する。
+C++ implementation of the TriOrb safe run velocity filter.
 
-> package.xml `<description>`: "C++ implementation of the TriOrb safe run velocity filter."
->
-> version: 0.0.1 / maintainer: info@triorb.co.jp
->
-> executable: `safe_run_cpp_node`
+> version: `0.0.1` / maintainer: TriOrb <info@triorb.co.jp> / license: Apache License, Version 2.0
 
 ## Overview
 
-TODO: `/safe_drive/run_vel`（または設定された input topic）で受けた速度指令を、点群による前方障害物距離・PLC の SLS / emergency stop 状態・協調 alive によって減速/停止したうえで `/drive/run_vel` へ再配信。協調用の `/bc/collab/run_vel` → `/bc/collab/safed_run_vel` も同様にフィルタする。
+TODO: このパッケージが提供する機能、起動タイミング、関連ノードとの連携を 2–4 文で。
 
-## Public ROS 2 API
+## API Reference
 
-### Publishers
+> Source: migrated from the hand-written `API.md` in the submodule.
 
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| `<prefix>/except_handl/node/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/error/str/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/triorb/warn/str/add` | `std_msgs/String` | parameters | TODO |
-| `<prefix>/drive/run_vel` | `triorb_drive_interface/TriorbRunVel3` | sensor_data depth=1 | TODO: 安全フィルタ適用後の速度指令 |
-| `<prefix>/drive/set_life_time` | `std_msgs/UInt16` | parameters | TODO: life_time 再配信 |
-| `<prefix>/triorb_safe_run/debug/image/compressed` | `sensor_msgs/CompressedImage` | sensor_data depth=1 | TODO: デバッグ可視化画像 |
-| `<prefix>/triorb_safe_run/decelerating` | `std_msgs/Bool` | sensor_data depth=1 | TODO: 減速状態フラグ |
-| `<prefix>/bc/collab/safed_run_vel` | `triorb_drive_interface/TriorbRunVel3Stamped` | sensor_data depth=1 | TODO: 協調走行時の安全化速度 |
-| `<prefix>/<config_pub>` | `std_msgs/String` | (TODO) | TODO: 現在の config 通知（get_config 応答にも利用？） |
+C++ implementation of the TriOrb safe run velocity filter.
 
-### Subscribers
-
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| (safe_run input topic, param) | `triorb_drive_interface/TriorbRunVel3` | sensor_data depth=1 | TODO: 上流速度指令（`/safe_drive/run_vel` 等） |
-| `<prefix>/bc/collab/run_vel` | `triorb_drive_interface/TriorbRunVel3Stamped` | sensor_data depth=1 | TODO: 協調走行速度入力 |
-| (parent_bind topic, param) | `triorb_collaboration_interface/ParentBind` | (TODO) | TODO: 親子バインド |
-| `<prefix>/collab/alive` | `std_msgs/Header` | parameters | TODO: 協調 alive 監視 |
-| (PLC basic_data to_plc topic, param) | `triorb_plc_interface/BasicDataToPLC` | (TODO) | TODO: 自ノードから PLC への状態監視 |
-| (複数の PointCloud topics, param) | `sensor_msgs/PointCloud2`（推定） | (TODO) | TODO: 障害物検知用点群（1〜N chan） |
-
-### Services
-
-| Service | Type | 用途（TODO） |
-| --- | --- | --- |
-| `<prefix>/<set_config>` | `triorb_static_interface/SetString` | TODO: config 全体をロード |
-| `<prefix>/<set_param>` | `triorb_static_interface/SetString` | TODO: 単一パラメータ設定 |
-| `<prefix>/<get_config>` | `triorb_static_interface/GetString` | TODO: 現在 config を返す |
-
-## Parameters
-
-多数。config YAML ファイルで与えるものが中心。主要カテゴリ（TODO: 具体名を列挙）:
-- 入力トピック名（`input_topic`, `output_topic` 等）
-- PointCloud ソース一覧
-- 減速テーブル（距離→速度係数）
-- PLC / collab 有効化フラグ
-
-## Launch / run
-
-```bash
-ros2 run triorb_safe_run_cpp safe_run_cpp_node --ros-args --params-file <path/to/safe_run.yaml>
-```
-
-TODO: `launch/` 配下の launch file を参照。
+### Node interface
+| Direction | Topic | Type | Notes |
+|-----------|-------|------|-------|
+| Subscribe | `/<prefix>/sick/point2d/right` (configurable) | `sensor_msgs/msg/PointCloud` | Synchronized via ApproximateTime. `point2d_topics` can list two or more streams. |
+| Subscribe | `/<prefix>/sick/point2d/left` (configurable) | `sensor_msgs/msg/PointCloud` | Same as above; add entries in config to change topics. |
+| Subscribe | `/<prefix>/safe_drive/run_vel` | `triorb_drive_interface/msg/TriorbRunVel3` | Raw velocity command to be filtered. |
+| Publish   | `/<prefix>/drive/run_vel` | `triorb_drive_interface/msg/TriorbRunVel3` | Safe velocity command after potential-field filtering. |
+| Publish   | `/<prefix>/drive/set_life_time` | `std_msgs/msg/UInt16` | Optional watchdog lifetime (currently throttled). |
+| Publish   | `/<prefix>/triorb_safe_run/config` | `std_msgs/msg/String` | 現在の設定をJSON文字列で3秒周期に配信。 |
+| Publish   | `/<prefix>/triorb_safe_run/debug/image/compressed` | `sensor_msgs/msg/CompressedImage` | Enabled when `enable_image_pub=true`; shows occupancy & vectors. |
+| Publish   | `/<prefix>/except_handl/node/add` etc. | `std_msgs/msg/String` | Registration and diagnostic topics inherited from Python node. |
+| Service   | `/<prefix>/triorb_safe_run/set_config` | `triorb_static_interface/srv/SetString` | Pass a JSON string (first element of `request[]`) to replace the runtime configuration. |
+| Service   | `/<prefix>/triorb_safe_run/set_param` | `triorb_static_interface/srv/SetString` | `request[0]`にJSONオブジェクトを渡すと複数パラメータをまとめて更新。`[キー1,値1(JSON),キー2,値2(JSON)...]`形式の偶数要素指定でも一括更新可。`[キー,値(JSON)]`形式は従来互換で1件更新。パース失敗時は例外を捕捉しエラー応答。 |
+| Service   | `/<prefix>/triorb_safe_run/get_config` | `triorb_static_interface/srv/GetString` | Returns the current configuration as JSON text in `result`. |
 
 ## Related Packages
 
-- 上流: `triorb_gamepad`, `triorb_navigation`（`/safe_drive/run_vel` を publish）、点群センサ、PLC (`triorb_sick_plc_wrapper` 等)
-- 下流: `triorb_drive_pico`（`/drive/run_vel`）、`triorb_snr_mux_driver`（`/triorb_safe_run/decelerating`）
-- インターフェース: `triorb_drive_interface`, `triorb_plc_interface`, `triorb_collaboration_interface`, `triorb_static_interface`
+TODO: 上流・下流の関連パッケージを列挙。

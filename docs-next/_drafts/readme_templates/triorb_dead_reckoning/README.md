@@ -1,71 +1,70 @@
 # triorb_dead_reckoning
 
-VSLAM・オドメトリ・IMU を統合し自己位置を推定するデッドレコニングパッケージ。IMU センサ確認用バイパスログ機能も含む。
+VSLAM・オドメトリ・IMUを統合し自己位置を推定するデッドレコニングパッケージです。IMUセンサ確認用バイパスログ機能も含みます。
 
-> package.xml `<description>`: "VSLAM・オドメトリ・IMUを統合し自己位置を推定するデッドレコニングパッケージです。IMUセンサ確認用バイパスログ機能も含みます。"
->
-> version: 1.2.0 / maintainer: info@triorb.co.jp
->
-> executable(s): `dead_reckoning` (entry: `triorb_dead_reckoning.dead_reckoning:main`)
+> version: `1.2.0` / maintainer: TriOrb <info@triorb.co.jp> / license: Apache License, Version 2.0
 
 ## Overview
 
-TODO: このノードが提供する機能、起動タイミング、関連ノードとの連携を 2–4 文で記入。IMU シリアル接続・ISAM2 最適化・MQTT 連携の位置付けも要記述。
+TODO: このパッケージが提供する機能、起動タイミング、関連ノードとの連携を 2–4 文で。
 
-## Public ROS 2 API
+## API Reference
 
-すべてのトピック名は `ROS_PREFIX` 環境変数がプレフィックスとして付与される（例: `<prefix>/triorb/dead_reckoning`）。
+> Source: migrated from the hand-written `API.md` in the submodule.
 
-### Publishers
+vslam・odometry・imuデータからisam2で位置情報を推定する
 
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| `<prefix>/except_handl/node/add` | `std_msgs/String` | parameters | TODO: 例外ハンドラへのノード登録 |
-| `<prefix>/triorb/error/str/add` | `std_msgs/String` | parameters | TODO: エラー通知 |
-| `<prefix>/triorb/warn/str/add` | `std_msgs/String` | parameters | TODO: 警告通知 |
-| `<prefix>/triorb/dead_reckoning` | `geometry_msgs/Vector3Stamped` | depth=1 | TODO: 統合自己位置（x, y, yaw） |
-| `<prefix>/triorb/dead_reckoning/speed` | `triorb_drive_interface/TriorbVel3` | depth=1 | TODO: 統合速度 |
+### Subscriber
+#### オドメトリデータを受信して自己位置推定に利用
+- Topic: (prefix)/triorb/odom
+- Type: geometry_msgs/msg/Vector3Stamped
 
-### Subscribers
+#### VSLAM推定姿勢データを受信して自己位置推定に利用
+- Topic: (prefix)/vslam/rig_tf
+- Type: geometry_msgs/msg/TransformStamped
 
-| Topic | Type | QoS | 用途（TODO） |
-| --- | --- | --- | --- |
-| `<prefix>/triorb/odom` | `geometry_msgs/Vector3Stamped` | depth=1 | TODO: 車輪オドメトリ入力 |
-| `<prefix>/vslam/rig_tf` | `geometry_msgs/TransformStamped` | sensor_data | TODO: VSLAM 位置入力 |
+### Publisher
+#### デッドレコニング推定結果を配信
+- Topic: (prefix)/triorb/dead_reckoning
+- Type: geometry_msgs/msg/Vector3Stamped
 
-### Services
+#### ノードの動作開始通知
+- Topic: (prefix)/_{ノード名}
+Type: std_msgs/msg/Empty
 
-| Service | Type | 用途（TODO） |
-| --- | --- | --- |
-| `<prefix>/get/version/dead_reckoning` | `triorb_static_interface/Version` | TODO: ノードバージョン取得 |
+### Service
+#### ノードのバージョン情報を取得
+- Topic: (prefix)/get/version/{ノード名}
+- Type: triorb_static_interface/srv/Version
 
-### Upstream dependencies (this node calls/subscribes to)
+### Action
+本パッケージではActionは利用していません。
 
-- subscribes: `triorb_drive_pico` (odometry), `triorb_vslam_tf` / stella_vslam (rig_tf)
-- MQTT: `/dead_reckoning/stream`, `/dead_reckoning/debug/{start,end}`, `/dead_reckoning/{vslam,imu}/off` (非 ROS)
-- TODO: MQTT Broker 経由で連携するダッシュボード等を記入
-
-## Parameters
-
-- `config` (string) — YAML 設定ファイルパス（必須）
-- `mqtt_adress` (string, default `"localhost"`)
-- `mqtt_port` (int, default `8083`, WebSocket)
-- `mqtt_client_id` (string, default `triorb_dead_reckoning_stream_<random>`)
-- `mqtt_topic` (string, default `/dead_reckoning/stream`)
-- `mqtt_debug_start_topic`, `mqtt_debug_end_topic`
-- `mqtt_vslam_off_topic`, `mqtt_imu_off_topic`
-- TODO: YAML 設定内部の IMU ポート / マッピング等を記入
-
-## Launch / run
-
-```bash
-ros2 run triorb_dead_reckoning dead_reckoning --ros-args -p config:=<path/to/config.yaml>
-```
-
-TODO: 標準の launch file があれば記載。
+### MQTT
+#### id
+- triorb_dead_reckoning_stream_{random.randint(0, 10000)}
+#### Publish
+- Topic: /dead_reckoning/stream
+    - jeson format
+    ```bash
+    {
+    "imu_acc":[x,x,z]
+    "imu_gyro":[x,x,z]
+    "odometry":[x,x,w]
+    "vslam":[x,x,w]
+    "gtsam":[x,x,w]
+    "serial_status":"状態をstring"
+    "vslam_off":"状態をTrue/False"
+    }
+    ```
+#### Subscribe
+- Topic: /dead_reckoning/debug/start
+    - デバッグモード開始 Emptyメッセージ
+- Topic: /dead_reckoning/debug/end
+    - デバッグモード終了 Emptyメッセージ
+- Topic: /dead_reckoning/vslam/off
+    - vslam/rig_tfを無視 Emptyメッセージ
 
 ## Related Packages
 
-- 上流: `triorb_drive_pico`（odom 配信）、VSLAM（`stella_vslam_ros` / `triorb_vslam_tf`）
-- 下流: `triorb_navigation`, `triorb_navigation_manager`（dead_reckoning を subscribe）
-- インターフェース: `triorb_drive_interface`, `triorb_static_interface`
+TODO: 上流・下流の関連パッケージを列挙。
