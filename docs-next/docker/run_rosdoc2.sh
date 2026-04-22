@@ -310,15 +310,31 @@ for pkg_rel, pkg_name in pairs:
             shutil.rmtree(dest_xml)
         shutil.copytree(dox_xml, dest_xml, symlinks=False)
 
-    # Strip the toctree line that points at the deleted `generated/` tree
-    # ("   C++ API <generated/index>"). Leaving it causes Sphinx to emit a
-    # broken-toctree warning and a dead link on the package page.
+    # Copy the submodule's hand-written API.md into the package tree so
+    # Sphinx/MyST can render it. The author maintains this file in the
+    # package source; rosdoc2 itself does not consume it.
+    submodule_api = repo_root / "submodules" / "TriOrb-AMR-Package" / pkg_rel / "API.md"
+    has_api = submodule_api.is_file()
+    if has_api:
+        shutil.copy2(submodule_api, dest / "API.md")
+
+    # Patch index.rst:
+    #   - drop the stale "   C++ API <generated/index>" toctree line
+    #     (the generated/ tree is purged for security; see the skip above).
+    #   - when API.md is present, inject "   API <API>" as the FIRST entry
+    #     of the main (non-hidden) toctree so it shows up on the package
+    #     landing page without needing to touch the hand-written source.
     pkg_index = dest / "index.rst"
     if pkg_index.is_file():
-        lines = pkg_index.read_text(encoding="utf-8").splitlines()
-        keep = [ln for ln in lines if "generated/index" not in ln]
-        if len(keep) != len(lines):
-            pkg_index.write_text("\n".join(keep) + "\n", encoding="utf-8")
+        text = pkg_index.read_text(encoding="utf-8")
+        text = "\n".join(ln for ln in text.splitlines() if "generated/index" not in ln)
+        if has_api and "   API <API>" not in text:
+            # Inject right after the first `.. toctree::` directive + its
+            # option lines. Option lines look like "   :maxdepth: 2".
+            m = re.search(r"(\.\. toctree::\n(?:   :\S+:[^\n]*\n)*)", text)
+            if m:
+                text = text.replace(m.group(1), m.group(1) + "\n   API <API>\n", 1)
+        pkg_index.write_text(text + ("\n" if not text.endswith("\n") else ""), encoding="utf-8")
 
     # Rewrite literalinclude paths: rosdoc2 emits relative paths anchored at the
     # container build dir. The container mounts the submodule at
