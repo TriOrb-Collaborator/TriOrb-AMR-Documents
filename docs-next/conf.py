@@ -103,6 +103,7 @@ html_theme = "furo"
 html_title = f"{project} {release}"
 html_static_path = ["_static"]
 html_favicon = "_static/favicon.png"
+html_logo = "_static/TriOrb_BASE.svg"
 
 # Lapis Lazuli brand colors, carried over from the legacy mike site
 # (triorb-amr-docs/docs/stylesheets/extra.css — primary rgb(34,59,128)).
@@ -111,7 +112,8 @@ html_theme_options = {
     "source_repository": "https://github.com/TriOrb-Inc/TriOrb-AMR-Documents",
     "source_branch": "docs2-poc",
     "source_directory": "docs-next/",
-    "sidebar_hide_name": False,
+    # Logo already contains the "TriOrb BASE" wordmark — don't double up.
+    "sidebar_hide_name": True,
     "light_css_variables": {
         "color-brand-primary": "rgb(34, 59, 128)",
         "color-brand-content": "rgb(34, 59, 128)",

@@ -6,6 +6,14 @@
  * colored brand area and an accent-banded content.
  */
 
+/* ---- Article header icons: keep only Light/Dark toggle -------------- */
+/* Furo renders a row of icons at top-right of each page: view-source,
+ * edit-this-page, theme-toggle. We keep only theme-toggle. */
+.content-icon-container > .view-this-page,
+.content-icon-container > .edit-this-page {
+  display: none !important;
+}
+
 /* ---- Top band (mike had a filled header bar) ------------------------ */
 body::before {
   content: "";
