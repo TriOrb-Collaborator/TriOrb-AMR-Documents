@@ -50,9 +50,6 @@ triorb_streaming_images/index
 :titlesonly:
 
 sick_flexi_soft/index
-sick_safetyscanners2/index
-sick_safetyscanners2_interfaces/index
-sick_safetyscanners_base/index
 triorb_sick_plc_wrapper/index
 triorb_sls_wrapper/index
 ```

@@ -213,6 +213,9 @@ EXCLUDE_PREFIXES = (
     "pkgs/TriOrb-ROS2-Types/triorb_cv_interface",
     "pkgs/TriOrb-ROS2-Types/triorb_field_interface",
     "pkgs/TriOrb-ROS2-Types/triorb_project_interface",
+    # 3rd-party SICK safetyscanner driver stack — internal-only.
+    "pkgs/triorb_sensor/sick/sick_safetyscanners2",
+    "pkgs/triorb_sensor/sick/sick_safetyscanners_base",
 )
 
 
