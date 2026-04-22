@@ -198,8 +198,8 @@ PKG_INDEX_DICT = {
 
 VISUAL_SLAM_DICT = {
     "Visual SLAM": "Visual SLAM",
-    "Visual SLAM is TriOrb BASE's map building and self-localization engine based on stereo keyframe features. The implementation wraps the open-source [stella_vslam](https://github.com/stella-cv/stella_vslam) library — its internal API is considered implementation detail and is not covered in this reference.":
-        "Visual SLAM は、ステレオキーフレーム特徴量にもとづく TriOrb BASE の地図生成・自己位置推定エンジンです。オープンソースの [stella_vslam](https://github.com/stella-cv/stella_vslam) を内部で利用していますが、ラッパーの内部 API は実装詳細として扱い、本リファレンスでは公開していません。",
+    "Visual SLAM is TriOrb BASE's map building and self-localization engine based on stereo keyframe features. Its internal wrapper API is considered implementation detail and is not covered in this reference.":
+        "Visual SLAM は、ステレオキーフレーム特徴量にもとづく TriOrb BASE の地図生成・自己位置推定エンジンです。内部ラッパーの API は実装詳細として扱い、本リファレンスでは公開していません。",
     "Role on TriOrb BASE": "TriOrb BASE における役割",
     "Responsibility": "役割",
     "Description": "説明",
@@ -215,23 +215,21 @@ VISUAL_SLAM_DICT = {
     "Map I/O": "地図 I/O",
     "Saves / loads map files to the robot controller and PC":
         "ロボットコントローラや PC との間で地図ファイルの保存・読み込みを実施",
-    "Interfaces you care about": "関連する API",
-    "Day-to-day interaction is through higher-level APIs, not through Visual SLAM directly:":
-        "運用では Visual SLAM を直接操作せず、以下の上位 API 経由で利用します:",
-    "`triorb_vslam_tf` — publishes VSLAM-derived pose as TF":
-        "`triorb_vslam_tf` — VSLAM 由来の姿勢を TF として配信",
-    "`trirob_vslam_tf_bridge` — bridges VSLAM to navigation pose":
-        "`trirob_vslam_tf_bridge` — VSLAM 姿勢をナビゲーション用姿勢へブリッジ",
-    "`triorb_dead_reckoning` — fuses VSLAM, odometry, and IMU for robust pose":
-        "`triorb_dead_reckoning` — VSLAM・オドメトリ・IMU を統合し堅牢な自己位置を推定",
-    "The WebAPI's map save / load / switch operations":
-        "WebAPI の地図保存・読み込み・切替操作",
-    "See those packages for the public topic / service surface.":
-        "公開されているトピック / サービスは各パッケージのページを参照してください。",
-    "Related": "関連",
-    "[triorb_vslam_tf](triorb_vslam_tf/index.md)": "[triorb_vslam_tf](triorb_vslam_tf/index.md)",
-    "[trirob_vslam_tf_bridge](trirob_vslam_tf_bridge/index.md)": "[trirob_vslam_tf_bridge](trirob_vslam_tf_bridge/index.md)",
-    "[triorb_dead_reckoning](triorb_dead_reckoning/index.md)": "[triorb_dead_reckoning](triorb_dead_reckoning/index.md)",
+    "API": "API",
+    "Visual SLAM itself does not expose a public ROS 2 API. Day-to-day interaction is through higher-level packages that consume its output:":
+        "Visual SLAM 自体は公開 ROS 2 API を提供しません。運用では出力を利用する以下の上位パッケージを経由します:",
+    "Package": "パッケージ",
+    "Role": "役割",
+    "[`triorb_vslam_tf`](triorb_vslam_tf/index.md)": "[`triorb_vslam_tf`](triorb_vslam_tf/index.md)",
+    "Publishes VSLAM-derived pose as TF.": "VSLAM 由来の姿勢を TF として配信。",
+    "[`trirob_vslam_tf_bridge`](trirob_vslam_tf_bridge/index.md)": "[`trirob_vslam_tf_bridge`](trirob_vslam_tf_bridge/index.md)",
+    "Bridges VSLAM to navigation pose.": "VSLAM 姿勢をナビゲーション用姿勢へブリッジ。",
+    "[`triorb_dead_reckoning`](triorb_dead_reckoning/index.md)": "[`triorb_dead_reckoning`](triorb_dead_reckoning/index.md)",
+    "Fuses VSLAM, odometry, and IMU for robust pose.": "VSLAM・オドメトリ・IMU を統合し堅牢な自己位置を推定。",
+    "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)": "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)",
+    "Map save / load / switch operations over HTTP.": "地図保存・読み込み・切替操作（HTTP）。",
+    "See each package's API page for its public topics, services, and actions.":
+        "公開されているトピック / サービス / アクションは各パッケージの API ページを参照してください。",
 }
 
 
