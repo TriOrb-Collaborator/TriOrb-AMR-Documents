@@ -112,6 +112,12 @@ deploy-stage:
 	    f="$(BUILDDIR)/deploy/$(DOCS_RELEASE)/$$lang/packages/index.html"; \
 	    [ -f "$$f" ] && "$$PY" _scripts/strip_readme_anchors.py "$$f"; \
 	done
+	@# Scrub every HTML's left-sidebar so no stale README / Python API /
+	@# Standard Documents entries survive an incremental rebuild. Safer
+	@# than forcing a full rebuild, idempotent, runs in a few seconds.
+	@PY=$$(command -v python3 || echo python3); \
+	if [ -x ../.venv-docs2/bin/python3 ]; then PY=../.venv-docs2/bin/python3; fi; \
+	"$$PY" _scripts/strip_sidebar_noise.py "$(BUILDDIR)/deploy/$(DOCS_RELEASE)"
 	@# SECURITY + NOISE: rosdoc2's exhale-generated `generated/` directories
 	@# expose private license-auth internals (ct.hpp, sha256.h) as source
 	@# listings. They also dominate the sidebar with C++ file/class hierarchy
