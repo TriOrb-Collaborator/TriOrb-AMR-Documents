@@ -4,6 +4,13 @@ Visual SLAM is TriOrb BASE's map building and self-localization engine based on
 stereo keyframe features. Its internal wrapper API is considered implementation
 detail and is not covered in this reference.
 
+```{toctree}
+:maxdepth: 1
+:titlesonly:
+
+API
+```
+
 ## Role on TriOrb BASE
 
 | Responsibility | Description |
@@ -13,16 +20,15 @@ detail and is not covered in this reference.
 | Map export | Exports the 3D map to a 2D occupancy representation used by downstream navigation |
 | Map I/O | Saves / loads map files to the robot controller and PC |
 
-## API
+## Related packages
 
-Visual SLAM itself does not expose a public ROS 2 API. Day-to-day
-interaction is through higher-level packages that consume its output:
+Higher-level packages consume Visual SLAM's output:
 
 | Package | Role |
 |---|---|
-| [`triorb_vslam_tf`](triorb_vslam_tf/index.md) | Publishes VSLAM-derived pose as TF. |
-| [`trirob_vslam_tf_bridge`](trirob_vslam_tf_bridge/index.md) | Bridges VSLAM to navigation pose. |
-| [`triorb_dead_reckoning`](triorb_dead_reckoning/index.md) | Fuses VSLAM, odometry, and IMU for robust pose. |
+| [`triorb_vslam_tf`](../triorb_vslam_tf/index.md) | Publishes VSLAM-derived pose as TF. |
+| [`trirob_vslam_tf_bridge`](../trirob_vslam_tf_bridge/index.md) | Bridges VSLAM to navigation pose. |
+| [`triorb_dead_reckoning`](../triorb_dead_reckoning/index.md) | Fuses VSLAM, odometry, and IMU for robust pose. |
 | [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) | Map save / load / switch operations over HTTP. |
 
 See each package's API page for its public topics, services, and actions.

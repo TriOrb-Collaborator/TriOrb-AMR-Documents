@@ -9,11 +9,14 @@ _rosdoc2_out/
 _rosdoc2_sources/
 /packages/*
 /packages/*/
-# packages/index.md and packages/visual_slam.md are hand-edited
-# (run_rosdoc2.sh regenerates index.md, but we still want it tracked as
-# the authoritative list of published packages across rebuilds).
+# Tracked hand-edited files (not auto-generated output):
+#   packages/index.md       — authoritative published-pkg list
+#   packages/visual_slam/*  — handwritten Visual SLAM page + API subpage
 !/packages/index.md
-!/packages/visual_slam.md
+!/packages/visual_slam/
+/packages/visual_slam/*
+!/packages/visual_slam/index.md
+!/packages/visual_slam/API.md
 
 # interfaces/ holds rosdoc2 output for TriOrb-ROS2-Types packages
 # (triorb_drive_interface etc). Same tracking policy as packages/.
