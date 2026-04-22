@@ -1,8 +1,8 @@
-# Visual SLAM
+# triorb_visual_slam
 
-Visual SLAM is TriOrb BASE's map building and self-localization engine based on
-stereo keyframe features. Its internal wrapper API is considered implementation
-detail and is not covered in this reference.
+TriOrb BASE のステレオキーフレーム特徴量ベースの地図生成・自己位置推定エンジン
+（Visual SLAM）をまとめたパッケージです。内部ラッパーの API は実装詳細として扱い、
+本リファレンスでは公開していません。
 
 ```{toctree}
 :maxdepth: 1

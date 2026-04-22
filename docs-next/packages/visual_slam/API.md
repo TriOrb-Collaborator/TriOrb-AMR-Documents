@@ -1,6 +1,6 @@
-# Visual SLAM API
+# API
 
-このページは、Visual SLAM の `/run_slam` ノードが ROS 2 に公開する Publish / Subscribe トピックの一覧です。
+このページは、triorb_visual_slam の `/run_slam` ノードが ROS 2 に公開する Publish / Subscribe トピックの一覧です。
 
 ---
 
