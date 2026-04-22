@@ -105,6 +105,12 @@ html_title = f"{project} {release}"
 html_static_path = ["_static"]
 html_favicon = "_static/favicon.png"
 html_logo = "_static/TriOrb_BASE.svg"
+# brand.css adds the Lapis-Lazuli overlay (sidebar gradient, H1 accent
+# underline, active-nav side border, icon hiding). Served from _static/
+# so every page gets a theme-correct relative href at build time — this
+# is what keeps the site consistent when deployed under a project page
+# prefix like /TriOrb-AMR-Documents/.
+html_css_files = ["brand.css"]
 
 # Lapis Lazuli brand colors, carried over from the legacy mike site
 # (triorb-amr-docs/docs/stylesheets/extra.css — primary rgb(34,59,128)).

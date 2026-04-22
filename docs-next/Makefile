@@ -97,12 +97,10 @@ deploy-stage:
 	@# Any non-index.html file under _landing/ is copied verbatim.
 	@find _landing -maxdepth 1 -type f ! -name index.html \
 	    -exec cp {} "$(BUILDDIR)/deploy/" \;
-	@# Mike-style visual overlay: inject /brand.css into every versioned
-	@# HTML page head. Cheap string op; no Sphinx rebuild required.
-	@if [ -f "$(BUILDDIR)/deploy/brand.css" ]; then \
-	    find "$(BUILDDIR)/deploy/$(DOCS_RELEASE)" -name '*.html' -print0 \
-	        | xargs -0 sed -i 's|</head>|<link rel="stylesheet" href="/brand.css" />\n</head>|'; \
-	fi
+	@# brand.css is now bundled into Sphinx's build via `html_css_files`
+	@# in conf.py. Every HTML already references it with a correct
+	@# relative path (e.g., `../../_static/brand.css`) so it works under
+	@# any URL prefix — no post-build injection needed.
 	@# Strip the "README" anchor-only entries that rosdoc2 surfaces under
 	@# each package in packages/index.html (Sphinx's `:titlesonly:` does
 	@# not suppress them for H2 headings brought in via .. include ::).
