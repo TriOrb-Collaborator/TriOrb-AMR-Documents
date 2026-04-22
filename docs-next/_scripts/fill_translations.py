@@ -139,7 +139,7 @@ OVERVIEW_MD_DICT = {
     "TriOrb BASE is an autonomous mobile robot (AMR) platform built around a novel **ball-drive omnidirectional motion mechanism** that addresses the \"external disturbance handling, positioning accuracy, and load capacity\" trade-offs that classical omnidirectional platforms have struggled with.":
         "TriOrb BASE は、独自の**球体駆動式全方向移動機構**を搭載した自律移動ロボット (AMR) プラットフォームです。従来の全方向移動プラットフォームでは両立が難しかった「外乱走破性・位置決め精度・耐荷重」を同時に成立させる独自構造です。",
     "Representative specs: standard φ100 sphere, load up to ~300 kg. Refer to the TriOrb website for the latest hardware figures.":
-        "代表仕様: 標準球径 φ100、運搬能力 約 300 kg。最新のハードウェア諸元は TriOrb コーポレートサイトをご参照ください。",
+        "代表仕様: 標準球径 φ100、可搬能力 約 300 kg。最新のハードウェア諸元は TriOrb コーポレートサイト等をご参照ください。",
     "This site provides:": "本サイトでは以下の情報を提供します:",
     "**Autonomous Navigation API**: ROS 2 topics / services / actions for driving the robot":
         "**自律移動 API**: ロボットを制御するための ROS 2 トピック / サービス / アクション",

@@ -79,6 +79,7 @@ exclude_patterns = [
     "_rosdoc2_out",
     "_rosdoc2_sources",
     "_handwritten",
+    "_drafts",
     "packages/*/_doxygen",
 ]
 
