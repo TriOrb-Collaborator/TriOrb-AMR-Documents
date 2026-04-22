@@ -321,13 +321,21 @@ for pkg_rel, pkg_name in pairs:
     # Patch index.rst:
     #   - drop the stale "   C++ API <generated/index>" toctree line
     #     (the generated/ tree is purged for security; see the skip above).
+    #   - drop "   Python API <modules>" and "   Standard Documents <standards>"
+    #     from the toctree so the sidebar only shows the hand-written API
+    #     page we promote on the next line. The underlying pages still exist
+    #     (reachable by direct URL) but they no longer clutter navigation.
     #   - when API.md is present, inject "   API <API>" as the FIRST entry
     #     of the main (non-hidden) toctree so it shows up on the package
     #     landing page without needing to touch the hand-written source.
     pkg_index = dest / "index.rst"
     if pkg_index.is_file():
         text = pkg_index.read_text(encoding="utf-8")
-        text = "\n".join(ln for ln in text.splitlines() if "generated/index" not in ln)
+        drop_tokens = ("generated/index", "Python API <modules>", "Standard Documents <standards>")
+        text = "\n".join(
+            ln for ln in text.splitlines()
+            if not any(tok in ln for tok in drop_tokens)
+        )
         if has_api and "   API <API>" not in text:
             # Inject right after the first `.. toctree::` directive + its
             # option lines. Option lines look like "   :maxdepth: 2".
@@ -335,6 +343,24 @@ for pkg_rel, pkg_name in pairs:
             if m:
                 text = text.replace(m.group(1), m.group(1) + "\n   API <API>\n", 1)
         pkg_index.write_text(text + ("\n" if not text.endswith("\n") else ""), encoding="utf-8")
+
+    # Strip the "README" H1 from __readme_include.rst so the included
+    # README body doesn't produce a "README" anchor entry in the sidebar.
+    # (We still include the body below the package title; we just don't
+    # need a separate heading for it.)
+    readme_inc = dest / "__readme_include.rst"
+    if readme_inc.is_file():
+        lines = readme_inc.read_text(encoding="utf-8").splitlines()
+        # Drop a leading H1 shaped as:
+        #   README
+        #   ======
+        while lines and not lines[0].strip():
+            lines.pop(0)
+        if len(lines) >= 2 and re.match(r"^\S+$", lines[0]) and re.match(r"^=+\s*$", lines[1]):
+            lines = lines[2:]
+            while lines and not lines[0].strip():
+                lines.pop(0)
+            readme_inc.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     # Rewrite literalinclude paths: rosdoc2 emits relative paths anchored at the
     # container build dir. The container mounts the submodule at
