@@ -14,6 +14,12 @@ _rosdoc2_sources/
 # the authoritative list of published packages across rebuilds).
 !/packages/index.md
 !/packages/visual_slam.md
+
+# interfaces/ holds rosdoc2 output for TriOrb-ROS2-Types packages
+# (triorb_drive_interface etc). Same tracking policy as packages/.
+/interfaces/*
+/interfaces/*/
+!/interfaces/index.md
 *.mo
 
 # B plan (Phase 4 pivot): rosdoc2-generated package docs are English-only.

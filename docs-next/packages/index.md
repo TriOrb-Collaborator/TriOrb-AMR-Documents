@@ -62,18 +62,4 @@ triorb_battery_info/index
 triorb_gpio/index
 triorb_host_info/index
 triorb_os_setting/index
-triorb_socket/index
-```
-
-## Interfaces
-
-```{toctree}
-:maxdepth: 1
-:titlesonly:
-
-triorb_drive_interface/index
-triorb_plc_interface/index
-triorb_sensor_interface/index
-triorb_slam_interface/index
-triorb_static_interface/index
 ```

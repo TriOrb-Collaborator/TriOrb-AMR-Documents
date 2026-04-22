@@ -20,6 +20,13 @@ packages/index
 ```
 
 ```{toctree}
+:maxdepth: 2
+:caption: Interfaces
+
+interfaces/index
+```
+
+```{toctree}
 :maxdepth: 1
 :caption: WebAPI
 

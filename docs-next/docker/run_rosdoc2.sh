@@ -219,6 +219,7 @@ EXCLUDE_PREFIXES = (
     # Additional internal-only packages.
     "pkgs/triorb_sensor/triorb_streaming_images",
     "pkgs/triorb_sensor/sick/sick_Flexi-Soft_ROS2",
+    "pkgs/triorb_os/triorb_socket",
 )
 
 
@@ -260,8 +261,21 @@ if hw_cats_path.exists():
 sources_root = repo_root / "docs-next" / "_rosdoc2_sources"
 output_root = repo_root / "docs-next" / "_rosdoc2_out"
 packages_root = repo_root / "docs-next" / "packages"
+interfaces_root = repo_root / "docs-next" / "interfaces"
 manifest_path = packages_root / "_manifest.json"
 packages_root.mkdir(parents=True, exist_ok=True)
+interfaces_root.mkdir(parents=True, exist_ok=True)
+
+# Category whose packages are materialized under interfaces/ (not packages/).
+INTERFACE_CATEGORY = "Interfaces"
+
+
+def root_for_category(cat: str) -> Path:
+    return interfaces_root if cat == INTERFACE_CATEGORY else packages_root
+
+
+def path_prefix_for_category(cat: str) -> str:
+    return "interfaces" if cat == INTERFACE_CATEGORY else "packages"
 
 manifest = {}
 if manifest_path.exists():
@@ -282,7 +296,16 @@ for pkg_rel, pkg_name in pairs:
         print(f"SKIP {pkg_name}: RST sources missing at {src}", file=sys.stderr)
         continue
 
-    dest = packages_root / pkg_name
+    category = categorize(pkg_rel)
+    dest_root = root_for_category(category)
+    dest = dest_root / pkg_name
+    # Also remove any stale copy under the OTHER root from a previous run
+    # (e.g., Interfaces package used to live under packages/).
+    other_root = packages_root if dest_root is interfaces_root else interfaces_root
+    stale = other_root / pkg_name
+    if stale.exists():
+        shutil.rmtree(stale)
+        manifest.pop(pkg_name, None)
     if dest.exists():
         shutil.rmtree(dest)
     dest.mkdir(parents=True)
@@ -388,13 +411,14 @@ for pkg_rel, pkg_name in pairs:
         if m:
             breathe_project = m.group(1).strip()
             break
+    path_prefix = path_prefix_for_category(category)
     entry = {
-        "path": f"packages/{pkg_name}",
-        "category": categorize(pkg_rel),
+        "path": f"{path_prefix}/{pkg_name}",
+        "category": category,
     }
     if breathe_project and (dest / "_doxygen" / "xml").is_dir():
         entry["breathe_project"] = breathe_project
-        entry["doxygen_xml"] = f"packages/{pkg_name}/_doxygen/xml"
+        entry["doxygen_xml"] = f"{path_prefix}/{pkg_name}/_doxygen/xml"
     manifest[pkg_name] = entry
     print(f"OK   {pkg_name}: materialized to {dest.relative_to(repo_root)} (category='{entry['category']}', breathe='{breathe_project}')")
 
@@ -435,7 +459,8 @@ for name, entry in manifest.items():
     cat = entry.get("category", "Other")
     by_cat.setdefault(cat, []).append((name, entry))
 
-idx_path = packages_root / "index.md"
+# Emit packages/index.md for non-Interface categories only.
+pkg_idx_path = packages_root / "index.md"
 lines = [
     "# Package API",
     "",
@@ -445,6 +470,8 @@ lines = [
     "",
 ]
 for cat in CATEGORY_ORDER:
+    if cat == INTERFACE_CATEGORY:
+        continue
     entries = by_cat.get(cat, [])
     if not entries:
         continue
@@ -454,20 +481,31 @@ for cat in CATEGORY_ORDER:
         suffix = "" if entry.get("handwritten") else "/index"
         lines.append(f"{name}{suffix}")
     lines.extend(["```", ""])
+pkg_idx_path.write_text("\n".join(lines), encoding="utf-8")
+print(f"=== umbrella package index written: {pkg_idx_path.relative_to(repo_root)} ===")
 
-# Any uncategorized leftovers (shouldn't happen but defensive).
-extras = [n for n in by_cat if n not in CATEGORY_ORDER and by_cat[n]]
-if extras:
-    lines.extend(["## Other", ""])
-    lines.extend(["```{toctree}", ":maxdepth: 1", ":titlesonly:", ""])
-    for cat in extras:
-        for name, entry in sorted(by_cat[cat], key=lambda kv: kv[0]):
-            suffix = "" if entry.get("handwritten") else "/index"
-            lines.append(f"{name}{suffix}")
-    lines.extend(["```", ""])
-
-idx_path.write_text("\n".join(lines), encoding="utf-8")
-print(f"=== umbrella package index written: {idx_path.relative_to(repo_root)} ===")
+# Emit interfaces/index.md for TriOrb-ROS2-Types packages.
+iface_idx_path = interfaces_root / "index.md"
+iface_entries = sorted(by_cat.get(INTERFACE_CATEGORY, []), key=lambda kv: kv[0])
+if iface_entries:
+    iface_lines = [
+        "# Interfaces",
+        "",
+        "TriOrb が公開している ROS 2 メッセージ / サービス / アクション定義の一覧です。",
+        "各 Interface パッケージは `submodules/TriOrb-AMR-Package/pkgs/TriOrb-ROS2-Types/` 配下で",
+        "配布されており、他のノード実装がインポートして利用します。",
+        "",
+        "```{toctree}",
+        ":maxdepth: 1",
+        ":titlesonly:",
+        "",
+    ]
+    for name, entry in iface_entries:
+        suffix = "" if entry.get("handwritten") else "/index"
+        iface_lines.append(f"{name}{suffix}")
+    iface_lines.extend(["```", ""])
+    iface_idx_path.write_text("\n".join(iface_lines), encoding="utf-8")
+    print(f"=== interfaces index written: {iface_idx_path.relative_to(repo_root)} ===")
 PY
 
 echo "done."

@@ -191,6 +191,8 @@ PKG_INDEX_DICT = {
     "Safety Sensors": "セーフティセンサ",
     "OS / Infrastructure": "OS・基盤",
     "Interfaces": "インタフェース",
+    "TriOrb が公開している ROS 2 メッセージ / サービス / アクション定義の一覧です。 各 Interface パッケージは `submodules/TriOrb-AMR-Package/pkgs/TriOrb-ROS2-Types/` 配下で 配布されており、他のノード実装がインポートして利用します.":
+        "TriOrb が公開している ROS 2 メッセージ / サービス / アクション定義の一覧です。各 Interface パッケージは `submodules/TriOrb-AMR-Package/pkgs/TriOrb-ROS2-Types/` 配下で配布されており、他のノード実装がインポートして利用します。",
 }
 
 VISUAL_SLAM_DICT = {
