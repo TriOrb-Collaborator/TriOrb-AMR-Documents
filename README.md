@@ -52,6 +52,12 @@ make serve-deploy        # 上記を :18000 で配信（言語切替が正しく
 make rosdoc2-image       # Docker イメージを一度だけビルド
 make rosdoc2             # 全パッケージの API ドキュメントを rosdoc2 で生成
 
+# GitHub Pages デプロイ（Fork テスト / 本番）
+_scripts/deploy_ghpages.sh             # fork へ force-with-lease push（既定、確認プロンプト付き）
+_scripts/deploy_ghpages.sh --skip-stage --yes          # 再ビルドせず再 push
+_scripts/deploy_ghpages.sh --no-force origin           # 本番（fast-forward のみ）
+# 詳細は docs-next/README.md 参照
+
 # クリーンアップ
 make clean               # _build/ を削除
 ```

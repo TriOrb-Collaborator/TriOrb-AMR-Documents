@@ -77,6 +77,66 @@ make rosdoc2                    # 全パッケージの API ドキュメント�
 公開対象パッケージの選別は `packages/index.md` で行います（`gather_md.py` の
 `EXCLUDE_KWDS` に準じた手動メンテ）。
 
+## GitHub Pages へデプロイ
+
+`_scripts/deploy_ghpages.sh` が **build → orphan commit → push** を 1 コマンド化。
+
+```bash
+# Fork テスト（既定）: 確認プロンプト付き、force-with-lease で push
+_scripts/deploy_ghpages.sh
+# = _scripts/deploy_ghpages.sh fork gh-pages
+
+# Fork に最新ビルド成果物をそのまま再デプロイ（rebuild スキップ + 確認スキップ）
+_scripts/deploy_ghpages.sh --skip-stage --yes
+
+# 本番（origin）デプロイ: --no-force 必須、fast-forward でないと拒否
+_scripts/deploy_ghpages.sh --no-force origin
+
+# ヘルプ
+_scripts/deploy_ghpages.sh --help
+```
+
+### 安全機構（組み込み）
+
+| チェック | 挙動 |
+| --- | --- |
+| `origin` に force push | **拒否** — `--no-force` 明示必須 |
+| `ct.hpp` / `sha256*` が tree に存在 | **拒否**（ライセンス漏洩防止） |
+| Working tree を汚さない | 一時 worktree + orphan branch で作業、終了時に自動クリーン |
+| Force push | `--force-with-lease`（他者の同時 push を踏まない） |
+| 確認プロンプト | 既定 ON、`--yes` で skip |
+| Deploy commit message | `source_sha` / `source_branch` / `deploy_ts` を記録 |
+
+### 初回セットアップ（Fork を使う場合）
+
+```bash
+# リモート登録
+git remote add fork git@github.com:TriOrb-Collaborator/TriOrb-AMR-Documents.git
+
+# 初回デプロイ
+_scripts/deploy_ghpages.sh fork
+
+# GitHub GUI: Settings → Pages
+#   Source: Deploy from a branch
+#   Branch: gh-pages / (root)
+# 成功時 URL 例: https://triorb-collaborator.github.io/TriOrb-AMR-Documents/
+```
+
+### 本番デプロイの流れ
+
+```bash
+# 1) Fork テスト再現で視覚検証（上記）
+_scripts/deploy_ghpages.sh
+
+# 2) 問題なければ本番へ
+_scripts/deploy_ghpages.sh --no-force origin
+```
+
+`--no-force` 付きで push が reject されたら **他者が既に origin/gh-pages を進めている**。その場合は
+`git fetch origin gh-pages` で差分を確認、必要なら一時 worktree で merge → 再 push。
+
+---
+
 ## Phase 4 配信レイアウト
 
 ```
