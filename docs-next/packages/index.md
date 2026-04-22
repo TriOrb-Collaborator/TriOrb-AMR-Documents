@@ -27,7 +27,7 @@ triorb_static_broadcast/index
 :titlesonly:
 
 triorb_tagslam_manager/index
-visual_slam
+visual_slam/index
 ```
 
 ## Sensor I/O

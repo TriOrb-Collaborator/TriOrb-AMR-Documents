@@ -436,19 +436,39 @@ handwritten_root = repo_root / "docs-next" / "_handwritten" / "packages"
 handwritten_names = []
 if handwritten_root.is_dir():
     for item in sorted(handwritten_root.iterdir()):
-        if item.suffix != ".md" or item.name.startswith("_"):
+        if item.name.startswith("_"):
             continue
-        name = item.stem
-        dest_md = packages_root / f"{name}.md"
-        shutil.copy2(item, dest_md)
-        handwritten_names.append(name)
+        # Support two shapes:
+        #   _handwritten/packages/<name>.md       → single-page package
+        #   _handwritten/packages/<name>/*        → directory package (index.md
+        #                                            + optional API.md, etc.)
+        is_dir = item.is_dir()
+        is_md  = item.is_file() and item.suffix == ".md"
+        if not (is_dir or is_md):
+            continue
+        name = item.stem if is_md else item.name
         category = handwritten_categories.get(name, "Other")
+        if is_md:
+            dest_md = packages_root / f"{name}.md"
+            shutil.copy2(item, dest_md)
+            path_val = f"packages/{name}"
+            toctree_entry_suffix = ""
+            print(f"HAND {name}: copied {item.relative_to(repo_root)} -> {dest_md.relative_to(repo_root)}")
+        else:
+            dest_dir = packages_root / name
+            if dest_dir.exists():
+                shutil.rmtree(dest_dir)
+            shutil.copytree(item, dest_dir, symlinks=False)
+            path_val = f"packages/{name}"
+            toctree_entry_suffix = "/index"
+            print(f"HAND {name}: copied {item.relative_to(repo_root)}/ -> {dest_dir.relative_to(repo_root)}/ (dir)")
+        handwritten_names.append(name)
         manifest[name] = {
-            "path": f"packages/{name}",
+            "path": path_val,
             "category": category,
             "handwritten": True,
+            "handwritten_dir": is_dir,
         }
-        print(f"HAND {name}: copied {item.relative_to(repo_root)} -> {dest_md.relative_to(repo_root)} (category='{category}')")
 
 # Emit packages/index.md grouped by category. Each category becomes a ## heading
 # with its own toctree. Categories appear in CATEGORY_ORDER; packages within a
@@ -478,7 +498,10 @@ for cat in CATEGORY_ORDER:
     lines.extend([f"## {cat}", ""])
     lines.extend(["```{toctree}", ":maxdepth: 1", ":titlesonly:", ""])
     for name, entry in sorted(entries, key=lambda kv: kv[0]):
-        suffix = "" if entry.get("handwritten") else "/index"
+        if entry.get("handwritten"):
+            suffix = "/index" if entry.get("handwritten_dir") else ""
+        else:
+            suffix = "/index"
         lines.append(f"{name}{suffix}")
     lines.extend(["```", ""])
 pkg_idx_path.write_text("\n".join(lines), encoding="utf-8")
@@ -501,7 +524,10 @@ if iface_entries:
         "",
     ]
     for name, entry in iface_entries:
-        suffix = "" if entry.get("handwritten") else "/index"
+        if entry.get("handwritten"):
+            suffix = "/index" if entry.get("handwritten_dir") else ""
+        else:
+            suffix = "/index"
         iface_lines.append(f"{name}{suffix}")
     iface_lines.extend(["```", ""])
     iface_idx_path.write_text("\n".join(iface_lines), encoding="utf-8")

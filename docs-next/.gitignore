@@ -31,4 +31,7 @@ _rosdoc2_sources/
 /locale/ja/LC_MESSAGES/packages/*
 /locale/ja/LC_MESSAGES/packages/*/
 !/locale/ja/LC_MESSAGES/packages/index.po
-!/locale/ja/LC_MESSAGES/packages/visual_slam.po
+!/locale/ja/LC_MESSAGES/packages/visual_slam/
+/locale/ja/LC_MESSAGES/packages/visual_slam/*
+!/locale/ja/LC_MESSAGES/packages/visual_slam/index.po
+!/locale/ja/LC_MESSAGES/packages/visual_slam/API.po
