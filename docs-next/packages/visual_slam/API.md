@@ -2,9 +2,9 @@
 
 このページは、triorb_visual_slam の `/run_slam` ノードが ROS 2 に公開する Publish / Subscribe トピックの一覧です。
 
----
+## Active API
 
-## 🔄 Publish トピック一覧
+### Publish トピック一覧
 
 | トピック名 | メッセージ型 | 説明 |
 |------------|---------------|------|
@@ -31,9 +31,7 @@
 | `/triorb/error/str/add` | `std_msgs::msg::String` | エラーメッセージ通知 |
 | `/triorb/warn/str/add` | `std_msgs::msg::String` | ワーニング通知 |
 
----
-
-## 📥 Subscribe トピック一覧
+### Subscribe トピック一覧
 
 | トピック名 | メッセージ型 | 説明 |
 |------------|---------------|------|

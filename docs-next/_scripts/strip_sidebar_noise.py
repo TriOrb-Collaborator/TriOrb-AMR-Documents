@@ -27,6 +27,24 @@ from bs4 import BeautifulSoup
 def strip_html(path: Path) -> int:
     soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
     removed = 0
+    renamed = 0
+
+    # Normalize stale visual_slam sidebar labels that linger after incremental
+    # rebuilds — the canonical labels are set by the page H1s:
+    #   packages/visual_slam/index.html  → "triorb_visual_slam"
+    #   packages/visual_slam/API.html    → "API"
+    for a in soup.select("a.reference.internal[href]"):
+        if a.parent is None:
+            continue
+        href = a.get("href", "") or ""
+        if href.endswith("visual_slam/index.html") or href.endswith("visual_slam/"):
+            if a.get_text(strip=True) != "triorb_visual_slam":
+                a.string = "triorb_visual_slam"
+                renamed += 1
+        elif href.endswith("visual_slam/API.html"):
+            if a.get_text(strip=True) != "API":
+                a.string = "API"
+                renamed += 1
 
     # 1. README anchors: href contains `#readme` and text equals "README".
     for a in soup.select('a.reference.internal[href*="#readme"]'):
@@ -55,9 +73,9 @@ def strip_html(path: Path) -> int:
                     removed += 1
                 break
 
-    if removed:
+    if removed or renamed:
         path.write_text(str(soup), encoding="utf-8")
-    return removed
+    return removed + renamed
 
 
 def main(argv: list[str]) -> int:
