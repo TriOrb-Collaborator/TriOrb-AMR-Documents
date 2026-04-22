@@ -270,10 +270,14 @@ for pkg_rel, pkg_name in pairs:
         shutil.rmtree(dest)
     dest.mkdir(parents=True)
 
-    # Copy RST tree (excluding conf.py — umbrella owns Sphinx config).
+    # Copy RST tree (excluding conf.py — umbrella owns Sphinx config, and
+    # exhale's generated/ output which leaks license-auth internals such as
+    # ct.hpp / sha256.h program listings).
     for item in src.iterdir():
         if item.name == "conf.py":
             continue
+        if item.name == "generated":
+            continue  # security: see docs-next/_scripts/strip_cpp_api_toctree.py
         target = dest / item.name
         if item.is_dir():
             shutil.copytree(item, target, symlinks=False)
@@ -288,6 +292,16 @@ for pkg_rel, pkg_name in pairs:
         if dest_xml.exists():
             shutil.rmtree(dest_xml)
         shutil.copytree(dox_xml, dest_xml, symlinks=False)
+
+    # Strip the toctree line that points at the deleted `generated/` tree
+    # ("   C++ API <generated/index>"). Leaving it causes Sphinx to emit a
+    # broken-toctree warning and a dead link on the package page.
+    pkg_index = dest / "index.rst"
+    if pkg_index.is_file():
+        lines = pkg_index.read_text(encoding="utf-8").splitlines()
+        keep = [ln for ln in lines if "generated/index" not in ln]
+        if len(keep) != len(lines):
+            pkg_index.write_text("\n".join(keep) + "\n", encoding="utf-8")
 
     # Rewrite literalinclude paths: rosdoc2 emits relative paths anchored at the
     # container build dir. The container mounts the submodule at

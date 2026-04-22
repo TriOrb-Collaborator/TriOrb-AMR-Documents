@@ -28,9 +28,13 @@ DOCS_RELEASE ?= v1.2.4
 
 html:
 	$(SPHINXBUILD) $(SPHINXOPTS) -b html -D language=en "$(SOURCEDIR)" "$(BUILDDIR)/html/en"
+	@# Strip rosdoc2's exhale `generated/` dirs right after build — they
+	@# leak license-auth internals (ct.hpp, sha256.h). See deploy-stage.
+	@find "$(BUILDDIR)/html/en/packages" -type d -name generated -prune -exec rm -rf {} + 2>/dev/null || true
 
 html-ja:
 	$(SPHINXBUILD) $(SPHINXOPTS) -b html -D language=ja "$(SOURCEDIR)" "$(BUILDDIR)/html/ja"
+	@find "$(BUILDDIR)/html/ja/packages" -type d -name generated -prune -exec rm -rf {} + 2>/dev/null || true
 
 gettext:
 	$(SPHINXBUILD) $(SPHINXOPTS) -b gettext "$(SOURCEDIR)" "$(BUILDDIR)/gettext"
@@ -108,6 +112,17 @@ deploy-stage:
 	    f="$(BUILDDIR)/deploy/$(DOCS_RELEASE)/$$lang/packages/index.html"; \
 	    [ -f "$$f" ] && "$$PY" _scripts/strip_readme_anchors.py "$$f"; \
 	done
+	@# SECURITY + NOISE: rosdoc2's exhale-generated `generated/` directories
+	@# expose private license-auth internals (ct.hpp, sha256.h) as source
+	@# listings. They also dominate the sidebar with C++ file/class hierarchy
+	@# noise. Strip them from every package tree under the deployed release.
+	@# Also scrub references from package index.html so there are no broken
+	@# links in the sidebar or content toctree.
+	@find "$(BUILDDIR)/deploy/$(DOCS_RELEASE)" -type d -name generated -prune -exec rm -rf {} + 2>/dev/null || true
+	@PY=$$(command -v python3 || echo python3); \
+	if [ -x ../.venv-docs2/bin/python3 ]; then PY=../.venv-docs2/bin/python3; fi; \
+	find "$(BUILDDIR)/deploy/$(DOCS_RELEASE)" -path '*/packages/*/index.html' -print0 \
+	    | xargs -0 "$$PY" _scripts/strip_cpp_api_toctree.py 2>/dev/null || true
 	@echo "deploy-ready tree: $(BUILDDIR)/deploy/"
 	@du -sh "$(BUILDDIR)/deploy"/* 2>/dev/null | sort -h
 
