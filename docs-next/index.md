@@ -32,7 +32,7 @@ interfaces/index
 :maxdepth: 1
 :caption: MCP
 
-MCP server (external) <https://mcp.triorb-cloud.com/mcp/>
+How to connect from ChatGPT or Claude <https://mcp.triorb-cloud.com/docs/setup-guide>
 ```
 
 ```{toctree}
@@ -49,7 +49,7 @@ guides/privacy
 - Contact: `info@triorb.co.jp`
 - [REST API](packages/webapi)
 - [MQTT API](packages/mqtt)
-- [MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model Context Protocol endpoint, usable from any MCP-capable AI client.
+- [How to connect from ChatGPT or Claude](https://mcp.triorb-cloud.com/docs/setup-guide)
 
 ## Past versions
 

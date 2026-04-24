@@ -116,6 +116,7 @@ INDEX_MD_DICT = {
     "REST API (external site)": "REST API（別サイト）",
     "MCP": "MCP",
     "MCP server (external)": "MCP サーバー（別サイト）",
+    "How to connect from ChatGPT or Claude": "ChatGPT や Claude などから接続する方法",
     "Legal": "法務",
     "Support": "サポート",
     "Source / Issues: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)":
@@ -123,6 +124,8 @@ INDEX_MD_DICT = {
     "Contact: `info@triorb.co.jp`": "お問い合わせ: `info@triorb.co.jp`",
     "[REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) (separate site)":
         "[REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)（別サイト）",
+    "[How to connect from ChatGPT or Claude](https://mcp.triorb-cloud.com/docs/setup-guide)":
+        "[ChatGPT や Claude などから接続する方法](https://mcp.triorb-cloud.com/docs/setup-guide)",
     "[MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model Context Protocol endpoint, usable from any MCP-capable AI client.":
         "[MCP サーバー](https://mcp.triorb-cloud.com/mcp/) — TriOrb 提供の Model Context Protocol エンドポイント。MCP 対応の AI クライアントから誰でもご利用いただけます。",
     "Past versions": "過去バージョン",

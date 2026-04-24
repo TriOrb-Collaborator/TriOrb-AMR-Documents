@@ -96,15 +96,21 @@ msgstr "MCP"
 msgid "MCP server (external)"
 msgstr "MCP サーバー（別サイト）"
 
+msgid "How to connect from ChatGPT or Claude"
+msgstr "ChatGPT や Claude などから接続する方法"
+
 msgid "[REST API](packages/webapi)"
 msgstr "[REST API](packages/webapi)"
 
+msgid "[MQTT API](packages/mqtt)"
+msgstr "[MQTT API](packages/mqtt)"
+
 msgid ""
-"[MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model "
-"Context Protocol endpoint, usable from any MCP-capable AI client."
+"[How to connect from ChatGPT or Claude](https://mcp.triorb-cloud.com/docs/"
+"setup-guide)"
 msgstr ""
-"[MCP サーバー](https://mcp.triorb-cloud.com/mcp/) — TriOrb 提供の Model Context "
-"Protocol エンドポイント。MCP 対応の AI クライアントから誰でもご利用いただけます。"
+"[ChatGPT や Claude などから接続する方法](https://mcp.triorb-cloud.com/docs/setup-"
+"guide)"
 
 #~ msgid "[v1.2.4 (legacy site)](../v1.2.4/)"
 #~ msgstr "[v1.2.4 (旧サイト)](../v1.2.4/)"
