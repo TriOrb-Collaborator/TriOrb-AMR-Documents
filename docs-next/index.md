@@ -18,6 +18,7 @@ guides/history
 
 packages/index
 packages/webapi
+packages/mqtt
 ```
 
 ```{toctree}
@@ -47,6 +48,7 @@ guides/privacy
 - Source / Issues: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)
 - Contact: `info@triorb.co.jp`
 - [WebAPI](packages/webapi)
+- [MQTT API](packages/mqtt)
 - [MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model Context Protocol endpoint, usable from any MCP-capable AI client.
 
 ## Past versions

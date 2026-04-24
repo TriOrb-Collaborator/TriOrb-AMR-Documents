@@ -11,8 +11,12 @@ _rosdoc2_sources/
 /packages/*/
 # Tracked hand-edited files (not auto-generated output):
 #   packages/index.md       — authoritative published-pkg list
+#   packages/webapi.md      — hand-written package API page
+#   packages/mqtt.md        — hand-written package API page
 #   packages/visual_slam/*  — handwritten Visual SLAM page + API subpage
 !/packages/index.md
+!/packages/webapi.md
+!/packages/mqtt.md
 !/packages/visual_slam/
 /packages/visual_slam/*
 !/packages/visual_slam/index.md
