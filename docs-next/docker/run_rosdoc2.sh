@@ -189,22 +189,57 @@ CATEGORY_ORDER = [
     "Other",
 ]
 
+# Public package pages are intentionally allow-listed. This is more robust than
+# relying on accumulated exclude rules alone: partial rosdoc2 refreshes should
+# never resurrect internal packages from a stale manifest or old package dirs.
+PUBLIC_PACKAGE_NAMES = {
+    "triorb_drive_pico",
+    "triorb_drive_vector",
+    "triorb_navigation",
+    "triorb_navigation_manager",
+    "triorb_safe_run_cpp",
+    "triorb_snr_mux_driver",
+    "triorb_tagslam_manager",
+    "triorb_camera_argus",
+    "triorb_camera_capture",
+    "triorb_gamepad",
+    "triorb_sick_plc_wrapper",
+    "triorb_sls_wrapper",
+    "triorb_battery_info",
+    "triorb_gpio",
+    "triorb_host_info",
+    "triorb_os_setting",
+}
+
 # Packages excluded from the public API docs. Mirrors the master-side
 # gather_md.py EXCLUDE_KWDS so docs-next and the legacy MkDocs navigation
 # stay aligned. Matched against `pkg_rel` (the package path under the
 # submodule root); substring match.
 EXCLUDE_PREFIXES = (
+    "pkgs/triorb_drive/path_planning_server",
+    "pkgs/triorb_drive/triorb_automove_task",
+    "pkgs/triorb_drive/triorb_dead_reckoning",
+    "pkgs/triorb_drive/triorb_follow_path_planner",
+    "pkgs/triorb_drive/triorb_linear_path_planner",
     "pkgs/triorb_navi_bridge",       # leaf pkg — not public API
     "pkgs/triorb_navigation_pkgs/",  # internal controller / planner modules
+    "pkgs/triorb_drive/triorb_navigation_utils",
+    "pkgs/triorb_drive/triorb_navigation_vslam_tf",
+    "pkgs/triorb_drive/triorb_path_controller_interface",
+    "pkgs/triorb_drive/triorb_path_follow_controller",
     "pkgs/triorb_fleet/",            # fleet management, internal
     "pkgs/triorb_service/",          # infra services, internal
     "pkgs/rosbridge_suite/",
     "pkgs-collab/",                  # collaborative API — separate site, not exposed here
     "pkgs/stella_vslam_ros/",        # visual_slam page is the hand-written replacement
-    "pkgs/triorb_drive/path_planning_server",
     # Additional exclusions (2026-04-22) — internal / not public API.
     "pkgs/triorb_drive/triorb_path_search_server",
+    "pkgs/triorb_drive/triorb_pid_pos_controller",
+    "pkgs/triorb_drive/triorb_pid_vel_controller",
     "pkgs/triorb_drive/triorb_region_map",
+    "pkgs/triorb_drive/triorb_towing_path_planner",
+    "pkgs/triorb_drive/triorb_vslam_tf",
+    "pkgs/triorb_drive/triorb_vslam_tf_bridge",
     "pkgs/triorb_sensor/triorb_calibration",
     "pkgs/triorb_sensor/triorb_camera_calibration",
     "pkgs/triorb_sensor/triorb_can",
@@ -225,6 +260,12 @@ EXCLUDE_PREFIXES = (
 
 def is_excluded(pkg_rel: str) -> bool:
     return any(pkg_rel.startswith(p) for p in EXCLUDE_PREFIXES)
+
+
+def is_public_package(pkg_name: str, category: str) -> bool:
+    if category == INTERFACE_CATEGORY:
+        return True
+    return pkg_name in PUBLIC_PACKAGE_NAMES
 
 
 def categorize(pkg_rel: str) -> str:
@@ -277,6 +318,21 @@ def root_for_category(cat: str) -> Path:
 def path_prefix_for_category(cat: str) -> str:
     return "interfaces" if cat == INTERFACE_CATEGORY else "packages"
 
+
+def strip_leading_markdown_h1(text: str) -> str:
+    lines = text.splitlines()
+    if not lines:
+        return text
+    i = 0
+    while i < len(lines) and not lines[i].strip():
+        i += 1
+    if i < len(lines) and lines[i].startswith("# "):
+        i += 1
+        while i < len(lines) and not lines[i].strip():
+            i += 1
+        return "\n".join(lines[i:]) + ("\n" if i < len(lines) else "")
+    return text
+
 manifest = {}
 if manifest_path.exists():
     try:
@@ -287,16 +343,20 @@ if manifest_path.exists():
 project_re = re.compile(r":project:\s+(.+?)\s*$", re.MULTILINE)
 
 for pkg_rel, pkg_name in pairs:
-    if is_excluded(pkg_rel):
-        print(f"SKIP {pkg_name}: excluded by EXCLUDE_PREFIXES rule ({pkg_rel})")
+    category = categorize(pkg_rel)
+    if is_excluded(pkg_rel) or not is_public_package(pkg_name, category):
+        reason = "EXCLUDE_PREFIXES" if is_excluded(pkg_rel) else "PUBLIC_PACKAGE_NAMES allowlist"
+        print(f"SKIP {pkg_name}: excluded by {reason} ({pkg_rel})")
         manifest.pop(pkg_name, None)
+        stale_pkg = packages_root / pkg_name
+        if stale_pkg.exists():
+            shutil.rmtree(stale_pkg)
         continue
     src = sources_root / pkg_name
     if not src.exists():
         print(f"SKIP {pkg_name}: RST sources missing at {src}", file=sys.stderr)
         continue
 
-    category = categorize(pkg_rel)
     dest_root = root_for_category(category)
     dest = dest_root / pkg_name
     # Also remove any stale copy under the OTHER root from a previous run
@@ -333,13 +393,53 @@ for pkg_rel, pkg_name in pairs:
             shutil.rmtree(dest_xml)
         shutil.copytree(dox_xml, dest_xml, symlinks=False)
 
-    # Copy the submodule's hand-written API.md into the package tree so
-    # Sphinx/MyST can render it. The author maintains this file in the
-    # package source; rosdoc2 itself does not consume it.
-    submodule_api = repo_root / "submodules" / "TriOrb-AMR-Package" / pkg_rel / "API.md"
+    # Copy hand-written language variants for package overview/API pages.
+    # The package source remains the authoring source of truth; the umbrella
+    # Sphinx build then switches between JA and EN at render time.
+    submodule_pkg_dir = repo_root / "submodules" / "TriOrb-AMR-Package" / pkg_rel
+    submodule_api = submodule_pkg_dir / "API.md"
+    submodule_api_en = submodule_pkg_dir / "API(EN).md"
     has_api = submodule_api.is_file()
+    has_api_en = submodule_api_en.is_file()
     if has_api:
-        shutil.copy2(submodule_api, dest / "API.md")
+        (dest / "API(JA).md").write_text(
+            strip_leading_markdown_h1(submodule_api.read_text(encoding="utf-8")),
+            encoding="utf-8",
+        )
+        if has_api_en:
+            (dest / "API(EN).md").write_text(
+                strip_leading_markdown_h1(submodule_api_en.read_text(encoding="utf-8")),
+                encoding="utf-8",
+            )
+        api_wrapper_lines = [
+            "API",
+            "===",
+            "",
+            ".. ifconfig:: language == 'en'",
+            "",
+        ]
+        if has_api_en:
+            api_wrapper_lines += [
+                "   .. include:: API(EN).md",
+                "      :parser: myst_parser.sphinx_",
+            ]
+        else:
+            api_wrapper_lines += [
+                "   .. include:: API(JA).md",
+                "      :parser: myst_parser.sphinx_",
+            ]
+        api_wrapper_lines += [
+            "",
+            ".. ifconfig:: language != 'en'",
+            "",
+            "   .. include:: API(JA).md",
+            "      :parser: myst_parser.sphinx_",
+            "",
+        ]
+        (dest / "API.rst").write_text("\n".join(api_wrapper_lines), encoding="utf-8")
+        stale_api_md = dest / "API.md"
+        if stale_api_md.exists():
+            stale_api_md.unlink()
 
     # Patch index.rst:
     #   - drop the stale "   C++ API <generated/index>" toctree line
@@ -367,23 +467,57 @@ for pkg_rel, pkg_name in pairs:
                 text = text.replace(m.group(1), m.group(1) + "\n   API <API>\n", 1)
         pkg_index.write_text(text + ("\n" if not text.endswith("\n") else ""), encoding="utf-8")
 
-    # Strip the "README" H1 from __readme_include.rst so the included
-    # README body doesn't produce a "README" anchor entry in the sidebar.
-    # (We still include the body below the package title; we just don't
-    # need a separate heading for it.)
+    # Public package landing pages should not be forced to reuse the package's
+    # root README. If DOCS.md / DOCS(EN).md exist, treat them as the web-site
+    # source of truth; otherwise fall back to README.md / README(EN).md.
+    docs_ja_src = submodule_pkg_dir / "DOCS.md"
+    docs_en_src = submodule_pkg_dir / "DOCS(EN).md"
+    readme_ja_src = submodule_pkg_dir / "README.md"
+    readme_en_src = submodule_pkg_dir / "README(EN).md"
+    web_ja_src = docs_ja_src if docs_ja_src.is_file() else readme_ja_src
+    if docs_en_src.is_file():
+        web_en_src = docs_en_src
+    elif readme_en_src.is_file():
+        web_en_src = readme_en_src
+    else:
+        web_en_src = web_ja_src
+
+    overview_ja_dst = dest / "overview.md"
+    overview_en_dst = dest / "overview(EN).md"
+    if web_ja_src.is_file():
+        overview_ja_dst.write_text(
+            strip_leading_markdown_h1(web_ja_src.read_text(encoding="utf-8")),
+            encoding="utf-8",
+        )
+    if web_en_src.is_file():
+        overview_en_dst.write_text(
+            strip_leading_markdown_h1(web_en_src.read_text(encoding="utf-8")),
+            encoding="utf-8",
+        )
+
     readme_inc = dest / "__readme_include.rst"
     if readme_inc.is_file():
-        lines = readme_inc.read_text(encoding="utf-8").splitlines()
-        # Drop a leading H1 shaped as:
-        #   README
-        #   ======
-        while lines and not lines[0].strip():
-            lines.pop(0)
-        if len(lines) >= 2 and re.match(r"^\S+$", lines[0]) and re.match(r"^=+\s*$", lines[1]):
-            lines = lines[2:]
-            while lines and not lines[0].strip():
-                lines.pop(0)
-            readme_inc.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        readme_inc_lines = []
+        if overview_en_dst.is_file():
+            readme_inc_lines += [
+                ".. ifconfig:: language == 'en'",
+                "",
+                "   .. include:: overview(EN).md",
+                "      :parser: myst_parser.sphinx_",
+                "",
+                ".. ifconfig:: language != 'en'",
+                "",
+                "   .. include:: overview.md",
+                "      :parser: myst_parser.sphinx_",
+                "",
+            ]
+        else:
+            readme_inc_lines += [
+                ".. include:: overview.md",
+                "   :parser: myst_parser.sphinx_",
+                "",
+            ]
+        readme_inc.write_text("\n".join(readme_inc_lines), encoding="utf-8")
 
     # Rewrite literalinclude paths: rosdoc2 emits relative paths anchored at the
     # container build dir. The container mounts the submodule at
@@ -421,12 +555,6 @@ for pkg_rel, pkg_name in pairs:
         entry["doxygen_xml"] = f"{path_prefix}/{pkg_name}/_doxygen/xml"
     manifest[pkg_name] = entry
     print(f"OK   {pkg_name}: materialized to {dest.relative_to(repo_root)} (category='{entry['category']}', breathe='{breathe_project}')")
-
-manifest_path.write_text(
-    json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
-    encoding="utf-8",
-)
-print(f"=== manifest updated: {manifest_path.relative_to(repo_root)} ===")
 
 # Merge hand-written package pages from docs-next/_handwritten/packages/*.md
 # These are committed to the repo and represent packages that should appear in
@@ -469,6 +597,31 @@ if handwritten_root.is_dir():
             "handwritten": True,
             "handwritten_dir": is_dir,
         }
+
+# Prune stale package dirs and manifest entries. This keeps partial rosdoc2
+# refreshes from reviving internal packages that used to exist in packages/_manifest.json
+# or docs-next/packages/<name>/ from older runs.
+allowed_package_dirs = set(PUBLIC_PACKAGE_NAMES) | set(handwritten_names)
+for child in packages_root.iterdir():
+    if not child.is_dir():
+        continue
+    if child.name.startswith("_"):
+        continue
+    if child.name not in allowed_package_dirs:
+        shutil.rmtree(child)
+        manifest.pop(child.name, None)
+
+for name, entry in list(manifest.items()):
+    if entry.get("category") == INTERFACE_CATEGORY:
+        continue
+    if name not in allowed_package_dirs:
+        manifest.pop(name, None)
+
+manifest_path.write_text(
+    json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
+    encoding="utf-8",
+)
+print(f"=== manifest updated: {manifest_path.relative_to(repo_root)} ===")
 
 # Emit packages/index.md grouped by category. Each category becomes a ## heading
 # with its own toctree. Categories appear in CATEGORY_ORDER; packages within a

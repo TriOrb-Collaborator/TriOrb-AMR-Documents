@@ -325,7 +325,7 @@ msgid ""
 "third parties. You are solely responsible for your own verification, "
 "monitoring, safety checks, and backup measures at your own cost and risk."
 msgstr ""
-"特に、ロボット制御、経路生成、センサ処理、ECU 通信、WebAPI "
+"特に、ロボット制御、経路生成、センサ処理、ECU 通信、REST API "
 "操作またはサンプルコードの利用は、物理的損害、停止、誤動作または第三者被害につながる可能性があります。利用者は、自己の責任と費用において検証、監視、安全確認および必要なバックアップ手段を実施してください。"
 
 #: ../../guides/terms.md:83

@@ -14,9 +14,11 @@ guides/history
 
 ```{toctree}
 :maxdepth: 2
-:caption: Package API (rosdoc2)
+:caption: Package API
 
 packages/index
+packages/webapi
+packages/mqtt
 ```
 
 ```{toctree}
@@ -28,16 +30,9 @@ interfaces/index
 
 ```{toctree}
 :maxdepth: 1
-:caption: WebAPI
-
-WebAPI (external site) <https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/>
-```
-
-```{toctree}
-:maxdepth: 1
 :caption: MCP
 
-MCP server (external) <https://mcp.triorb-cloud.com/mcp/>
+How to connect from ChatGPT or Claude <https://mcp.triorb-cloud.com/docs/setup-guide>
 ```
 
 ```{toctree}
@@ -52,8 +47,9 @@ guides/privacy
 
 - Source / Issues: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)
 - Contact: `info@triorb.co.jp`
-- [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) (separate site)
-- [MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model Context Protocol endpoint, usable from any MCP-capable AI client.
+- [REST API](packages/webapi)
+- [MQTT API](packages/mqtt)
+- [How to connect from ChatGPT or Claude](https://mcp.triorb-cloud.com/docs/setup-guide)
 
 ## Past versions
 

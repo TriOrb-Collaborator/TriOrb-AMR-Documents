@@ -13,8 +13,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Package API"
-msgstr "パッケージ API"
+msgid "ROS2 API"
+msgstr "ROS2 API"
 
 msgid ""
 "Auto-generated API reference for ROS 2 packages under TriOrb-AMR-Package, "

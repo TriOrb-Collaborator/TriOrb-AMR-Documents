@@ -27,12 +27,14 @@ SPHINXOPTS  ?= -j auto
 DOCS_RELEASE ?= v1.2.4
 
 html:
+	rm -rf "$(BUILDDIR)/html/en"
 	$(SPHINXBUILD) $(SPHINXOPTS) -b html -D language=en "$(SOURCEDIR)" "$(BUILDDIR)/html/en"
 	@# Strip rosdoc2's exhale `generated/` dirs right after build — they
 	@# leak license-auth internals (ct.hpp, sha256.h). See deploy-stage.
 	@find "$(BUILDDIR)/html/en/packages" -type d -name generated -prune -exec rm -rf {} + 2>/dev/null || true
 
 html-ja:
+	rm -rf "$(BUILDDIR)/html/ja"
 	$(SPHINXBUILD) $(SPHINXOPTS) -b html -D language=ja "$(SOURCEDIR)" "$(BUILDDIR)/html/ja"
 	@find "$(BUILDDIR)/html/ja/packages" -type d -name generated -prune -exec rm -rf {} + 2>/dev/null || true
 

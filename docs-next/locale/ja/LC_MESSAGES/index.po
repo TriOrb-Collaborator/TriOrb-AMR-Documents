@@ -25,8 +25,8 @@ msgid "User Guide"
 msgstr "ユーザーガイド"
 
 #: ../../index.md:14
-msgid "Package API (rosdoc2)"
-msgstr "パッケージ API (rosdoc2)"
+msgid "Package API"
+msgstr "Package API"
 
 #: ../../index.md:21
 msgid "Legal"
@@ -84,11 +84,11 @@ msgid ""
 "See the [top-level version picker](../../) for a cross-version landing page."
 msgstr "版の横断トップは [バージョンピッカー](../../) をご利用ください。"
 
-msgid "WebAPI"
-msgstr "WebAPI"
+msgid "REST API"
+msgstr "REST API"
 
-msgid "WebAPI (external site)"
-msgstr "WebAPI（別サイト）"
+msgid "REST API (external site)"
+msgstr "REST API（別サイト）"
 
 msgid "MCP"
 msgstr "MCP"
@@ -96,18 +96,21 @@ msgstr "MCP"
 msgid "MCP server (external)"
 msgstr "MCP サーバー（別サイト）"
 
-msgid ""
-"[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) "
-"(separate site)"
-msgstr ""
-"[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)（別サイト）"
+msgid "How to connect from ChatGPT or Claude"
+msgstr "ChatGPT や Claude などから接続する方法"
+
+msgid "[REST API](packages/webapi)"
+msgstr "[REST API](packages/webapi)"
+
+msgid "[MQTT API](packages/mqtt)"
+msgstr "[MQTT API](packages/mqtt)"
 
 msgid ""
-"[MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model "
-"Context Protocol endpoint, usable from any MCP-capable AI client."
+"[How to connect from ChatGPT or Claude](https://mcp.triorb-cloud.com/docs/"
+"setup-guide)"
 msgstr ""
-"[MCP サーバー](https://mcp.triorb-cloud.com/mcp/) — TriOrb 提供の Model Context "
-"Protocol エンドポイント。MCP 対応の AI クライアントから誰でもご利用いただけます。"
+"[ChatGPT や Claude などから接続する方法](https://mcp.triorb-cloud.com/docs/setup-"
+"guide)"
 
 #~ msgid "[v1.2.4 (legacy site)](../v1.2.4/)"
 #~ msgstr "[v1.2.4 (旧サイト)](../v1.2.4/)"
