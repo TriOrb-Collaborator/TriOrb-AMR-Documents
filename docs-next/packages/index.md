@@ -11,15 +11,6 @@ Auto-generated API reference for ROS 2 packages under TriOrb-AMR-Package,
 produced by rosdoc2. Packages are grouped by subsystem; within each group
 they are sorted alphabetically.
 
-## WebAPI
-
-```{toctree}
-:maxdepth: 1
-:titlesonly:
-
-webapi
-```
-
 ## Drive & Navigation
 
 ```{toctree}

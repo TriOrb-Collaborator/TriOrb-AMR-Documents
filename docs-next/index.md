@@ -17,6 +17,7 @@ guides/history
 :caption: Package API
 
 packages/index
+packages/webapi
 ```
 
 ```{toctree}
