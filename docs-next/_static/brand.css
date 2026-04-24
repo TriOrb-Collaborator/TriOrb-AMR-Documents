@@ -109,3 +109,134 @@ code.literal {
     color: rgb(138, 162, 224);
   }
 }
+
+/* ---- MQTT API: in-page ROS2 API preview modal ---------------------- */
+.mqtt-api-modal[hidden] {
+  display: none !important;
+}
+
+.mqtt-api-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.mqtt-api-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 16, 40, 0.58);
+  backdrop-filter: blur(2px);
+}
+
+.mqtt-api-modal__dialog {
+  position: absolute;
+  inset: clamp(1rem, 4vh, 2.5rem) clamp(1rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(34, 59, 128, 0.25);
+  border-radius: 16px;
+  background: var(--color-background-primary);
+  box-shadow: 0 24px 80px rgba(8, 16, 40, 0.32);
+}
+
+.mqtt-api-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(34, 59, 128, 0.18);
+  background: linear-gradient(90deg, rgba(34, 59, 128, 0.10), rgba(34, 59, 128, 0.02));
+}
+
+.mqtt-api-modal__eyebrow {
+  margin: 0 0 0.15rem;
+  color: rgb(34, 59, 128);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mqtt-api-modal__header h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.mqtt-api-modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+}
+
+.mqtt-api-modal__open {
+  font-size: 0.9rem;
+}
+
+.mqtt-api-modal__close {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid rgba(34, 59, 128, 0.22);
+  border-radius: 999px;
+  background: var(--color-background-secondary);
+  color: var(--color-foreground-primary);
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.mqtt-api-modal__close:hover {
+  border-color: rgb(34, 59, 128);
+  color: rgb(34, 59, 128);
+}
+
+.mqtt-api-modal__frame {
+  flex: 1 1 auto;
+  width: 100%;
+  border: 0;
+  background: var(--color-background-primary);
+}
+
+.mqtt-api-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .mqtt-api-modal__dialog {
+    inset: 0;
+    border-radius: 0;
+  }
+
+  .mqtt-api-modal__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mqtt-api-modal__actions {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) .mqtt-api-modal__backdrop {
+    background: rgba(0, 0, 0, 0.68);
+  }
+
+  body:not([data-theme="light"]) .mqtt-api-modal__dialog {
+    border-color: rgba(138, 162, 224, 0.30);
+  }
+
+  body:not([data-theme="light"]) .mqtt-api-modal__header {
+    border-bottom-color: rgba(138, 162, 224, 0.22);
+    background: linear-gradient(90deg, rgba(138, 162, 224, 0.14), rgba(138, 162, 224, 0.03));
+  }
+
+  body:not([data-theme="light"]) .mqtt-api-modal__eyebrow,
+  body:not([data-theme="light"]) .mqtt-api-modal__close:hover {
+    color: rgb(138, 162, 224);
+  }
+}

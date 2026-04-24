@@ -112,6 +112,7 @@ html_logo = "_static/TriOrb_BASE.svg"
 # is what keeps the site consistent when deployed under a project page
 # prefix like /TriOrb-AMR-Documents/.
 html_css_files = ["brand.css"]
+html_js_files = ["mqtt-api-modal.js"]
 
 # Lapis Lazuli brand colors, carried over from the legacy mike site
 # (triorb-amr-docs/docs/stylesheets/extra.css — primary rgb(34,59,128)).
