@@ -14,7 +14,7 @@ guides/history
 
 ```{toctree}
 :maxdepth: 2
-:caption: Package API (rosdoc2)
+:caption: Package API
 
 packages/index
 ```

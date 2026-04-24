@@ -1,4 +1,4 @@
-# Interfaces
+# ROS2 msg/srv/action
 
 TriOrb が公開している ROS 2 メッセージ / サービス / アクション定義の一覧です。
 各 Interface パッケージは [TriOrb-ROS2-Types](https://github.com/TriOrb-Inc/TriOrb-ROS2-Types)

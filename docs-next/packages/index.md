@@ -1,4 +1,4 @@
-# Package API
+# ROS2 API
 
 ```{important}
 ROS 2 API を利用するには、[TriOrb-ROS2-Types](https://github.com/TriOrb-Inc/TriOrb-ROS2-Types)

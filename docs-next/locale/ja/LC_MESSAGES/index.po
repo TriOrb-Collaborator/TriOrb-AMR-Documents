@@ -25,8 +25,8 @@ msgid "User Guide"
 msgstr "ユーザーガイド"
 
 #: ../../index.md:14
-msgid "Package API (rosdoc2)"
-msgstr "パッケージ API (rosdoc2)"
+msgid "Package API"
+msgstr "Package API"
 
 #: ../../index.md:21
 msgid "Legal"
