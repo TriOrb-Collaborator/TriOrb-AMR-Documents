@@ -96,11 +96,8 @@ msgstr "MCP"
 msgid "MCP server (external)"
 msgstr "MCP サーバー（別サイト）"
 
-msgid ""
-"[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) "
-"(separate site)"
-msgstr ""
-"[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)（別サイト）"
+msgid "[WebAPI](packages/webapi)"
+msgstr "[WebAPI](packages/webapi)"
 
 msgid ""
 "[MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model "

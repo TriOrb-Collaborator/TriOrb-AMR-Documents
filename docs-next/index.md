@@ -28,13 +28,6 @@ interfaces/index
 
 ```{toctree}
 :maxdepth: 1
-:caption: WebAPI
-
-WebAPI (external site) <https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/>
-```
-
-```{toctree}
-:maxdepth: 1
 :caption: MCP
 
 MCP server (external) <https://mcp.triorb-cloud.com/mcp/>
@@ -52,7 +45,7 @@ guides/privacy
 
 - Source / Issues: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)
 - Contact: `info@triorb.co.jp`
-- [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) (separate site)
+- [WebAPI](packages/webapi)
 - [MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model Context Protocol endpoint, usable from any MCP-capable AI client.
 
 ## Past versions
