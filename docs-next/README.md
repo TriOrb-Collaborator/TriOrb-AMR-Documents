@@ -77,6 +77,8 @@ make rosdoc2                    # 全パッケージの API ドキュメント�
 公開対象パッケージの選別は `packages/index.md` で行います（`gather_md.py` の
 `EXCLUDE_KWDS` に準じた手動メンテ）。
 
+公開/非公開/名称変更ルールの説明は `PACKAGE_VISIBILITY_RULES.md` を参照してください。
+
 ## GitHub Pages へデプロイ
 
 `_scripts/deploy_ghpages.sh` が **build → orphan commit → push** を 1 コマンド化。

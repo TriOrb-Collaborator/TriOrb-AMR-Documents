@@ -10,14 +10,12 @@ they are sorted alphabetically.
 :maxdepth: 1
 :titlesonly:
 
-triorb_dead_reckoning/index
 triorb_drive_pico/index
 triorb_drive_vector/index
 triorb_navigation/index
 triorb_navigation_manager/index
 triorb_safe_run_cpp/index
 triorb_snr_mux_driver/index
-triorb_static_broadcast/index
 ```
 
 ## SLAM
@@ -39,7 +37,6 @@ visual_slam/index
 triorb_camera_argus/index
 triorb_camera_capture/index
 triorb_gamepad/index
-triorb_streaming_image_cpp/index
 ```
 
 ## Safety Sensors

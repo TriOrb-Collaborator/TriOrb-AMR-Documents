@@ -103,3 +103,4 @@ make clean               # _build/ を削除
 - `CLAUDE.md` — AI エージェント向け（パイプライン分離、よく踏む落とし穴）
 - `docs-next/HANDOFF.md` — 最新の作業状態と再開手順
 - `docs-next/CI.md` — CI 設計と GitHub Actions の設計意図
+- `docs-next/PACKAGE_VISIBILITY_RULES.md` — 公開/非公開/名称変更ルールの集約

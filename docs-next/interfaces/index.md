@@ -8,8 +8,12 @@ TriOrb が公開している ROS 2 メッセージ / サービス / アクショ
 :maxdepth: 1
 :titlesonly:
 
+triorb_collaboration_interface/index
+triorb_cv_interface/index
 triorb_drive_interface/index
+triorb_field_interface/index
 triorb_plc_interface/index
+triorb_project_interface/index
 triorb_sensor_interface/index
 triorb_slam_interface/index
 triorb_static_interface/index

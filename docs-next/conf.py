@@ -18,6 +18,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "breathe",
     "sphinx.ext.autodoc",
+    "sphinx.ext.ifconfig",
     "sphinx.ext.intersphinx",
 ]
 
