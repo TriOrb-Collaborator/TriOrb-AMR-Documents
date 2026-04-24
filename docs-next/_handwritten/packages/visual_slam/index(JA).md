@@ -22,6 +22,6 @@ TriOrb BASE のステレオキーフレーム特徴量ベースの地図生成�
 | `triorb_vslam_tf` | ナビゲーションスタックで使う内部姿勢 publish コンポーネントです。 |
 | `triorb_vslam_tf_bridge` | SLAM 出力とナビゲーション姿勢処理をつなぐ内部 bridge です。 |
 | `triorb_dead_reckoning` | VSLAM、オドメトリ、IMU を統合する内部姿勢融合コンポーネントです。 |
-| [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) | HTTP 経由の地図保存 / 読込 / 切替操作です。 |
+| [REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) | HTTP 経由の地図保存 / 読込 / 切替操作です。 |
 
 上記の内部コンポーネントは、このドキュメントサイトでは公開していません。

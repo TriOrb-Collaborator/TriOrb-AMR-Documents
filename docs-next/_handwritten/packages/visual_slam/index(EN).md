@@ -22,6 +22,6 @@ Higher-level public components consume Visual SLAM output:
 | `triorb_vslam_tf` | Internal pose-publication component used by the navigation stack |
 | `triorb_vslam_tf_bridge` | Internal bridge between SLAM output and navigation pose handling |
 | `triorb_dead_reckoning` | Internal pose-fusion component that combines VSLAM, odometry, and IMU |
-| [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) | HTTP interface for map save/load/switch operations |
+| [REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) | HTTP interface for map save/load/switch operations |
 
 The internal components above are not published on this documentation site.

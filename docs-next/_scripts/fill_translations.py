@@ -112,8 +112,8 @@ INDEX_MD_DICT = {
         "TriOrb BASE の開発者向けドキュメントです。自律移動パッケージの ROS 2 API リファレンス、上位側制御 ECU 通信ライブラリ、運用ガイド、変更履歴をまとめています。",
     "User Guide": "ユーザーガイド",
     "Package API (rosdoc2)": "パッケージ API (rosdoc2)",
-    "WebAPI": "WebAPI",
-    "WebAPI (external site)": "WebAPI（別サイト）",
+    "REST API": "REST API",
+    "REST API (external site)": "REST API（別サイト）",
     "MCP": "MCP",
     "MCP server (external)": "MCP サーバー（別サイト）",
     "Legal": "法務",
@@ -121,8 +121,8 @@ INDEX_MD_DICT = {
     "Source / Issues: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)":
         "ソースコード / Issue: [TriOrb-Inc/TriOrb-AMR-Documents](https://github.com/TriOrb-Inc/TriOrb-AMR-Documents)",
     "Contact: `info@triorb.co.jp`": "お問い合わせ: `info@triorb.co.jp`",
-    "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) (separate site)":
-        "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)（別サイト）",
+    "[REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) (separate site)":
+        "[REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)（別サイト）",
     "[MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model Context Protocol endpoint, usable from any MCP-capable AI client.":
         "[MCP サーバー](https://mcp.triorb-cloud.com/mcp/) — TriOrb 提供の Model Context Protocol エンドポイント。MCP 対応の AI クライアントから誰でもご利用いただけます。",
     "Past versions": "過去バージョン",
@@ -145,8 +145,8 @@ OVERVIEW_MD_DICT = {
         "**自律移動 API**: ロボットを制御するための ROS 2 トピック / サービス / アクション",
     "**Control ECU Library**: a Python library for sending commands to the TriOrb control ECU directly from a host PC":
         "**制御 ECU 通信ライブラリ**: 上位 PC から TriOrb 制御 ECU へ直接指令を送るための Python ライブラリ",
-    "**WebAPI**: browser-facing HTTP API for the robot controller ([separate site](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/))":
-        "**WebAPI**: ロボットコントローラ向けのブラウザ対応 HTTP API（[別サイト](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)）",
+    "**REST API**: browser-facing HTTP API for the robot controller ([separate site](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/))":
+        "**REST API**: ロボットコントローラ向けの HTTP API（[別サイト](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)）",
     "**Changelog / Terms of Service / Privacy Policy**": "**変更履歴 / 利用規約 / プライバシーポリシー**",
     "Before you start": "利用前に",
     "For hardware setup and initial software installation, refer to the TriOrb User Documents portal, which aggregates the **TriOrb BASE Operating Manual**, **Autonomous Navigation Package User Manual**, and **Upgrade Procedures**:":
@@ -155,8 +155,8 @@ OVERVIEW_MD_DICT = {
         "[TriOrb User Documents (Notion)](https://triorb.notion.site/2afb60b1eaf380dd8e6acade491a29d6?v=2afb60b1eaf381f4a558000ca9c9461d)",
     "Detailed hardware manuals for non-standard models are distributed separately on a per-project basis.":
         "標準機以外のハードウェア詳細マニュアルは個別配布となります。",
-    "This site focuses on the public API surface and change history of the ROS 2 / Python layer. The [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) is also available when a browser-only integration is preferred.":
-        "本サイトは ROS 2 / Python レイヤの公開 API 仕様と変更履歴に特化しています。ブラウザのみで連携したい場合は [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) もご利用いただけます。",
+    "This site focuses on the public API surface and change history of the ROS 2 / Python layer. The [REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) is also available when a browser-only integration is preferred.":
+        "本サイトは ROS 2 / Python レイヤの公開 API 仕様と変更履歴に特化しています。ブラウザのみで連携したい場合は [REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/) もご利用いただけます。",
 }
 
 HISTORY_MD_DICT = {
@@ -226,7 +226,7 @@ VISUAL_SLAM_DICT = {
     "Bridges VSLAM to navigation pose.": "VSLAM 姿勢をナビゲーション用姿勢へブリッジ。",
     "[`triorb_dead_reckoning`](triorb_dead_reckoning/index.md)": "[`triorb_dead_reckoning`](triorb_dead_reckoning/index.md)",
     "Fuses VSLAM, odometry, and IMU for robust pose.": "VSLAM・オドメトリ・IMU を統合し堅牢な自己位置を推定。",
-    "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)": "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)",
+    "[REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)": "[REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)",
     "Map save / load / switch operations over HTTP.": "地図保存・読み込み・切替操作（HTTP）。",
     "See each package's API page for its public topics, services, and actions.":
         "公開されているトピック / サービス / アクションは各パッケージの API ページを参照してください。",

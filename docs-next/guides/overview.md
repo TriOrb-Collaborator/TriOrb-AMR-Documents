@@ -12,7 +12,7 @@ This site provides:
 
 - **Autonomous Navigation API**: ROS 2 topics / services / actions for driving the robot
 - **Control ECU Library**: a Python library for sending commands to the TriOrb control ECU directly from a host PC
-- **WebAPI**: browser-facing HTTP API for the robot controller ([separate site](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/))
+- **REST API**: browser-facing HTTP API for the robot controller ([separate site](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/))
 - **Changelog / Terms of Service / Privacy Policy**
 
 ## Before you start
@@ -27,5 +27,5 @@ Detailed hardware manuals for non-standard models are distributed separately
 on a per-project basis.
 
 This site focuses on the public API surface and change history of the ROS 2 /
-Python layer. The [WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)
+Python layer. The [REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)
 is also available when a browser-only integration is preferred.

@@ -1,12 +1,12 @@
-# WebAPI
+# REST API
 
-WebAPI は、TriOrb BASE の Robot Controller が公開する HTTP API です。
+REST API は、TriOrb BASE の Robot Controller が公開する HTTP API です。
 ROS 2 の topic / service / action を直接扱う代わりに、HTTP 経由でロボットの状態取得、
 地図操作、自律移動、直接制御、システム管理などを実行するためのインタフェースです。
 
 ## 実機でのアクセス
 
-実機上では Robot Controller の WebAPI サーバーが `8080` 番ポートで起動します。
+実機上では Robot Controller の REST API サーバーが `8080` 番ポートで起動します。
 AMR の IP アドレスが `192.168.20.30` の場合、ベース URL は次の形式です。
 
 ```text
@@ -38,4 +38,4 @@ OpenAPI フロントエンドでは `Try it out` を使って、実機に対し�
 公開版は仕様確認用であり、実機に接続されていないため実行系の確認は実機側の
 OpenAPI フロントエンドで行ってください。
 
-- [TriOrb WebAPI Reference](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)
+- [TriOrb REST API Reference](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)

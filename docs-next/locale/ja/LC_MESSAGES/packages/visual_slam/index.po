@@ -95,8 +95,8 @@ msgstr "[`triorb_dead_reckoning`](triorb_dead_reckoning/index.md)"
 msgid "Fuses VSLAM, odometry, and IMU for robust pose."
 msgstr "VSLAM・オドメトリ・IMU を統合し堅牢な自己位置を推定。"
 
-msgid "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)"
-msgstr "[WebAPI](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)"
+msgid "[REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)"
+msgstr "[REST API](https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/)"
 
 msgid "Map save / load / switch operations over HTTP."
 msgstr "地図保存・読み込み・切替操作（HTTP）。"
@@ -176,8 +176,6 @@ msgstr "公開されているトピック / サービス / アクションは各
 #~ "`triorb_dead_reckoning` — fuses VSLAM, odometry, and IMU for robust pose"
 #~ msgstr "`triorb_dead_reckoning` — VSLAM・オドメトリ・IMU を統合し堅牢な自己位置を推定"
 
-#~ msgid "The WebAPI's map save / load / switch operations"
-#~ msgstr "WebAPI の地図保存・読み込み・切替操作"
 
 #~ msgid "See those packages for the public topic / service surface."
 #~ msgstr "公開されているトピック / サービスは各パッケージのページを参照してください。"

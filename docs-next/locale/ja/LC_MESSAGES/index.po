@@ -84,11 +84,11 @@ msgid ""
 "See the [top-level version picker](../../) for a cross-version landing page."
 msgstr "版の横断トップは [バージョンピッカー](../../) をご利用ください。"
 
-msgid "WebAPI"
-msgstr "WebAPI"
+msgid "REST API"
+msgstr "REST API"
 
-msgid "WebAPI (external site)"
-msgstr "WebAPI（別サイト）"
+msgid "REST API (external site)"
+msgstr "REST API（別サイト）"
 
 msgid "MCP"
 msgstr "MCP"
@@ -96,8 +96,8 @@ msgstr "MCP"
 msgid "MCP server (external)"
 msgstr "MCP サーバー（別サイト）"
 
-msgid "[WebAPI](packages/webapi)"
-msgstr "[WebAPI](packages/webapi)"
+msgid "[REST API](packages/webapi)"
+msgstr "[REST API](packages/webapi)"
 
 msgid ""
 "[MCP server](https://mcp.triorb-cloud.com/mcp/) — public TriOrb Model "
