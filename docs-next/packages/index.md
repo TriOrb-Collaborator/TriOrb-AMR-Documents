@@ -1,13 +1,15 @@
 # Package API
 
+```{important}
+ROS 2 API を利用するには、[TriOrb-ROS2-Types](https://github.com/TriOrb-Inc/TriOrb-ROS2-Types)
+の install が必要です。対象ワークスペースで `git clone` してから `colcon build`
+してください。各 package の topic / service / action は、この repository で配布されている
+interface 定義に依存しています。
+```
+
 Auto-generated API reference for ROS 2 packages under TriOrb-AMR-Package,
 produced by rosdoc2. Packages are grouped by subsystem; within each group
 they are sorted alphabetically.
-
-ROS 2 API を利用する場合は、あわせて
-[TriOrb-ROS2-Types](https://github.com/TriOrb-Inc/TriOrb-ROS2-Types) を clone し、
-対象ワークスペースで `colcon build` してください。各 package の topic / service /
-action は、この repository で配布されている interface 定義に依存しています。
 
 ## Drive & Navigation
 
