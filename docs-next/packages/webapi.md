@@ -13,10 +13,10 @@ AMR の IP アドレスが `192.168.20.30` の場合、ベース URL は次の�
 http://192.168.20.30:8080
 ```
 
-例えば稼働確認用の health check は次の URL で確認できます。
+例えば Robot Controller のバージョン情報は次の URL で確認できます。
 
 ```text
-http://192.168.20.30:8080/system/health
+http://192.168.20.30:8080/system/version
 ```
 
 ## OpenAPI フロントエンド
