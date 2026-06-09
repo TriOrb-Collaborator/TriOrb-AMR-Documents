@@ -1,0 +1,1639 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="https://triorb.co.jp/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>TriOrb-ROS2-Types - TriOrb BASE 開発ガイド</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#triorb-ros2-types" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="TriOrb BASE 開発ガイド" class="md-header__button md-logo" aria-label="TriOrb BASE 開発ガイド" data-md-component="logo">
+      
+  <img src="https://triorb.co.jp/wp/wp-content/themes/triorb/img/logo-w.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TriOrb BASE 開発ガイド
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TriOrb-ROS2-Types
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="blue"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="blue"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TriOrb BASE 開発ガイド" class="md-nav__button md-logo" aria-label="TriOrb BASE 開発ガイド" data-md-component="logo">
+      
+  <img src="https://triorb.co.jp/wp/wp-content/themes/triorb/img/logo-w.png" alt="logo">
+
+    </a>
+    TriOrb BASE 開発ガイド
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reference_API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自律移動API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pkgs-collab/Reference_API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    協調移動API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TriOrb-ROS2-Types/README_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ROS2 Interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triorb-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    制御ECU通信ライブラリ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    サンプルプログラム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    変更履歴
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_collaboration_interfacemsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_collaboration_interface/msg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_collaboration_interface/msg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_collaboration_interfacemsgparentbindmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_collaboration_interface/msg/ParentBind.msg
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_cv_interfacemsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_cv_interface/msg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_cv_interface/msg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_cv_interfacemsgboundingboxmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_cv_interface/msg/BoundingBox.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_cv_interfacemsgdetectionmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_cv_interface/msg/Detection.msg
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_cv_interfacesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_cv_interface/srv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_cv_interface/srv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_cv_interfacesrvversionsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_cv_interface/srv/Version.srv
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_drive_interfaceaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_drive_interface/action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfaceactiontriorbsetpathaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/action/TriorbSetPath.action
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_drive_interface/msg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgdrivegainsmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/DriveGains.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgmotorparamsmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/MotorParams.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgmotorstatusmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/MotorStatus.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgroutemsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/Route.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgtriorbpos3msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/TriorbPos3.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgtriorbrunpos3msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/TriorbRunPos3.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgtriorbrunresultmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/TriorbRunResult.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgtriorbrunsettingmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/TriorbRunSetting.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgtriorbrunvel3msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/TriorbRunVel3.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgtriorbsetpos3msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/TriorbSetPos3.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgtriorbspeedmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/TriorbSpeed.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacemsgtriorbvel3msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/msg/TriorbVel3.msg
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_drive_interfacesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/srv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_drive_interface/srv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacesrvgetpathsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/srv/GetPath.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacesrvgetroutesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/srv/GetRoute.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacesrvmotorparamssrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/srv/MotorParams.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacesrvmotorstatussrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/srv/MotorStatus.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacesrvtriorbrunpos3srv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/srv/TriorbRunPos3.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacesrvtriorbrunvel3srv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/srv/TriorbRunVel3.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacesrvtriorbsetpos3srv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/srv/TriorbSetPos3.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_drive_interfacesrvversionsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_drive_interface/srv/Version.srv
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_field_interfacemsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_field_interface/msg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_field_interface/msg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_field_interfacemsgkeyframemsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_field_interface/msg/Keyframe.msg
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_field_interfacesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_field_interface/srv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_field_interface/srv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_field_interfacesrvgetkeyframelistsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_field_interface/srv/GetKeyframeList.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_field_interfacesrvsetkeyframesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_field_interface/srv/SetKeyframe.srv
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_project_interfacesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_project_interface/srv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_project_interface/srv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_project_interfacesrvversionsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_project_interface/srv/Version.srv
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_sensor_interfaceaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_sensor_interface/action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfaceactioncameracalibrationinternalaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/action/CameraCalibrationInternal.action
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacemsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/msg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_sensor_interface/msg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacemsgcameradevicemsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/msg/CameraDevice.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacemsgdistancesensormsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/msg/DistanceSensor.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacemsgimusensormsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/msg/ImuSensor.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacemsgobstaclesmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/msg/Obstacles.msg
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/srv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_sensor_interface/srv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacesrvcameracapturesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/srv/CameraCapture.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacesrvcameradevicesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/srv/CameraDevice.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacesrvgetdistancesensorsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/srv/GetDistanceSensor.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacesrvsetdistancesensorsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/srv/SetDistanceSensor.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_sensor_interfacesrvversionsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_sensor_interface/srv/Version.srv
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_static_interfacemsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/msg
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_static_interface/msg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacemsghoststatusmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/msg/HostStatus.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacemsgnodeinfomsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/msg/NodeInfo.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacemsgrobotstatusmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/msg/RobotStatus.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacemsgsettingipv4msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/msg/SettingIPv4.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacemsgsettingrosmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/msg/SettingROS.msg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacemsgsettingssidmsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/msg/SettingSSID.msg
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_static_interface/srv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvgetimagesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/GetImage.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvgetstringsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/GetString.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvgetstringlistsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/GetStringList.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvnodeinfosrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/NodeInfo.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvros2launchsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/Ros2Launch.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvros2runsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/Ros2Run.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvsetimagesrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/SetImage.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvsetstringsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/SetString.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvsettingipv4srv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/SettingIPv4.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvsettingrossrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/SettingROS.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvsettingssidsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/SettingSSID.srv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triorb_static_interfacesrvversionsrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_static_interface/srv/Version.srv
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="triorb-ros2-types">TriOrb-ROS2-Types</h1>
+<h2 id="triorb_collaboration_interfacemsg">triorb_collaboration_interface/msg</h2>
+<h3 id="triorb_collaboration_interfacemsgparentbindmsg">triorb_collaboration_interface/msg/ParentBind.msg</h3>
+<pre><code class="language-bash">std_msgs/Header header      # Header
+string parent               # Parent name
+string you                  # Your name
+float32 x                   # Relative position of the parent from you [m]
+float32 y                   # Relative position of the parent from you [m]
+float32 deg                 # Relative position of the parent from you [deg]
+</code></pre>
+<h2 id="triorb_cv_interfacemsg">triorb_cv_interface/msg</h2>
+<h3 id="triorb_cv_interfacemsgboundingboxmsg">triorb_cv_interface/msg/BoundingBox.msg</h3>
+<pre><code class="language-bash">float32[] xtl_ytl_xbr_ybr
+</code></pre>
+<h3 id="triorb_cv_interfacemsgdetectionmsg">triorb_cv_interface/msg/Detection.msg</h3>
+<pre><code class="language-bash">std_msgs/Header header      # Timestamp
+uint32 det_num              # Number of detections
+BoundingBox[] boxes         # BoundingBoxs
+float64[] scores            # Detection scores
+string[] labels             # Object types
+</code></pre>
+<h2 id="triorb_cv_interfacesrv">triorb_cv_interface/srv</h2>
+<h3 id="triorb_cv_interfacesrvversionsrv">triorb_cv_interface/srv/Version.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+uint8[] version
+</code></pre>
+<h2 id="triorb_drive_interfaceaction">triorb_drive_interface/action</h2>
+<h3 id="triorb_drive_interfaceactiontriorbsetpathaction">triorb_drive_interface/action/TriorbSetPath.action</h3>
+<pre><code class="language-bash">TriorbSetPos3[] path     # List of waypoints and movement control values for each waypoint
+---
+TriorbRunResult result   # Result of completion of movement to final destination
+---
+uint32 way_idx           # Index of waypoint currently moving
+TriorbPos3 now           # Current robot position
+</code></pre>
+<h2 id="triorb_drive_interfacemsg">triorb_drive_interface/msg</h2>
+<h3 id="triorb_drive_interfacemsgdrivegainsmsg">triorb_drive_interface/msg/DriveGains.msg</h3>
+<pre><code class="language-bash">float32 xy_p    #  translation P gain
+float32 xy_i    #  translation I gain (0 recommended)
+float32 xy_d    #  translation D gain
+float32 w_p     # rotation P gain
+float32 w_i     # rotation I gain (0 recommended)
+float32 w_d     # rotation D gain
+</code></pre>
+<h3 id="triorb_drive_interfacemsgmotorparamsmsg">triorb_drive_interface/msg/MotorParams.msg</h3>
+<pre><code class="language-bash">bool lpf                # Use LPF for driving command filter (False: moving average)
+uint8 filter_t          # Command filter time constant (0-200)[ms]
+uint8 pos_p_gain        # Position loop gain (1-50)[Hz]
+uint16 speed_p_gain     # speed loop gain (1-500) [Hz]
+uint16 speed_i_gain     # speed loop integral time constant (1-10000) [0.01ms]
+uint16 torque_filter    # torque filter (0-4700) [Hz]
+uint8 speed_ff          # speed feed-forward (0-100) [%]
+uint8 stiffness         # machine stiffness selection (0-15)
+</code></pre>
+<h3 id="triorb_drive_interfacemsgmotorstatusmsg">triorb_drive_interface/msg/MotorStatus.msg</h3>
+<pre><code class="language-bash">std_msgs/Header header      # Timestamp
+uint16 last_error_value     # Last motor alert flag
+uint8 last_error_motor      # Motor ID of the last alert
+float32 voltage             # Mains voltage observed by the motor driver
+uint16 state                # Operating state of each motor (bit flag)
+float32 power               # Power consumption of each motor (W)
+
+#---Operating state of each motor (bit flag)---
+# 0x8000: Remote control Y button
+# 0x4000: Remote control B button
+# 0x2000: Remote control A button
+# 0x1000: Remote control X button
+# 0x0800: Rotating
+# 0x0400: Position control complete
+# 0x0200: Excitation in progress
+# 0x0100: Motor status acquired successfully
+</code></pre>
+<h3 id="triorb_drive_interfacemsgroutemsg">triorb_drive_interface/msg/Route.msg</h3>
+<pre><code class="language-bash">uint32 id               # ID
+string name             # Name
+TriorbPos3[] waypoint   # Waypoints
+</code></pre>
+<h3 id="triorb_drive_interfacemsgtriorbpos3msg">triorb_drive_interface/msg/TriorbPos3.msg</h3>
+<pre><code class="language-bash">float32 x       # [m]
+float32 y       # [m]
+float32 deg     # [deg]
+</code></pre>
+<h3 id="triorb_drive_interfacemsgtriorbrunpos3msg">triorb_drive_interface/msg/TriorbRunPos3.msg</h3>
+<pre><code class="language-bash">TriorbSpeed speed
+TriorbPos3 position
+</code></pre>
+<h3 id="triorb_drive_interfacemsgtriorbrunresultmsg">triorb_drive_interface/msg/TriorbRunResult.msg</h3>
+<pre><code class="language-bash">bool success
+TriorbPos3 position
+</code></pre>
+<h3 id="triorb_drive_interfacemsgtriorbrunsettingmsg">triorb_drive_interface/msg/TriorbRunSetting.msg</h3>
+<pre><code class="language-bash">float32 tx      # Target error in X-axis direction [±m]
+float32 ty      # Target error in Y-axis direction [±m].
+float32 tr      # Target error in rotation [±deg].
+uint8 force     # Target force level
+</code></pre>
+<h3 id="triorb_drive_interfacemsgtriorbrunvel3msg">triorb_drive_interface/msg/TriorbRunVel3.msg</h3>
+<pre><code class="language-bash">TriorbSpeed speed
+TriorbVel3 velocity
+</code></pre>
+<h3 id="triorb_drive_interfacemsgtriorbsetpos3msg">triorb_drive_interface/msg/TriorbSetPos3.msg</h3>
+<pre><code class="language-bash">TriorbRunPos3 pos
+TriorbRunSetting setting
+</code></pre>
+<h3 id="triorb_drive_interfacemsgtriorbspeedmsg">triorb_drive_interface/msg/TriorbSpeed.msg</h3>
+<pre><code class="language-bash">uint32 acc  # Acceleration time [ms]
+uint32 dec  # Deceleration time [ms]
+float32 xy  # Translation velocity [m/s]
+float32 w   # Rotation speed [rad/s]
+</code></pre>
+<h3 id="triorb_drive_interfacemsgtriorbvel3msg">triorb_drive_interface/msg/TriorbVel3.msg</h3>
+<pre><code class="language-bash">float32 vx # Velocity vector along X axis [m/s]
+float32 vy # Velocity vector along Y axis [m/s]
+float32 vw # Rotation velocity vector around the Z axis [rad/s]
+</code></pre>
+<h2 id="triorb_drive_interfacesrv">triorb_drive_interface/srv</h2>
+<h3 id="triorb_drive_interfacesrvgetpathsrv">triorb_drive_interface/srv/GetPath.srv</h3>
+<pre><code class="language-bash">TriorbPos3[] waypoint
+uint8 dilation_k_size
+uint8 gauss_k_size
+float32 sigma
+---
+TriorbPos3[] result
+</code></pre>
+<h3 id="triorb_drive_interfacesrvgetroutesrv">triorb_drive_interface/srv/GetRoute.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+Route[] result
+</code></pre>
+<h3 id="triorb_drive_interfacesrvmotorparamssrv">triorb_drive_interface/srv/MotorParams.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+MotorParams result
+</code></pre>
+<h3 id="triorb_drive_interfacesrvmotorstatussrv">triorb_drive_interface/srv/MotorStatus.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+MotorStatus result
+</code></pre>
+<h3 id="triorb_drive_interfacesrvtriorbrunpos3srv">triorb_drive_interface/srv/TriorbRunPos3.srv</h3>
+<pre><code class="language-bash">TriorbRunPos3 request
+---
+std_msgs/Header header
+uint8 result
+</code></pre>
+<h3 id="triorb_drive_interfacesrvtriorbrunvel3srv">triorb_drive_interface/srv/TriorbRunVel3.srv</h3>
+<pre><code class="language-bash">TriorbRunVel3 request
+---
+std_msgs/Header header
+uint8 result
+</code></pre>
+<h3 id="triorb_drive_interfacesrvtriorbsetpos3srv">triorb_drive_interface/srv/TriorbSetPos3.srv</h3>
+<pre><code class="language-bash">TriorbSetPos3 pos
+---
+TriorbRunResult result
+</code></pre>
+<h3 id="triorb_drive_interfacesrvversionsrv">triorb_drive_interface/srv/Version.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+uint8[] version
+</code></pre>
+<h2 id="triorb_field_interfacemsg">triorb_field_interface/msg</h2>
+<h3 id="triorb_field_interfacemsgkeyframemsg">triorb_field_interface/msg/Keyframe.msg</h3>
+<pre><code class="language-bash">uint32 id       # Frame id
+float32 tvec    # Translation vector
+float32 rvec    # Rotation vector
+string name     # Name of the frame
+</code></pre>
+<h2 id="triorb_field_interfacesrv">triorb_field_interface/srv</h2>
+<h3 id="triorb_field_interfacesrvgetkeyframelistsrv">triorb_field_interface/srv/GetKeyframeList.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+Keyframe[] result
+</code></pre>
+<h3 id="triorb_field_interfacesrvsetkeyframesrv">triorb_field_interface/srv/SetKeyframe.srv</h3>
+<pre><code class="language-bash">Keyframe keyframe
+---
+string result
+</code></pre>
+<h2 id="triorb_project_interfacesrv">triorb_project_interface/srv</h2>
+<h3 id="triorb_project_interfacesrvversionsrv">triorb_project_interface/srv/Version.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+uint8[] version
+</code></pre>
+<h2 id="triorb_sensor_interfaceaction">triorb_sensor_interface/action</h2>
+<h3 id="triorb_sensor_interfaceactioncameracalibrationinternalaction">triorb_sensor_interface/action/CameraCalibrationInternal.action</h3>
+<pre><code class="language-bash"># 参考：https://developer.mamezou-tech.com/robotics/vision/calibration-pattern/#asymmetry-circlegrid
+# 参考：https://calib.io/pages/camera-calibration-pattern-generator
+# &gt; Width 280mm, Height 200mm, Rows 11, Cols 16, Spacing 20mm, Diameter 12mm
+
+# --- Goal ---
+uint16 rows                             # Calibration board definition: Rows
+uint16 cols                             # Calibration board definition: Columns
+float32 spacing                         # Calibration board definition: Circle Spacing [mm]
+float32 diameter                        # Calibration board definition: Diameter [mm]
+string src                              # Calibration target (Topic / device path / directory path / movie file path)
+---
+# --- Result ---
+sensor_msgs/CompressedImage image       # Calibration result
+float32 fx
+float32 fy
+float32 cx
+float32 cy
+float32 k1
+float32 k2
+float32 k3
+float32 k4
+---
+# --- Feedback ---
+string progress
+sensor_msgs/CompressedImage image       # Image on the way
+</code></pre>
+<h2 id="triorb_sensor_interfacemsg">triorb_sensor_interface/msg</h2>
+<h3 id="triorb_sensor_interfacemsgcameradevicemsg">triorb_sensor_interface/msg/CameraDevice.msg</h3>
+<pre><code class="language-bash">string device       # Path of camera device
+string topic        # Topic name of camera image
+string id           # Frame ID of the camera image topic
+string state        # Camera device status (sleep | wakeup | awake)
+int16 rotation      # Rotation of the camera image
+int16 exposure      # Camera Exposure
+float32 gamma       # Gamma correction value
+float32 timer       # Data collection cycle [s]
+</code></pre>
+<h3 id="triorb_sensor_interfacemsgdistancesensormsg">triorb_sensor_interface/msg/DistanceSensor.msg</h3>
+<pre><code class="language-bash">std_msgs/Header header      # Timestamp
+float32 distance            # Distance to obstacle [m]
+uint8 confidence            # Signal reliability (0-100)
+float32 hfov                # Horizontal detectable angle [deg]
+float32 vfov                # Vertical detectable angle [deg]
+float32 max_dist            # Maximum detectable distance [m]
+float32 min_dist            # Minimum detectable distance [m]
+float32[] mount_xyz         # Mounting location [m]
+float32[] mount_ypr         # Mounting orientation [deg]
+</code></pre>
+<h3 id="triorb_sensor_interfacemsgimusensormsg">triorb_sensor_interface/msg/ImuSensor.msg</h3>
+<pre><code class="language-bash">std_msgs/Header header # Timestamp
+float32 yaw
+float32 pitch
+float32 roll
+</code></pre>
+<h3 id="triorb_sensor_interfacemsgobstaclesmsg">triorb_sensor_interface/msg/Obstacles.msg</h3>
+<pre><code class="language-bash">std_msgs/Header header      # Timestamp
+float32 forward             # Distance to obstacle in forward [m]
+float32 left                # Distance to obstacle in left [m]
+float32 right               # Distance to obstacle in right [m]
+float32 back                # Distance to obstacle in back [m]
+</code></pre>
+<h2 id="triorb_sensor_interfacesrv">triorb_sensor_interface/srv</h2>
+<h3 id="triorb_sensor_interfacesrvcameracapturesrv">triorb_sensor_interface/srv/CameraCapture.srv</h3>
+<pre><code class="language-bash">CameraDevice[] request
+---
+string[] result
+</code></pre>
+<h3 id="triorb_sensor_interfacesrvcameradevicesrv">triorb_sensor_interface/srv/CameraDevice.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+CameraDevice[] result
+</code></pre>
+<h3 id="triorb_sensor_interfacesrvgetdistancesensorsrv">triorb_sensor_interface/srv/GetDistanceSensor.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+string[] topic  # List of topic name
+string[] state  # List of sensor state ( sleep | wakeup | awake )
+</code></pre>
+<h3 id="triorb_sensor_interfacesrvsetdistancesensorsrv">triorb_sensor_interface/srv/SetDistanceSensor.srv</h3>
+<pre><code class="language-bash">string[] topic  # List of topic name
+string[] state  # List of sensor state ( sleep | wakeup | awake )
+---
+string[] result
+</code></pre>
+<h3 id="triorb_sensor_interfacesrvversionsrv">triorb_sensor_interface/srv/Version.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+uint8[] version
+</code></pre>
+<h2 id="triorb_static_interfacemsg">triorb_static_interface/msg</h2>
+<h3 id="triorb_static_interfacemsghoststatusmsg">triorb_static_interface/msg/HostStatus.msg</h3>
+<pre><code class="language-bash">std_msgs/Header header      # Timestamp
+float32 memory_percent      # Memory usage
+float32 cpu_percent         # CPU usage
+float32 host_temperature    # Temperature of the host computer
+string wlan_ssid            # SSID of the access point
+uint8 wlan_signal           # Signal strength of the access point 
+uint32 wlan_freq            # Communication speed of the access point
+float32 ping                # Ping speed to the default gateway
+uint8[] gateway             # Address of the default gateway
+</code></pre>
+<h3 id="triorb_static_interfacemsgnodeinfomsg">triorb_static_interface/msg/NodeInfo.msg</h3>
+<pre><code class="language-bash">string name # Node name
+string state # Node state ( sleep | wakeup | awake )
+</code></pre>
+<h3 id="triorb_static_interfacemsgrobotstatusmsg">triorb_static_interface/msg/RobotStatus.msg</h3>
+<pre><code class="language-bash">std_msgs/Header header  # timestamp
+float32 voltage         # main power supply voltage
+uint16 btns             # Remote control operation status (bit flag)
+uint16 state            # Robot operation state (bit flag)
+uint16 error            # Error status of the robot (bit flag)
+
+#---Remote control operation status (bit flag)---
+# 0x8000: Remote control Y button
+# 0x4000: Remote control B button
+# 0x2000: Remote control A button
+# 0x1000: Remote control X button
+
+#---Robot operation state (bit flag)---
+# 0x8000: Motor is being excited
+# 0x4000: Accepting move instruction
+# 0x2000: Moving
+# 0x1000: Self-position recognition in progress
+# 0x0800: Generating map
+# 0x0400: During anti-collision control
+# 0x0200: Position control move completed
+
+#---Error status of the robot (bit flag)---
+# 0x8000: Motor connection error
+# 0x4000: IMU and distance sensor connection error
+# 0x2000: Camera connection error
+# 0x1000: Main power supply voltage abnormal
+</code></pre>
+<h3 id="triorb_static_interfacemsgsettingipv4msg">triorb_static_interface/msg/SettingIPv4.msg</h3>
+<pre><code class="language-bash">string device # device name
+string method # device mode: auto | manual | shared | disabled
+uint8[] adress # IP adress
+uint8 mask # Subnet mask
+uint8[] gateway # Default gateway adress
+uint8[] mac # Hardware adress
+</code></pre>
+<h3 id="triorb_static_interfacemsgsettingrosmsg">triorb_static_interface/msg/SettingROS.msg</h3>
+<pre><code class="language-bash">bool ros_localhost_only # ROS_LOCALHOST_ONLY
+uint16 ros_domain_id # ROS_DOMAIN_ID
+string ros_prefix # ROS_PREFIX
+</code></pre>
+<h3 id="triorb_static_interfacemsgsettingssidmsg">triorb_static_interface/msg/SettingSSID.msg</h3>
+<pre><code class="language-bash">string ssid # Wi-Fi SSID name
+string passphrase # Wi-Fi passphrase
+string security # Wi-Fi security type
+uint8 signal # Signal strength (0-100)
+</code></pre>
+<h2 id="triorb_static_interfacesrv">triorb_static_interface/srv</h2>
+<h3 id="triorb_static_interfacesrvgetimagesrv">triorb_static_interface/srv/GetImage.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+sensor_msgs/Image image
+</code></pre>
+<h3 id="triorb_static_interfacesrvgetstringsrv">triorb_static_interface/srv/GetString.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+string result
+</code></pre>
+<h3 id="triorb_static_interfacesrvgetstringlistsrv">triorb_static_interface/srv/GetStringList.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+string[] result
+</code></pre>
+<h3 id="triorb_static_interfacesrvnodeinfosrv">triorb_static_interface/srv/NodeInfo.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+NodeInfo[] result
+</code></pre>
+<h3 id="triorb_static_interfacesrvros2launchsrv">triorb_static_interface/srv/Ros2Launch.srv</h3>
+<pre><code class="language-bash">string pkg          # Package name
+string file         # Launch file name
+string args         # Arguments to the launch file
+---
+string result       # Launch result
+</code></pre>
+<h3 id="triorb_static_interfacesrvros2runsrv">triorb_static_interface/srv/Ros2Run.srv</h3>
+<pre><code class="language-bash">string pkg          # Package name
+string exec         # Executable file name
+string args         # Arguments to the executable
+---
+string result       # Execution result
+</code></pre>
+<h3 id="triorb_static_interfacesrvsetimagesrv">triorb_static_interface/srv/SetImage.srv</h3>
+<pre><code class="language-bash">sensor_msgs/Image image
+---
+string result
+</code></pre>
+<h3 id="triorb_static_interfacesrvsetstringsrv">triorb_static_interface/srv/SetString.srv</h3>
+<pre><code class="language-bash">string[] request
+---
+string result
+</code></pre>
+<h3 id="triorb_static_interfacesrvsettingipv4srv">triorb_static_interface/srv/SettingIPv4.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+SettingIPv4[] result
+</code></pre>
+<h3 id="triorb_static_interfacesrvsettingrossrv">triorb_static_interface/srv/SettingROS.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+SettingROS result
+</code></pre>
+<h3 id="triorb_static_interfacesrvsettingssidsrv">triorb_static_interface/srv/SettingSSID.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+SettingSSID[] result
+</code></pre>
+<h3 id="triorb_static_interfacesrvversionsrv">triorb_static_interface/srv/Version.srv</h3>
+<pre><code class="language-bash">std_msgs/Empty request
+---
+uint8[] version
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 TriOrb Inc.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../javascripts/lunr.stemmer.support.js"></script>
+      
+        <script src="../../../javascripts/tinyseg.js"></script>
+      
+        <script src="../../../javascripts/lunr.ja.js"></script>
+      
+        <script src="../../../javascripts/mkdocs_search_config.js"></script>
+      
+    
+  </body>
+</html>

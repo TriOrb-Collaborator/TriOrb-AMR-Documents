@@ -1,0 +1,242 @@
+/*
+ * TriOrb brand overlay for Sphinx + Furo pages.
+ * Injected into every HTML page under v1.2.4/ at deploy-stage time
+ * (no Sphinx rebuild required). Intended to evoke the legacy mike
+ * (mkdocs-material) visual identity: Lapis Lazuli primary with a
+ * colored brand area and an accent-banded content.
+ */
+
+/* ---- Article header icons: keep only Light/Dark toggle -------------- */
+/* Furo renders a row of icons at top-right of each page: view-source,
+ * edit-this-page, theme-toggle. We keep only theme-toggle. */
+.content-icon-container > .view-this-page,
+.content-icon-container > .edit-this-page {
+  display: none !important;
+}
+
+/* ---- Top band (mike had a filled header bar) ------------------------ */
+body::before {
+  content: "";
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(34, 59, 128) 0%, rgb(64, 89, 158) 100%);
+}
+
+/* ---- Sidebar brand (project title block) ---------------------------- */
+.sidebar-brand {
+  background: linear-gradient(135deg, rgb(34, 59, 128) 0%, rgb(20, 39, 98) 100%);
+  padding: 1.5rem 1rem !important;
+  margin: -1rem -1rem 1rem !important;
+  border-radius: 0;
+  text-decoration: none;
+}
+.sidebar-brand-text,
+.sidebar-brand .sidebar-brand-text,
+a.sidebar-brand .sidebar-brand-text {
+  color: #ffffff !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.sidebar-logo-container .sidebar-logo {
+  max-height: 48px;
+}
+
+/* ---- H1 accent underline (mike-ish) --------------------------------- */
+article.bd-article h1::after,
+.content h1::after,
+main h1::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: 0.3rem;
+  background: rgb(34, 59, 128);
+  border-radius: 2px;
+}
+
+/* ---- Active sidebar entry with Lapis side-bar ---------------------- */
+.sidebar-tree .toctree-l1.current > .reference,
+.sidebar-tree .reference.current {
+  border-left: 3px solid rgb(34, 59, 128);
+  padding-left: calc(var(--sidebar-item-spacing-horizontal) - 3px);
+  background: rgba(34, 59, 128, 0.06);
+}
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) .sidebar-tree .toctree-l1.current > .reference,
+  body:not([data-theme="light"]) .sidebar-tree .reference.current {
+    background: rgba(138, 162, 224, 0.10);
+    border-left-color: rgb(138, 162, 224);
+  }
+}
+
+/* ---- Links: slightly more saturated hover -------------------------- */
+.content a.reference:hover,
+main a.reference:hover {
+  color: rgb(20, 39, 98);
+  text-decoration-color: rgb(20, 39, 98);
+}
+
+/* ---- Admonition: lapis-tinted left border for :::{note} etc -------- */
+.admonition {
+  border-left: 4px solid rgb(34, 59, 128) !important;
+}
+
+/* ---- Code inline: subtle Lapis tint -------------------------------- */
+code.literal {
+  border: 1px solid rgba(34, 59, 128, 0.18);
+  background: rgba(34, 59, 128, 0.04);
+}
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) code.literal {
+    border-color: rgba(138, 162, 224, 0.25);
+    background: rgba(138, 162, 224, 0.08);
+  }
+}
+
+/* ---- TOC (right sidebar): accent heading --------------------------- */
+.toc-title-container .toc-title {
+  color: rgb(34, 59, 128);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) .toc-title-container .toc-title {
+    color: rgb(138, 162, 224);
+  }
+}
+
+/* ---- MQTT API: in-page ROS2 API preview modal ---------------------- */
+.mqtt-api-modal[hidden] {
+  display: none !important;
+}
+
+.mqtt-api-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.mqtt-api-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 16, 40, 0.58);
+  backdrop-filter: blur(2px);
+}
+
+.mqtt-api-modal__dialog {
+  position: absolute;
+  inset: clamp(1rem, 4vh, 2.5rem) clamp(1rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(34, 59, 128, 0.25);
+  border-radius: 16px;
+  background: var(--color-background-primary);
+  box-shadow: 0 24px 80px rgba(8, 16, 40, 0.32);
+}
+
+.mqtt-api-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(34, 59, 128, 0.18);
+  background: linear-gradient(90deg, rgba(34, 59, 128, 0.10), rgba(34, 59, 128, 0.02));
+}
+
+.mqtt-api-modal__eyebrow {
+  margin: 0 0 0.15rem;
+  color: rgb(34, 59, 128);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mqtt-api-modal__header h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.mqtt-api-modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+}
+
+.mqtt-api-modal__open {
+  font-size: 0.9rem;
+}
+
+.mqtt-api-modal__close {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid rgba(34, 59, 128, 0.22);
+  border-radius: 999px;
+  background: var(--color-background-secondary);
+  color: var(--color-foreground-primary);
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.mqtt-api-modal__close:hover {
+  border-color: rgb(34, 59, 128);
+  color: rgb(34, 59, 128);
+}
+
+.mqtt-api-modal__frame {
+  flex: 1 1 auto;
+  width: 100%;
+  border: 0;
+  background: var(--color-background-primary);
+}
+
+.mqtt-api-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .mqtt-api-modal__dialog {
+    inset: 0;
+    border-radius: 0;
+  }
+
+  .mqtt-api-modal__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mqtt-api-modal__actions {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) .mqtt-api-modal__backdrop {
+    background: rgba(0, 0, 0, 0.68);
+  }
+
+  body:not([data-theme="light"]) .mqtt-api-modal__dialog {
+    border-color: rgba(138, 162, 224, 0.30);
+  }
+
+  body:not([data-theme="light"]) .mqtt-api-modal__header {
+    border-bottom-color: rgba(138, 162, 224, 0.22);
+    background: linear-gradient(90deg, rgba(138, 162, 224, 0.14), rgba(138, 162, 224, 0.03));
+  }
+
+  body:not([data-theme="light"]) .mqtt-api-modal__eyebrow,
+  body:not([data-theme="light"]) .mqtt-api-modal__close:hover {
+    color: rgb(138, 162, 224);
+  }
+}

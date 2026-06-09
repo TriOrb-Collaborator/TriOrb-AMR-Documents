@@ -1,0 +1,729 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="https://triorb.co.jp/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>triorb_tagslam_manager - TriOrb BASE 開発ガイド</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#triorb_tagslam_manager" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="TriOrb BASE 開発ガイド" class="md-header__button md-logo" aria-label="TriOrb BASE 開発ガイド" data-md-component="logo">
+      
+  <img src="https://triorb.co.jp/wp/wp-content/themes/triorb/img/logo-w.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TriOrb BASE 開発ガイド
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              triorb_tagslam_manager
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="blue"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="blue"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="TriOrb BASE 開発ガイド" class="md-nav__button md-logo" aria-label="TriOrb BASE 開発ガイド" data-md-component="logo">
+      
+  <img src="https://triorb.co.jp/wp/wp-content/themes/triorb/img/logo-w.png" alt="logo">
+
+    </a>
+    TriOrb BASE 開発ガイド
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自律移動API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../pkgs-collab/Reference_API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    協調移動API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TriOrb-ROS2-Types/README_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ROS2 Interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../triorb-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    制御ECU通信ライブラリ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    サンプルプログラム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://triorb-inc.github.io/TriOrb-AMR-Robot-Controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    変更履歴
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#triorb_tagslam_manager_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      triorb_tagslam_manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="triorb_tagslam_manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subscriber" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscriber（外部からの呼び出し例付き）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscriber（外部からの呼び出し例付き）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tagslamsavemap-std_msgsmsgstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      /tagslam/save/map (std_msgs/msg/String)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tagslamloadmap-std_msgsmsgstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      /tagslam/load/map (std_msgs/msg/String)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odombody_t_rig-nav_msgsmsgodometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      /odom/body_t_rig (nav_msgs/msg/Odometry)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camerastag_topic-apriltag_msgsmsgapriltagdetectionarray" class="md-nav__link">
+    <span class="md-ellipsis">
+      cameras[*].tag_topic (apriltag_msgs/msg/AprilTagDetectionArray)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publisher
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      地図操作の詳細
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      状態監視
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="triorb_tagslam_manager">triorb_tagslam_manager</h1>
+<p><strong>パス</strong>: <code>tagslam_ws/src/triorb_tagslam_manager</code><br />
+<strong>説明</strong>: TagSLAM用の地図保存・読込・初期化を一括管理し、tagslam系ノードの再起動や状態通知を行う管理ノードです。</p>
+<h2 id="triorb_tagslam_manager_1">triorb_tagslam_manager</h2>
+<p>TagSLAM用の地図保存・読込・初期化を一括管理し、tagslam系ノードの再起動や状態通知を行う管理ノードです。</p>
+<h3 id="subscriber">Subscriber（外部からの呼び出し例付き）</h3>
+<p>各トピック名は<code>ROS_PREFIX</code>が設定されていれば<code>/&lt;prefix&gt;/...</code>に変換されます。以下のコマンド例では<code>ROS_PREFIX=/robot</code>を想定しています。</p>
+<h4 id="tagslamsavemap-std_msgsmsgstring"><code>/tagslam/save/map</code> (<code>std_msgs/msg/String</code>)</h4>
+<ul>
+<li>地図保存要求。msg.dataを地図ディレクトリ名として<code>/data/tagslam_map/&lt;名前&gt;</code>に保存します。<code>/</code>は<code>_</code>に置換されます。</li>
+<li>外部送信例:
+  <code>bash
+  ROS_PREFIX=/robot ros2 topic pub --once /robot/tagslam/save/map std_msgs/msg/String '{data: "warehouse_202405"}'</code></li>
+</ul>
+<h4 id="tagslamloadmap-std_msgsmsgstring"><code>/tagslam/load/map</code> (<code>std_msgs/msg/String</code>)</h4>
+<ul>
+<li>JSONまたは単純文字列で地図操作モードを受付けます。<code>mode</code>により動作が変わります。</li>
+<li><code>load</code>: 既存地図を読み込み、<code>tagslam</code>/<code>sync_and_detect</code>を再起動。<code>is_static</code>(bool)、<code>slow_mode</code>(bool)、<code>amnesia</code>(bool)、<code>map_name</code>(string)を指定。</li>
+<li><code>initialize</code>: <code>/params/tagslam/tagslam_original.yaml</code>を元に初期タグ情報を生成し直して再起動。後述のパラメータを任意指定可能。</li>
+<li><code>remove</code>: <code>map_name</code>配下の保存済み地図を削除。</li>
+<li>外部送信例（地図読込）:
+  <code>bash
+  ROS_PREFIX=/robot ros2 topic pub --once /robot/tagslam/load/map std_msgs/msg/String \
+    "{data: '{\"mode\":\"load\",\"map_name\":\"warehouse_202405\",\"is_static\":true,\"slow_mode\":false,\"amnesia\":true}'}"</code></li>
+<li>外部送信例（初期化）:
+  <code>bash
+  ROS_PREFIX=/robot ros2 topic pub --once /robot/tagslam/load/map std_msgs/msg/String \
+    "{data: '{\"mode\":\"initialize\",\"origin_tag_id\":1,\"origin_tag_size\":150,\"origin_tag_pos_z\":0,\"origin_tag_pos_deg\":0,\"default_tag_size\":120,\"optimizer_mode\":\"fast\"}'}"</code></li>
+<li>外部送信例（削除）:
+  <code>bash
+  ROS_PREFIX=/robot ros2 topic pub --once /robot/tagslam/load/map std_msgs/msg/String \
+    "{data: '{\"mode\":\"remove\",\"map_name\":\"warehouse_202405\"}'}"</code></li>
+</ul>
+<h4 id="odombody_t_rig-nav_msgsmsgodometry"><code>/odom/body_t_rig</code> (<code>nav_msgs/msg/Odometry</code>)</h4>
+<ul>
+<li>ボディ座標系に対するリグ座標系のOdometry。受信すると<code>/tagslam/rig_tf</code>へ<code>TransformStamped</code>として流し、SLAMロスト判定用のタイマも更新します。</li>
+<li>外部送信例（静的姿勢を一度だけ送る）:
+  <code>bash
+  ROS_PREFIX=/robot ros2 topic pub --once /robot/odom/body_t_rig nav_msgs/msg/Odometry \
+    '{pose: {pose: {position: {x: 0.0, y: 0.0, z: 0.0}, orientation: {w: 1.0, x: 0.0, y: 0.0, z: 0.0}}}}'</code></li>
+</ul>
+<h4 id="camerastag_topic-apriltag_msgsmsgapriltagdetectionarray"><code>cameras[*].tag_topic</code> (<code>apriltag_msgs/msg/AprilTagDetectionArray</code>)</h4>
+<ul>
+<li><code>/params/tagslam/cameras.yaml</code>に記述された全カメラの<code>tag_topic</code>へ動的にSubscriberを張り、検出中タグIDを追跡します。<code>set_tag_size_from_file</code>で読みだしたサイズと合わせて<code>/tagslam/tag_tf</code>のメタ情報として利用されます。</li>
+<li>外部送信例（例: <code>/robot/camera0/detector/tags</code>へダミー配信）:
+  <code>bash
+  ROS_PREFIX=/robot ros2 topic pub --once /robot/camera0/detector/tags apriltag_msgs/msg/AprilTagDetectionArray \
+    '{detections: [{id: 100}]}'</code></li>
+</ul>
+<h3 id="publisher">Publisher</h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>型</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/tagslam/rig_tf</code></td>
+<td><code>geometry_msgs/msg/TransformStamped</code></td>
+<td><code>/odom/body_t_rig</code>で受信した姿勢をTF互換形式に変換。</td>
+</tr>
+<tr>
+<td><code>/tagslam/tag_tf</code></td>
+<td><code>geometry_msgs/msg/TransformStamped</code></td>
+<td><code>tf_buffer</code>に存在するタグ姿勢を周期送信。<code>header.frame_id</code>にはタグサイズ、<code>child_frame_id</code>の末尾には<code>look</code>/<code>known</code>を追記。</td>
+</tr>
+<tr>
+<td><code>/tagslam/state</code></td>
+<td><code>std_msgs/msg/UInt8MultiArray</code></td>
+<td><code>StateCode</code>（WORKING/SAVE_MAP/LOAD_MAP）の進捗。<code>StateValue</code>(0:STANDBY,1:PROCESSING,2:SUCCESS,3:LOST)または<code>64+ErrorValue</code>を格納。</td>
+</tr>
+<tr>
+<td><code>/tagslam/map_name</code></td>
+<td><code>std_msgs/msg/String</code></td>
+<td>現在ロード済みの地図名。</td>
+</tr>
+<tr>
+<td><code>/tagslam/status</code></td>
+<td><code>triorb_slam_interface/msg/SlamStatus</code></td>
+<td>ビットフラグでSLAM状態/エラーを通知。state: bit0=FIXマップ、bit1=ローカライズ成功、bit2=保存処理中、bit3=読込処理中。error: bit0=tagslam停止、bit1=既知タグ未検出、bit2=保存失敗、bit3=読込失敗。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="service">Service</h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>型</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/get/version/tagslam_manager_node</code></td>
+<td><code>triorb_static_interface/srv/Version</code></td>
+<td>ノードバージョン(現在<code>0.0.0</code>)を返却。<code>ROS_PREFIX</code>が付与された名前空間に配置されます。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">地図操作の詳細</h3>
+<ul>
+<li><strong>保存</strong>: <code>/tagslam/save/map</code>受信後<code>/dump</code>サービス(Trigger)を呼び出し、<code>poses.yaml</code>と<code>camera_poses.yaml</code>を取得。<code>tagslam.yaml</code>の<code>bodies</code>以降を<code>poses.yaml</code>で置き換え、<code>/data/tagslam_map/&lt;name&gt;/tagslam_map.yaml</code>に書き出します。完了/エラーを<code>/tagslam/state</code>および<code>/tagslam/status</code>で通知。</li>
+<li><strong>読込</strong>: <code>/tagslam/load/map</code>で<code>mode=load</code>を受けると、保存済み地図を<code>/params/tagslam/target_map.yaml</code>へ複写しながら<code>is_static</code>指定やノイズ置換を実施。完了後<code>tmux</code>セッション<code>detect</code>と<code>tagslam</code>を再起動し、tfバッファをリセットしてタグサイズ辞書を再生成します。</li>
+<li><strong>初期化</strong>: <code>mode=initialize</code>では<code>tagslam_original.yaml</code>を基にタグID/サイズ/高さ/姿勢/デフォルトサイズ、<code>optimizer_mode</code>(<code>fast|slow|full</code>)、<code>minimum_viewing_angle</code>、<code>minimum_tag_area</code>などを上書きして<code>tagslam.yaml</code>を生成。再起動後は地図名を空にします。</li>
+<li><strong>削除</strong>: <code>mode=remove</code>では<code>/data/tagslam_map/&lt;map_name&gt;</code>を再帰的に削除します。</li>
+</ul>
+<h3 id="_2">状態監視</h3>
+<ul>
+<li><code>check_state()</code>が1秒周期で<code>tagslam</code>/<code>sync_and_detect</code>ノードの生存確認とロスト判定（2秒以内に<code>/odom/body_t_rig</code>更新が無い場合は<code>LOST</code>）を行い、<code>/tagslam/state</code>と<code>/tagslam/status</code>へ反映します。</li>
+<li><code>check_tf_tree()</code>が1秒周期で<code>tf_buffer</code>から既知タグ一覧を取得し、<code>/tagslam/tag_tf</code>に送出します。</li>
+<li><code>check_srv_call_result()</code>が地図保存のサービス応答を監視し、<code>ErrorValue</code>（BUSY/ TIMEOUT/ NOT_FOUND/ UNKNOWN）を付与します。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 TriOrb Inc.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.instant", "navigation.expand", "navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../../../javascripts/lunr.stemmer.support.js"></script>
+      
+        <script src="../../../../../javascripts/tinyseg.js"></script>
+      
+        <script src="../../../../../javascripts/lunr.ja.js"></script>
+      
+        <script src="../../../../../javascripts/mkdocs_search_config.js"></script>
+      
+    
+  </body>
+</html>

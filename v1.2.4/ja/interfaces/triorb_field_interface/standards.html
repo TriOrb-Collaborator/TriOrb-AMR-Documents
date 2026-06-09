@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html class="no-js" data-content_root="" lang="ja">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/><meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="../../genindex.html" rel="index" title="索引"/><link href="../../search.html" rel="search" title="検索"/><link href="standard_docs/PACKAGE.html" rel="next" title="PACKAGE"/><link href="interfaces/msg/Dummy.html" rel="prev" title="Dummy"/>
+<link href="../../_static/favicon.png" rel="shortcut icon"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.08.06 -->
+<title>Standard Documents - TriOrb BASE Developer Guide v1.2.4</title>
+<link href="../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../_static/styles/furo.css?v=354aac6f" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/togglebutton.css?v=9c3e77be" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../../_static/styles/furo-extensions.css?v=302659d7" rel="stylesheet" type="text/css"/>
+<link href="../../_static/brand.css?v=babe90dd" rel="stylesheet" type="text/css"/>
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: rgb(34, 59, 128);
+  --color-brand-content: rgb(34, 59, 128);
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: rgb(138, 162, 224);
+  --color-brand-content: rgb(138, 162, 224);
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: rgb(138, 162, 224);
+  --color-brand-content: rgb(138, 162, 224);
+  
+      }
+    }
+  }
+</style></meta></head>
+<body>
+<script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+<symbol id="svg-toc" viewbox="0 0 24 24">
+<title>Contents</title>
+<svg fill="currentColor" stroke="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+<path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+</svg>
+</symbol>
+<symbol id="svg-menu" viewbox="0 0 24 24">
+<title>Menu</title>
+<svg class="feather-menu" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<line x1="3" x2="21" y1="12" y2="12"></line>
+<line x1="3" x2="21" y1="6" y2="6"></line>
+<line x1="3" x2="21" y1="18" y2="18"></line>
+</svg>
+</symbol>
+<symbol id="svg-arrow-right" viewbox="0 0 24 24">
+<title>Expand</title>
+<svg class="feather-chevron-right" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</symbol>
+<symbol id="svg-sun" viewbox="0 0 24 24">
+<title>Light mode</title>
+<svg class="feather-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</symbol>
+<symbol id="svg-moon" viewbox="0 0 24 24">
+<title>Dark mode</title>
+<svg class="icon-tabler-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+</svg>
+</symbol>
+<symbol id="svg-sun-with-moon" viewbox="0 0 24 24">
+<title>Auto light/dark, in light mode</title>
+<svg class="icon-custom-derived-from-feather-sun-and-tabler-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z" style="opacity: 50%"></path>
+<line x1="14.5" x2="14.5" y1="3.25" y2="1.25"></line>
+<line x1="14.5" x2="14.5" y1="15.85" y2="17.85"></line>
+<line x1="10.044" x2="8.63" y1="5.094" y2="3.68"></line>
+<line x1="19" x2="20.414" y1="14.05" y2="15.464"></line>
+<line x1="8.2" x2="6.2" y1="9.55" y2="9.55"></line>
+<line x1="20.8" x2="22.8" y1="9.55" y2="9.55"></line>
+<line x1="10.044" x2="8.63" y1="14.006" y2="15.42"></line>
+<line x1="19" x2="20.414" y1="5.05" y2="3.636"></line>
+<circle cx="14.5" cy="9.55" r="3.6"></circle>
+</svg>
+</symbol>
+<symbol id="svg-moon-with-sun" viewbox="0 0 24 24">
+<title>Auto light/dark, in dark mode</title>
+<svg class="icon-custom-derived-from-feather-sun-and-tabler-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"></path>
+<line style="opacity: 50%" x1="18" x2="18" y1="3.705" y2="2.5"></line>
+<line style="opacity: 50%" x1="18" x2="18" y1="11.295" y2="12.5"></line>
+<line style="opacity: 50%" x1="15.316" x2="14.464" y1="4.816" y2="3.964"></line>
+<line style="opacity: 50%" x1="20.711" x2="21.563" y1="10.212" y2="11.063"></line>
+<line style="opacity: 50%" x1="14.205" x2="13.001" y1="7.5" y2="7.5"></line>
+<line style="opacity: 50%" x1="21.795" x2="23" y1="7.5" y2="7.5"></line>
+<line style="opacity: 50%" x1="15.316" x2="14.464" y1="10.184" y2="11.036"></line>
+<line style="opacity: 50%" x1="20.711" x2="21.563" y1="4.789" y2="3.937"></line>
+<circle cx="18" cy="7.5" r="2.169" style="opacity: 50%"></circle>
+</svg>
+</symbol>
+<symbol id="svg-pencil" viewbox="0 0 24 24">
+<svg class="icon-tabler-pencil-code" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
+<path d="M13.5 6.5l4 4"></path>
+<path d="M20 21l2 -2l-2 -2"></path>
+<path d="M17 17l-2 2l2 2"></path>
+</svg>
+</symbol>
+<symbol id="svg-eye" viewbox="0 0 24 24">
+<svg class="icon-tabler-eye-code" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+<path d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008"></path>
+<path d="M20 21l2 -2l-2 -2"></path>
+<path d="M17 17l-2 2l2 2"></path>
+</svg>
+</symbol>
+</svg>
+<input class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<input class="sidebar-toggle" id="__toc" name="__toc" type="checkbox"/>
+<label class="overlay sidebar-overlay" for="__navigation">
+<div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+<div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+<div class="page">
+<header class="mobile-header">
+<div class="header-left">
+<label class="nav-overlay-icon" for="__navigation">
+<div class="visually-hidden">Toggle site navigation sidebar</div>
+<i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+</label>
+</div>
+<div class="header-center">
+<a href="../../index.html"><div class="brand">TriOrb BASE Developer Guide v1.2.4</div></a>
+</div>
+<div class="header-right">
+<div class="theme-toggle-container theme-toggle-header">
+<button class="theme-toggle">
+<div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+<svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+<svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+<svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+<svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+</button>
+</div>
+<label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+<div class="visually-hidden">Toggle table of contents sidebar</div>
+<i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+</label>
+</div>
+</header>
+<aside class="sidebar-drawer">
+<div class="sidebar-container">
+<div class="sidebar-sticky"><div class="sidebar-scroll"><a class="sidebar-brand" href="../../index.html">
+<div class="sidebar-logo-container">
+<img alt="Logo" class="sidebar-logo" src="../../_static/TriOrb_BASE.svg"/>
+</div>
+</a><form action="../../search.html" class="sidebar-search-container" method="get" role="search">
+<input aria-label="検索" class="sidebar-search" name="q" placeholder="検索"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<div id="searchbox"></div>
+<div class="sidebar-language-switcher">
+<label for="language-select" style="font-size:0.8rem; opacity:0.7;">言語 / Language</label>
+<select id="language-select" onchange="(function(sel){
+              var url = window.location.href;
+              var map = {'ja': '/ja/', 'en': '/en/'};
+              var from = 'ja' === 'ja' ? '/ja/' : '/en/';
+              var to = map[sel.value] || from;
+              window.location.href = url.replace(from, to);
+          })(this)">
+<option selected="" value="ja">日本語</option>
+<option value="en">English</option>
+</select>
+</div><div class="sidebar-tree">
+<p class="caption" role="heading"><span class="caption-text">ユーザーガイド</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/overview.html">製品概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/history.html">変更履歴</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Package API</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../packages/index.html">ROS2 API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of ROS2 API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_drive_pico/index.html">triorb_drive_pico</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of triorb_drive_pico</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_drive_pico/API.html">API</a></li>
+</ul>
+</input></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_drive_vector/index.html">triorb_drive_vector</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of triorb_drive_vector</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_drive_vector/API.html">API</a></li>
+</ul>
+</input></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_navigation/index.html">triorb_navigation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of triorb_navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_navigation/API.html">API</a></li>
+</ul>
+</input></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_navigation_manager/index.html">triorb_navigation_manager</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of triorb_navigation_manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_navigation_manager/API.html">API</a></li>
+</ul>
+</input></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_safe_run_cpp/index.html">triorb_safe_run_cpp</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of triorb_safe_run_cpp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_safe_run_cpp/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_snr_mux_driver/index.html">triorb_snr_mux_driver</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of triorb_snr_mux_driver</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_snr_mux_driver/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_tagslam_manager/index.html">triorb_tagslam_manager</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of triorb_tagslam_manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_tagslam_manager/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/visual_slam/index.html">triorb_visual_slam</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of triorb_visual_slam</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/visual_slam/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_camera_argus/index.html">triorb_camera_argus</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of triorb_camera_argus</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_camera_argus/API.html">API</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../packages/triorb_camera_argus/interfaces/service_definitions.html">Service Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Service Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../packages/triorb_camera_argus/interfaces/srv/AutoGainTarget.html">AutoGainTarget</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_camera_capture/index.html">triorb_camera_capture</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of triorb_camera_capture</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_camera_capture/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_gamepad/index.html">triorb_gamepad</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of triorb_gamepad</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_gamepad/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_sick_plc_wrapper/index.html">triorb_sick_plc_wrapper</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of triorb_sick_plc_wrapper</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_sick_plc_wrapper/API.html">API</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../packages/triorb_sick_plc_wrapper/interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../packages/triorb_sick_plc_wrapper/interfaces/msg/AppDataFromPLC.html">AppDataFromPLC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../packages/triorb_sick_plc_wrapper/interfaces/msg/AppDataToPLC.html">AppDataToPLC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../packages/triorb_sick_plc_wrapper/interfaces/msg/EstopDetailFromPLC.html">EstopDetailFromPLC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_sls_wrapper/index.html">triorb_sls_wrapper</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of triorb_sls_wrapper</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_sls_wrapper/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_battery_info/index.html">triorb_battery_info</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of triorb_battery_info</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_battery_info/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_gpio/index.html">triorb_gpio</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of triorb_gpio</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_gpio/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_host_info/index.html">triorb_host_info</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of triorb_host_info</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_host_info/API.html">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../packages/triorb_os_setting/index.html">triorb_os_setting</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of triorb_os_setting</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/triorb_os_setting/API.html">API</a></li>
+</ul>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/webapi.html">REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/mqtt.html">MQTT API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interfaces</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">ROS2 msg/srv/action</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of ROS2 msg/srv/action</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../triorb_collaboration_interface/index.html">triorb_collaboration_interface</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of triorb_collaboration_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_collaboration_interface/interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_collaboration_interface/interfaces/msg/GroupCreate.html">GroupCreate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_collaboration_interface/interfaces/msg/ParentBind.html">ParentBind</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../triorb_cv_interface/index.html">triorb_cv_interface</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of triorb_cv_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_cv_interface/interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_cv_interface/interfaces/msg/BoundingBox.html">BoundingBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_cv_interface/interfaces/msg/Detection.html">Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_cv_interface/interfaces/service_definitions.html">Service Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Service Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_cv_interface/interfaces/srv/GetImage.html">GetImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_cv_interface/interfaces/srv/Version.html">Version</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../triorb_drive_interface/index.html">triorb_drive_interface</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of triorb_drive_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_drive_interface/interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/DriveGains.html">DriveGains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/MotorParams.html">MotorParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/MotorStatus.html">MotorStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/PathSetting.html">PathSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/RobotParams.html">RobotParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/Route.html">Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbAlignPos3.html">TriorbAlignPos3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbPos3.html">TriorbPos3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbPos3Stamped.html">TriorbPos3Stamped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbPositioningTimeoutMode.html">TriorbPositioningTimeoutMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbRunPos3.html">TriorbRunPos3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbRunResult.html">TriorbRunResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbRunResultStamped.html">TriorbRunResultStamped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbRunSetting.html">TriorbRunSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbRunState.html">TriorbRunState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbRunVel3.html">TriorbRunVel3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbRunVel3Stamped.html">TriorbRunVel3Stamped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbSetPath.html">TriorbSetPath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbSetPos3.html">TriorbSetPos3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbSpeed.html">TriorbSpeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/msg/TriorbVel3.html">TriorbVel3</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_drive_interface/interfaces/service_definitions.html">Service Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Service Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/srv/GetPath.html">GetPath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/srv/GetRoute.html">GetRoute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/srv/MotorParams.html">MotorParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/srv/MotorStatus.html">MotorStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/srv/TriorbGetVel3.html">TriorbGetVel3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/srv/TriorbRunPos3.html">TriorbRunPos3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/srv/TriorbRunVel3.html">TriorbRunVel3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/srv/TriorbSetPos3.html">TriorbSetPos3</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_drive_interface/interfaces/action_definitions.html">Action Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Action Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_drive_interface/interfaces/action/TriorbSetPath.html">TriorbSetPath</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">triorb_field_interface</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of triorb_field_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="interfaces/msg/Dummy.html">Dummy</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children current-page"><a class="current reference internal" href="#">Standard Documents</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle navigation of Standard Documents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="standard_docs/PACKAGE.html">PACKAGE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../triorb_plc_interface/index.html">triorb_plc_interface</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle navigation of triorb_plc_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_plc_interface/interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_plc_interface/interfaces/msg/BasicDataFromPLC.html">BasicDataFromPLC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_plc_interface/interfaces/msg/BasicDataToPLC.html">BasicDataToPLC</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../triorb_project_interface/index.html">triorb_project_interface</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle navigation of triorb_project_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_project_interface/interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_project_interface/interfaces/msg/Dummy.html">Dummy</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../triorb_sensor_interface/index.html">triorb_sensor_interface</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle navigation of triorb_sensor_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_sensor_interface/interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/msg/BatteryModuleStatus.html">BatteryModuleStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/msg/BatteryStatus.html">BatteryStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/msg/CameraDevice.html">CameraDevice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/msg/CanFrame.html">CanFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/msg/DistanceSensor.html">DistanceSensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/msg/ImuSensor.html">ImuSensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/msg/Obstacles.html">Obstacles</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_sensor_interface/interfaces/service_definitions.html">Service Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle navigation of Service Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/srv/AutoGainTarget.html">AutoGainTarget</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/srv/CameraCapture.html">CameraCapture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/srv/CameraDevice.html">CameraDevice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/srv/GetDistanceSensor.html">GetDistanceSensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/srv/SetDistanceSensor.html">SetDistanceSensor</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_sensor_interface/interfaces/action_definitions.html">Action Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of Action Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_sensor_interface/interfaces/action/CameraCalibrationInternal.html">CameraCalibrationInternal</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../triorb_slam_interface/index.html">triorb_slam_interface</a><input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" role="switch" type="checkbox"/><label for="toctree-checkbox-48"><div class="visually-hidden">Toggle navigation of triorb_slam_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_slam_interface/interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" role="switch" type="checkbox"/><label for="toctree-checkbox-49"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_slam_interface/interfaces/msg/CamerasLandmarkInfo.html">CamerasLandmarkInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_slam_interface/interfaces/msg/CamerasPose.html">CamerasPose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_slam_interface/interfaces/msg/Keyframe.html">Keyframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_slam_interface/interfaces/msg/KeyframeArray.html">KeyframeArray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_slam_interface/interfaces/msg/PointArrayStamped.html">PointArrayStamped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_slam_interface/interfaces/msg/PoseDevStamped.html">PoseDevStamped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_slam_interface/interfaces/msg/SlamStatus.html">SlamStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_slam_interface/interfaces/msg/UInt32MultiArrayStamped.html">UInt32MultiArrayStamped</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_slam_interface/interfaces/msg/XyArrayStamped.html">XyArrayStamped</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../triorb_static_interface/index.html">triorb_static_interface</a><input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" role="switch" type="checkbox"/><label for="toctree-checkbox-51"><div class="visually-hidden">Toggle navigation of triorb_static_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_static_interface/interfaces/message_definitions.html">Message Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" role="switch" type="checkbox"/><label for="toctree-checkbox-52"><div class="visually-hidden">Toggle navigation of Message Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/msg/ClockSync.html">ClockSync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/msg/HostStatus.html">HostStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/msg/NodeInfo.html">NodeInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/msg/RobotError.html">RobotError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/msg/RobotStatus.html">RobotStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/msg/SettingIPv4.html">SettingIPv4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/msg/SettingROS.html">SettingROS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/msg/SettingSSID.html">SettingSSID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/msg/StringList.html">StringList</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../triorb_static_interface/interfaces/service_definitions.html">Service Definitions</a><input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" role="switch" type="checkbox"/><label for="toctree-checkbox-53"><div class="visually-hidden">Toggle navigation of Service Definitions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/ErrorList.html">ErrorList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/GetImage.html">GetImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/GetString.html">GetString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/GetStringList.html">GetStringList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/NodeInfo.html">NodeInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/SetImage.html">SetImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/SetString.html">SetString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/SettingIPv4.html">SettingIPv4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/SettingROS.html">SettingROS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/SettingSSID.html">SettingSSID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triorb_static_interface/interfaces/srv/Version.html">Version</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MCP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://mcp.triorb-cloud.com/docs/setup-guide">ChatGPT や Claude などから接続する方法</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">法務</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/terms.html">利用規約</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/privacy.html">プライバシーポリシー</a></li>
+</ul>
+</div></div>
+</div>
+</div>
+</aside>
+<div class="main">
+<div class="content">
+<div class="article-container">
+<a class="back-to-top muted-link" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+</svg>
+<span>Back to top</span>
+</a>
+<div class="content-icon-container">
+<div class="view-this-page">
+<a class="muted-link" href="https://github.com/TriOrb-Inc/TriOrb-AMR-Documents/blob/docs2-poc/docs-next/interfaces/triorb_field_interface/standards.rst?plain=true" title="View this page">
+<svg><use href="#svg-eye"></use></svg>
+<span class="visually-hidden">View this page</span>
+</a>
+</div><div class="edit-this-page">
+<a class="muted-link" href="https://github.com/TriOrb-Inc/TriOrb-AMR-Documents/edit/docs2-poc/docs-next/interfaces/triorb_field_interface/standards.rst" title="Edit this page">
+<svg><use href="#svg-pencil"></use></svg>
+<span class="visually-hidden">Edit this page</span>
+</a>
+</div><div class="theme-toggle-container theme-toggle-content">
+<button class="theme-toggle">
+<div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+<svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+<svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+<svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+<svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+</button>
+</div>
+<label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+<div class="visually-hidden">Toggle table of contents sidebar</div>
+<i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+</label>
+</div>
+<article id="furo-main-content" role="main">
+<section id="standard-documents">
+<h1>Standard Documents<a class="headerlink" href="#standard-documents" title="この見出しへのパーマリンク">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standard_docs/PACKAGE.html">PACKAGE</a></li>
+</ul>
+</div>
+</section>
+</article>
+</div>
+<footer>
+<div class="related-pages">
+<a class="next-page" href="standard_docs/PACKAGE.html">
+<div class="page-info">
+<div class="context">
+<span>Next</span>
+</div>
+<div class="title">PACKAGE</div>
+</div>
+<svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+</a>
+<a class="prev-page" href="interfaces/msg/Dummy.html">
+<svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+<div class="page-info">
+<div class="context">
+<span>Previous</span>
+</div>
+<div class="title">Dummy</div>
+</div>
+</a>
+</div>
+<div class="bottom-of-page">
+<div class="left-details">
+<div class="copyright">
+                Copyright © 2025-2026, TriOrb Inc.
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+</div>
+<div class="right-details">
+</div>
+</div>
+</footer>
+</div>
+<aside class="toc-drawer no-toc">
+</aside>
+</div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=88065ed8"></script>
+<script src="../../_static/doctools.js?v=888ff710"></script>
+<script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+<script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+<script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../_static/copybutton.js?v=f281be69"></script>
+<script>let toggleHintShow = 'クリックして表示';</script>
+<script>let toggleHintHide = 'クリックして非表示';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../_static/togglebutton.js?v=b8b12719"></script>
+<script src="../../_static/translations.js?v=4dbe4bdc"></script>
+<script src="../../_static/design-tabs.js?v=36754332"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="../../_static/mqtt-api-modal.js?v=5c18589f"></script>
+</body>
+</html>
